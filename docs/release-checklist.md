@@ -10,6 +10,6 @@
 - [x] Code and non-code licenses recorded.
 - [x] Citation and Zenodo metadata templates included.
 - [x] GitHub repository name is `pico-former`.
-- [ ] Enable the repository in the Zenodo GitHub integration.
-- [ ] Create GitHub release `v0.1.0`.
-- [ ] Add the issued Zenodo concept DOI to citation metadata and the manuscript.
+- [ ] Enable `pico-former` in the Zenodo GitHub integration (https://zenodo.org/account/settings/github/).
+- [x] Create GitHub release `v0.1.0`.
+- [ ] After Zenodo mints the concept DOI, add it to `CITATION.cff`, `README.md`, and the manuscript Data and code section.
