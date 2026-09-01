@@ -3,12 +3,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22218446.svg)](https://doi.org/10.5281/zenodo.22218446)
 
 Repository: [https://github.com/modalfuse/pico-former](https://github.com/modalfuse/pico-former)  
-Release: [v0.1.1](https://github.com/modalfuse/pico-former/releases/tag/v0.1.1)  
+Release: [v1.0.0](https://github.com/modalfuse/pico-former/releases/tag/v1.0.0)  
 Zenodo: [https://doi.org/10.5281/zenodo.22218446](https://doi.org/10.5281/zenodo.22218446)
 
 Pico-Former is an on-device curve–event glucose predictor for ESP32-S3. One Core-1 forward pass emits a 48-point 1–4 h trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. The network definition and \(\tau\) protocol follow the public RICE-Former archive.
 
-This package contains the MCU kernels, the dual-core firmware glue, the serial audit host, and aggregate on-board audit tables. Raw CGM records, trained weights, credentials, and caches are not distributed.
+This package contains the MCU kernels, the dual-core firmware glue, the serial audit host, and aggregate on-board audit tables. Raw CGM records, participant event logs, and trained weights are not distributed.
 
 ## Companion archive
 
@@ -50,7 +50,7 @@ Python 3.13 with the RICE-Former environment is sufficient for the host scripts.
 
 ## Data and model artifacts
 
-This repository contains no raw CGM records, participant event logs, Wi-Fi passwords, trained weights, or caches. Aggregate tables report cohort-level metrics only.
+This repository contains no raw CGM records, participant event logs, or trained weights. Aggregate tables report cohort-level metrics only.
 
 AZT1D remains available from Mendeley Data, <https://doi.org/10.17632/gk9m674wcx.1>. Access terms are set by that provider.
 

@@ -12,4 +12,6 @@
 - [x] GitHub repository name is `pico-former`.
 - [x] Enable `pico-former` in the Zenodo GitHub integration.
 - [x] Create GitHub release `v0.1.0`, then `v0.1.1` after the hook was enabled.
-- [x] Concept DOI `10.5281/zenodo.22218446` added to `CITATION.cff` and `README.md`. Do not cut a new GitHub release solely for this metadata commit.
+- [x] Concept DOI `10.5281/zenodo.22218446` added to `CITATION.cff` and `README.md`.
+- [x] Zenodo description aligned with the RICE-Former record (https://zenodo.org/records/22171918).
+- [ ] GitHub release `v1.0.0` (this version updates the Zenodo landing page).

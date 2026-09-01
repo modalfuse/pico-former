@@ -4,7 +4,7 @@
   "access_right": "open",
   "license": "MIT",
   "language": "eng",
-  "version": "v0.1.0",
+  "version": "v1.0.0",
   "publication_date": "2026-09-01",
   "creators": [
     {
@@ -54,13 +54,17 @@
   ],
   "keywords": [
     "continuous glucose monitoring",
+    "glucose forecasting",
     "on-device inference",
     "ESP32-S3",
     "Transformer",
     "TinyML",
-    "hypoglycemia",
     "Internet of Medical Things",
-    "curve-event prediction"
+    "residual-on-inertia",
+    "event-aware prediction",
+    "hypoglycemia",
+    "hyperglycemia",
+    "type 1 diabetes"
   ],
   "related_identifiers": [
     {
@@ -70,7 +74,7 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/modalfuse/pico-former/tree/v0.1.0",
+      "identifier": "https://github.com/modalfuse/pico-former/tree/v1.0.0",
       "relation": "isIdenticalTo",
       "resource_type": "software",
       "scheme": "url"
@@ -88,6 +92,6 @@
       "scheme": "doi"
     }
   ],
-  "notes": "This software archive provides the ESP32-S3 implementation of a public curve-event glucose Transformer. Raw CGM records, trained weights, and credentials are not redistributed.",
-  "description": "<p><strong>Pico-Former</strong> is an on-device curve–event glucose Transformer for ESP32-S3. One Core-1 forward pass emits a 48-point trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. Tokenization, residual-on-inertia, and the frozen <code>τ</code> protocol follow the public RICE-Former archive (Zenodo <a href=\"https://doi.org/10.5281/zenodo.22171786\">10.5281/zenodo.22171786</a>).</p>\n\n<h2>Included materials</h2>\n<ul>\n<li>ESP32-S3 firmware: self-attention, cross-attention, residual glue, dual-core I/O</li>\n<li>Host scripts to export weights from an authorized checkpoint and to audit the board over serial</li>\n<li>Aggregate AZT1D holdout tables and on-board identity summaries (19,152 windows)</li>\n<li>Documentation for data access and reproducibility</li>\n</ul>\n\n<h2>Not included</h2>\n<p>Raw CGM records, participant event logs, trained weights (<code>ceqt_weights.h</code>), Wi-Fi credentials, and caches.</p>\n\n<p><strong>Software repository:</strong> <a href=\"https://github.com/modalfuse/pico-former\">https://github.com/modalfuse/pico-former</a></p>"
+  "notes": "This software archive accompanies the Pico-Former on-device implementation. Tokenization, residual-on-inertia, and the frozen tau protocol follow the public RICE-Former archive (https://doi.org/10.5281/zenodo.22171786). Public CGM datasets remain available from their original providers and are not redistributed in this deposit.",
+  "description": "<p>This reproducibility-focused software archive provides <strong>Pico-Former</strong>, an on-device curve–event glucose Transformer for ESP32-S3. It accompanies the manuscript <em>Pico-Former: a curve–event glucose Transformer on ESP32-S3</em>.</p>\n\n<p>The repository supports independent audit of four connected device designs: (1) a 96-token, width-48 encoder whose activations fit in ESP32-S3 internal SRAM; (2) one Core-1 forward pass that emits a 48-point 1–4 h trajectory and 16 event logits; (3) Flash-resident validation-frozen thresholds so event flags are <code>ℓ ≥ τ</code>; and (4) a dual-core contract that leaves wireless I/O on Core 0. Tokenization, residual-on-inertia, and the <code>τ</code> protocol follow the public RICE-Former archive (Zenodo <a href=\"https://doi.org/10.5281/zenodo.22171786\">10.5281/zenodo.22171786</a>).</p>\n\n<h2>Included materials</h2>\n<ul>\n<li><strong>ESP32-S3 firmware</strong>: self-attention, cross-attention, residual glue, and dual-core I/O (<code>CEQT</code> remains the engineering codename of the network)</li>\n<li><strong>Host audit scripts</strong> to export weights from an authorized checkpoint and to stream holdout windows over serial</li>\n<li><strong>Privacy-preserving aggregate tables</strong> for the AZT1D holdout curve and event recomputes</li>\n<li><strong>On-board identity summaries</strong> for 19,152 windows: over/under agreement, paired FNR/FPR, latency, and a datasheet energy band</li>\n<li><strong>Documentation</strong> for data access, reproducibility, and GitHub–Zenodo release steps</li>\n</ul>\n\n<h2>Repository layout</h2>\n<ul>\n<li><code>firmware/</code>: PlatformIO project for ESP32-S3</li>\n<li><code>host/</code>: weight export and serial-audit scripts (they import <code>ceqt</code> from a local RICE-Former checkout)</li>\n<li><code>results/tables/</code>: aggregate AZT1D holdout curve and event tables</li>\n<li><code>results/validation/</code>: on-board agreement, paired FNR/FPR, latency, and energy-band summaries</li>\n<li><code>docs/</code>: data access, reproducibility, and release instructions</li>\n</ul>\n\n<h2>Install and verify</h2>\n<pre><code>cd firmware\npio run -e s3_n16r8 -t upload\n</code></pre>\n<p>Obtain AZT1D from its original provider and the RICE-Former source tree as described in <code>docs/data-access.md</code>. Export weights from an authorized checkpoint, then run <code>python host/run_validation.py</code> with <code>RICE_FORMER_SRC</code>, <code>RICE_CKPT</code>, and <code>RICE_CACHE</code> set.</p>\n\n<p>A 19,152-window holdout audit on ESP32-S3 QFN56 (240 MHz, hardware FP32) reported median latency 398.2 ms (0.13% of a 5 min CGM beat), a working buffer of about 192 KB internal SRAM, 19,143 / 19,152 window agreement, and identical 4 h hypo70 FNR/FPR 0.669/0.043 on the board and the public host of the same checkpoint.</p>\n\n<h2>Data and privacy boundary</h2>\n<p>AZT1D remains available from Mendeley Data, <a href=\"https://doi.org/10.17632/gk9m674wcx.1\">10.17632/gk9m674wcx.1</a>. The host protocol, locked splits, and aggregate PC tables are archived as RICE-Former, <a href=\"https://doi.org/10.5281/zenodo.22171786\">10.5281/zenodo.22171786</a>. This deposit archives firmware, host audit scripts, aggregate result tables, and on-board identity summaries. Raw CGM records, participant event logs, and trained weights are not redistributed. Details are provided in <code>docs/data-access.md</code>.</p>\n\n<h2>Citation</h2>\n<p>Please cite this software archive as:</p>\n<blockquote>Liu Q, Yang M, Wang Z, Wang S, An X, Lu S, Yang Q, Liu M, Wu Z, Huang D. Pico-Former: a curve–event glucose Transformer on ESP32-S3. Zenodo. <a href=\"https://doi.org/10.5281/zenodo.22218446\">https://doi.org/10.5281/zenodo.22218446</a></blockquote>\n<p>Please also cite the companion host archive:</p>\n<blockquote>Liu Q, Yang M, Wang Z, Wang S, An X, Lu S, Yang Q, Liu M, Wu Z, Huang D. RICE-Former: a curve–event Transformer. Zenodo. <a href=\"https://doi.org/10.5281/zenodo.22171786\">https://doi.org/10.5281/zenodo.22171786</a></blockquote>\n<p>Citation metadata are also provided in <code>CITATION.cff</code>. Please cite the accompanying manuscript when referring to the scientific findings.</p>\n<p><strong>Software repository:</strong> <a href=\"https://github.com/modalfuse/pico-former\">https://github.com/modalfuse/pico-former</a></p>"
 }
