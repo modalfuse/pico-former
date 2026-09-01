@@ -4,7 +4,7 @@
   "access_right": "open",
   "license": "MIT",
   "language": "eng",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "publication_date": "2026-09-01",
   "creators": [
     {
@@ -19,11 +19,13 @@
     },
     {
       "name": "Wang, Zijiaqi",
-      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0009-0000-6296-4882"
     },
     {
       "name": "Wang, Saier",
-      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0009-0006-4289-258X"
     },
     {
       "name": "An, Xiang",
@@ -32,7 +34,8 @@
     },
     {
       "name": "Lu, Sichao",
-      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0000-0002-5409-6154"
     },
     {
       "name": "Yang, Qiang",
@@ -41,11 +44,13 @@
     },
     {
       "name": "Liu, Mingyuan",
-      "affiliation": "Department of Vascular Surgery, Capital Medical University Affiliated Beijing Friendship Hospital"
+      "affiliation": "Department of Vascular Surgery, Capital Medical University Affiliated Beijing Friendship Hospital",
+      "orcid": "0000-0002-6449-4885"
     },
     {
       "name": "Wu, Zhenyu",
-      "affiliation": "Capital Medical University Daxing Teaching Hospital"
+      "affiliation": "Capital Medical University Daxing Teaching Hospital",
+      "orcid": "0000-0002-5309-4632"
     },
     {
       "name": "Huang, Dongming",
@@ -74,7 +79,7 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/modalfuse/pico-former/tree/v1.0.0",
+      "identifier": "https://github.com/modalfuse/pico-former/tree/v1.0.1",
       "relation": "isIdenticalTo",
       "resource_type": "software",
       "scheme": "url"
