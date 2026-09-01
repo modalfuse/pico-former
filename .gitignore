@@ -1,0 +1,26 @@
+.DS_Store
+.pio
+.vscode
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets and generated headers
+firmware/wifi.yaml
+firmware/include/secrets.h
+firmware/include/wifi_secrets.gen.h
+firmware/include/ceqt_weights.h
+
+# Build artifacts
+*.bin
+*.elf
+*.map
+
+# Local exports (participant windows and weights)
+gold/
+host/.cache/
+*.pt
+*.pkl
+*.ckpt
+.env
+.env.*

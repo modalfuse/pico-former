@@ -1,0 +1,50 @@
+{
+  "empty": {
+    "idx": 8,
+    "subject": 14,
+    "n_marks": 0,
+    "now": 77.0,
+    "pred_1h_board": 77.0,
+    "pred_4h_board": 77.0,
+    "pred_1h_pc": 77.0,
+    "pred_4h_pc": 77.0,
+    "yhat_maxabs": 0.0,
+    "logit_maxabs": 0.0004582405090332031,
+    "g_board": 0.0,
+    "g_pc": 0.0,
+    "us_ms": 395.48,
+    "evt_agree": true
+  },
+  "golden": {
+    "idx": 0,
+    "subject": 14,
+    "n_marks": 2,
+    "now": 85.0,
+    "pred_1h_board": 114.29277038574219,
+    "pred_4h_board": 156.27191162109375,
+    "pred_1h_pc": 114.28392028808594,
+    "pred_4h_pc": 156.26978302001953,
+    "yhat_maxabs": 0.009449005126953125,
+    "logit_maxabs": 0.0005800724029541016,
+    "g_board": 1.0,
+    "g_pc": 1.0,
+    "us_ms": 396.516,
+    "evt_agree": true
+  },
+  "other_subject": {
+    "idx": 4014,
+    "subject": 13,
+    "n_marks": 3,
+    "now": 157.0,
+    "pred_1h_board": 160.89202880859375,
+    "pred_4h_board": 143.78616333007812,
+    "pred_1h_pc": 160.89207220077515,
+    "pred_4h_pc": 143.78399467468262,
+    "yhat_maxabs": 0.003796100616455078,
+    "logit_maxabs": 0.0006270408630371094,
+    "g_board": 1.0,
+    "g_pc": 1.0,
+    "us_ms": 398.195,
+    "evt_agree": true
+  }
+}

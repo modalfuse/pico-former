@@ -1,0 +1,93 @@
+{
+  "title": "Pico-Former: a curve–event glucose Transformer on ESP32-S3",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "MIT",
+  "language": "eng",
+  "version": "v0.1.0",
+  "publication_date": "2026-09-01",
+  "creators": [
+    {
+      "name": "Liu, Qiang",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0000-0003-3699-5858"
+    },
+    {
+      "name": "Yang, Ming",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0009-0006-9270-3521"
+    },
+    {
+      "name": "Wang, Zijiaqi",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+    },
+    {
+      "name": "Wang, Saier",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+    },
+    {
+      "name": "An, Xiang",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0009-0004-3167-4072"
+    },
+    {
+      "name": "Lu, Sichao",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology"
+    },
+    {
+      "name": "Yang, Qiang",
+      "affiliation": "Academy of Artificial Intelligence, Beijing Institute of Petrochemical Technology",
+      "orcid": "0000-0001-5767-4637"
+    },
+    {
+      "name": "Liu, Mingyuan",
+      "affiliation": "Department of Vascular Surgery, Capital Medical University Affiliated Beijing Friendship Hospital"
+    },
+    {
+      "name": "Wu, Zhenyu",
+      "affiliation": "Capital Medical University Daxing Teaching Hospital"
+    },
+    {
+      "name": "Huang, Dongming",
+      "affiliation": "Capital Medical University Daxing Teaching Hospital"
+    }
+  ],
+  "keywords": [
+    "continuous glucose monitoring",
+    "on-device inference",
+    "ESP32-S3",
+    "Transformer",
+    "TinyML",
+    "hypoglycemia",
+    "Internet of Medical Things",
+    "curve-event prediction"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/modalfuse/pico-former",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/modalfuse/pico-former/tree/v0.1.0",
+      "relation": "isIdenticalTo",
+      "resource_type": "software",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.22171786",
+      "relation": "cites",
+      "resource_type": "software",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.17632/gk9m674wcx.1",
+      "relation": "cites",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "This software archive provides the ESP32-S3 implementation of a public curve-event glucose Transformer. Raw CGM records, trained weights, and credentials are not redistributed.",
+  "description": "<p><strong>Pico-Former</strong> is an on-device curve–event glucose Transformer for ESP32-S3. One Core-1 forward pass emits a 48-point trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. Tokenization, residual-on-inertia, and the frozen <code>τ</code> protocol follow the public RICE-Former archive (Zenodo <a href=\"https://doi.org/10.5281/zenodo.22171786\">10.5281/zenodo.22171786</a>).</p>\n\n<h2>Included materials</h2>\n<ul>\n<li>ESP32-S3 firmware: self-attention, cross-attention, residual glue, dual-core I/O</li>\n<li>Host scripts to export weights from an authorized checkpoint and to audit the board over serial</li>\n<li>Aggregate AZT1D holdout tables and on-board identity summaries (19,152 windows)</li>\n<li>Documentation for data access and reproducibility</li>\n</ul>\n\n<h2>Not included</h2>\n<p>Raw CGM records, participant event logs, trained weights (<code>ceqt_weights.h</code>), Wi-Fi credentials, and caches.</p>\n\n<p><strong>Software repository:</strong> <a href=\"https://github.com/modalfuse/pico-former\">https://github.com/modalfuse/pico-former</a></p>"
+}

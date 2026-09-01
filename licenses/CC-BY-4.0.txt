@@ -1,0 +1,15 @@
+Documentation, aggregate tables, and figures in this repository are licensed
+under the Creative Commons Attribution 4.0 International License
+(SPDX identifier: CC-BY-4.0).
+
+Copyright (c) 2026 Qiang Liu and Pico-Former contributors.
+
+You may share and adapt these materials for any purpose, provided that
+appropriate credit is given, a link to the license is provided, and changes
+are indicated.
+
+License summary:
+https://creativecommons.org/licenses/by/4.0/
+
+Legal code:
+https://creativecommons.org/licenses/by/4.0/legalcode

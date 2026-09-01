@@ -1,0 +1,8 @@
+{
+  "n": 32,
+  "mae_1h": 33.64942890405655,
+  "mae_4h": 49.66275528073311,
+  "hypo70_4h_fnr": 0.7586206896551724,
+  "hypo70_4h_fpr": 0.0,
+  "note": "AZT1D test-split first 32 windows; not the full-paper table"
+}
