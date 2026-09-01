@@ -1,7 +1,10 @@
 # Pico-Former: a curve–event glucose Transformer on ESP32-S3
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22218446.svg)](https://doi.org/10.5281/zenodo.22218446)
+
 Repository: [https://github.com/modalfuse/pico-former](https://github.com/modalfuse/pico-former)  
-Release: [v0.1.0](https://github.com/modalfuse/pico-former/releases/tag/v0.1.0)
+Release: [v0.1.1](https://github.com/modalfuse/pico-former/releases/tag/v0.1.1)  
+Zenodo: [https://doi.org/10.5281/zenodo.22218446](https://doi.org/10.5281/zenodo.22218446)
 
 Pico-Former is an on-device curve–event glucose predictor for ESP32-S3. One Core-1 forward pass emits a 48-point 1–4 h trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. The network definition and \(\tau\) protocol follow the public RICE-Former archive.
 
@@ -55,7 +58,7 @@ AZT1D remains available from Mendeley Data, <https://doi.org/10.17632/gk9m674wcx
 
 Cite both software archives:
 
-> Liu Q, Yang M, Wang Z, Wang S, An X, Lu S, Yang Q, Liu M, Wu Z, Huang D. Pico-Former: a curve–event glucose Transformer on ESP32-S3. GitHub. https://github.com/modalfuse/pico-former
+> Liu Q, Yang M, Wang Z, Wang S, An X, Lu S, Yang Q, Liu M, Wu Z, Huang D. Pico-Former: a curve–event glucose Transformer on ESP32-S3. Zenodo. https://doi.org/10.5281/zenodo.22218446
 >
 > Liu Q, Yang M, Wang Z, Wang S, An X, Lu S, Yang Q, Liu M, Wu Z, Huang D. RICE-Former: a curve–event Transformer. Zenodo. https://doi.org/10.5281/zenodo.22171786
 
