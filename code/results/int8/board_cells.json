@@ -1,0 +1,113 @@
+{
+ "q8": {
+  "n": 512,
+  "windows_bit_identical_vs_host": 497,
+  "logits_differing_vs_host": 27,
+  "logit_maxabs_vs_host": 0.125,
+  "cells_disagree_vs_host": 1,
+  "disagree_cells": [
+   {
+    "window": 3400,
+    "out": 0,
+    "board": -2.875,
+    "host": -3.0,
+    "thr": -2.995896816253662
+   }
+  ],
+  "board_cells_changed_vs_fp32": 108,
+  "board_windows_changed_vs_fp32": 61,
+  "host_cells_changed_vs_fp32": 109,
+  "logit_maxabs_board_vs_fp32": 5.708234821546757,
+  "latency_ms": {
+   "median": 63.194,
+   "p95": 63.222,
+   "p99": 63.23289,
+   "max": 69.349,
+   "first": 69.349
+  },
+  "int_min_free_min": 104567,
+  "psram_free_min": 7971988,
+  "serial_retries": 0
+ },
+ "q16": {
+  "n": 512,
+  "windows_bit_identical_vs_host": 0,
+  "logits_differing_vs_host": 6977,
+  "logit_maxabs_vs_host": 0.0595703125,
+  "cells_disagree_vs_host": 2,
+  "disagree_cells": [
+   {
+    "window": 1943,
+    "out": 2,
+    "board": -1.6533203125,
+    "host": -1.650390625,
+    "thr": -1.6519243717193604
+   },
+   {
+    "window": 4090,
+    "out": 2,
+    "board": -1.666015625,
+    "host": -1.6474609375,
+    "thr": -1.6519243717193604
+   }
+  ],
+  "board_cells_changed_vs_fp32": 3,
+  "board_windows_changed_vs_fp32": 3,
+  "host_cells_changed_vs_fp32": 1,
+  "logit_maxabs_board_vs_fp32": 0.05885926312317791,
+  "latency_ms": {
+   "median": 182.683,
+   "p95": 183.883,
+   "p99": 184.00745999999998,
+   "max": 184.056,
+   "first": 181.281
+  },
+  "int_min_free_min": 32039,
+  "psram_free_min": 7882624,
+  "serial_retries": 0
+ },
+ "qmix": {
+  "n": 512,
+  "windows_bit_identical_vs_host": 505,
+  "logits_differing_vs_host": 14,
+  "logit_maxabs_vs_host": 0.125,
+  "cells_disagree_vs_host": 0,
+  "disagree_cells": [],
+  "board_cells_changed_vs_fp32": 78,
+  "board_windows_changed_vs_fp32": 47,
+  "host_cells_changed_vs_fp32": 78,
+  "logit_maxabs_board_vs_fp32": 1.7062501271055197,
+  "latency_ms": {
+   "median": 64.545,
+   "p95": 64.578,
+   "p99": 64.59056,
+   "max": 70.683,
+   "first": 70.683
+  },
+  "int_min_free_min": 80759,
+  "psram_free_min": 7961236,
+  "serial_retries": 0
+ },
+ "fp32": {
+  "n": 512,
+  "windows_bit_identical_vs_host": 0,
+  "logits_differing_vs_host": 7055,
+  "logit_maxabs_vs_host": 8.58306884765625e-06,
+  "cells_disagree_vs_host": 0,
+  "disagree_cells": [],
+  "board_cells_changed_vs_fp32": 0,
+  "board_windows_changed_vs_fp32": 0,
+  "host_cells_changed_vs_fp32": 0,
+  "logit_maxabs_board_vs_fp32": 9.014554925634854e-06,
+  "latency_ms": {
+   "median": 312.921,
+   "p95": 314.0103,
+   "p99": 314.199,
+   "max": 314.304,
+   "first": 310.023
+  },
+  "int_min_free_min": 111391,
+  "psram_free_min": 8339736,
+  "serial_retries": 0
+ }
+}

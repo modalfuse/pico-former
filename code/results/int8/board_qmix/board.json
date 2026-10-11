@@ -1,0 +1,21 @@
+{
+ "time": "2026-10-10 06:15:56",
+ "bits": 8,
+ "tag": "qmix",
+ "n": 512,
+ "serial_retries": 0,
+ "logit_maxabs_board_vs_host_q": 0.125,
+ "delta_norm_maxabs_board_vs_host_q": 0.0625,
+ "windows_bit_identical_logits": 505,
+ "logit_maxabs_board_vs_fp32": 1.7062501271055197,
+ "latency_ms": {
+  "median": 64.545,
+  "p95": 64.578,
+  "p99": 64.59056,
+  "max": 70.683,
+  "first": 70.683
+ },
+ "int_free_min": 193459,
+ "int_min_free_min": 80759,
+ "psram_free_min": 7961236
+}

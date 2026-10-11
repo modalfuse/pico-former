@@ -1,0 +1,506 @@
+{
+ "time": "2026-10-10 10:52:07",
+ "window_idx": 0,
+ "tests": {
+  "SHA": {
+   "sha_ok": 1,
+   "sha_checks": 2,
+   "fault": 0,
+   "pass": true,
+   "seconds": 1.9
+  },
+  "F1": {
+   "baseline": {
+    "status": 0,
+    "flags": 0,
+    "evt_none": false,
+    "evt": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "logits_finite": true,
+    "us_total": 391644,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "poisoned": {
+    "status": 20,
+    "flags": 0,
+    "evt_none": true,
+    "evt": [
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255
+    ],
+    "logits_finite": false,
+    "us_total": 391434,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "poisoned_round_trip_s": 0.41823697090148926,
+   "next": {
+    "status": 0,
+    "flags": 0,
+    "evt_none": false,
+    "evt": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "logits_finite": true,
+    "us_total": 391738,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "pass": true,
+   "seconds": 3.1
+  },
+  "F4": {
+   "status_before": {
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "baseline": {
+    "status": 0,
+    "flags": 0,
+    "evt_none": false,
+    "evt": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "logits_finite": true,
+    "us_total": 392087,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "after_hang_cmd": {
+    "status": 22,
+    "flags": 0,
+    "evt_none": true,
+    "evt": [
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255
+    ],
+    "logits_finite": true,
+    "us_total": 0,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "fault_frame_s": 2.0263888835906982,
+   "reset_line_s": 5.658204793930054,
+   "reset_reason": 6,
+   "status_after": {
+    "reset_reason": 6,
+    "reset_count": 1,
+    "fault": 0
+   },
+   "next": {
+    "status": 0,
+    "flags": 0,
+    "evt_none": false,
+    "evt": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "logits_finite": true,
+    "us_total": 392029,
+    "reset_reason": 6,
+    "reset_count": 1
+   },
+   "pass": true,
+   "seconds": 9.6
+  },
+  "F7": {
+   "default_stale_ms": 600000,
+   "test_stale_ms": 8000,
+   "window": {
+    "status": 0,
+    "flags": 0,
+    "evt_none": false,
+    "evt": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "logits_finite": true,
+    "us_total": 391983,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "trace": [
+    {
+     "t_s": 0.08,
+     "age_s": 0.1,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 0.66,
+     "age_s": 0.7,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 1.2,
+     "age_s": 1.2,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 1.74,
+     "age_s": 1.7,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 2.28,
+     "age_s": 2.3,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 2.82,
+     "age_s": 2.8,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 3.35,
+     "age_s": 3.4,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 3.89,
+     "age_s": 3.9,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 4.43,
+     "age_s": 4.4,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 4.97,
+     "age_s": 5.0,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 5.51,
+     "age_s": 5.5,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 6.05,
+     "age_s": 6.1,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 6.59,
+     "age_s": 6.6,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 7.13,
+     "age_s": 7.1,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 7.67,
+     "age_s": 7.7,
+     "stale": 0,
+     "events_present": true
+    },
+    {
+     "t_s": 8.21,
+     "age_s": 8.2,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 8.75,
+     "age_s": 8.8,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 9.29,
+     "age_s": 9.3,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 9.83,
+     "age_s": 9.8,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 10.36,
+     "age_s": 10.4,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 10.91,
+     "age_s": 10.9,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 11.44,
+     "age_s": 11.4,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 11.98,
+     "age_s": 12.0,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 12.52,
+     "age_s": 12.5,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 13.06,
+     "age_s": 13.1,
+     "stale": 1,
+     "events_present": false
+    },
+    {
+     "t_s": 13.6,
+     "age_s": 13.6,
+     "stale": 1,
+     "events_present": false
+    }
+   ],
+   "first_stale": {
+    "t_s": 8.21,
+    "age_s": 8.2,
+    "stale": 1,
+    "events_present": false
+   },
+   "restored_stale_ms": 600000,
+   "pass": true,
+   "seconds": 16.4
+  },
+  "F2": {
+   "env": "s3_corrupt_w",
+   "flash": true,
+   "banner_fault_line": true,
+   "status_fault": 21,
+   "sha_ok": 0,
+   "int_free": 30240,
+   "window": {
+    "status": 21,
+    "flags": 0,
+    "evt_none": true,
+    "evt": [
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255
+    ],
+    "logits_finite": true,
+    "us_total": 0,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "pass": true,
+   "seconds": 30.9
+  },
+  "F3": {
+   "env": "s3_corrupt_t",
+   "flash": true,
+   "banner_fault_line": true,
+   "status_fault": 21,
+   "sha_ok": 0,
+   "int_free": 30240,
+   "window": {
+    "status": 21,
+    "flags": 0,
+    "evt_none": true,
+    "evt": [
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255
+    ],
+    "logits_finite": true,
+    "us_total": 0,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "pass": true,
+   "seconds": 30.6
+  },
+  "F5": {
+   "env": "s3_eatsram",
+   "flash": true,
+   "banner_fault_line": true,
+   "status_fault": 23,
+   "sha_ok": 1,
+   "int_free": 63180,
+   "window": {
+    "status": 23,
+    "flags": 0,
+    "evt_none": true,
+    "evt": [
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255,
+     255
+    ],
+    "logits_finite": true,
+    "us_total": 0,
+    "reset_reason": 1,
+    "reset_count": 0
+   },
+   "pass": true,
+   "seconds": 30.5
+  }
+ },
+ "restored_s3_n16r8": true
+}

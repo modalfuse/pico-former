@@ -1,0 +1,8 @@
+.pio/
+.vscode/
+build/
+managed_components/
+.cache/
+sdkconfig
+!sdkconfig.defaults
+!sdkconfig.defaults.*

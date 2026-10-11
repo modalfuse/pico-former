@@ -1,0 +1,47 @@
+{
+ "firmware": "v1.0.1 rice-s3/pico-former/firmware, rebuilt in code/firmware-v1.0.1",
+ "runs": [
+  {
+   "boot": 1,
+   "first_ms": 392.2,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 397.14115000000004,
+   "burn_last_ms": 396.612
+  },
+  {
+   "boot": 2,
+   "first_ms": 392.2,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 397.17645,
+   "burn_last_ms": 396.619
+  },
+  {
+   "boot": 3,
+   "first_ms": 392.2,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 397.241,
+   "burn_last_ms": 396.287
+  },
+  {
+   "boot": 4,
+   "first_ms": 392.2,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 397.62375,
+   "burn_last_ms": 396.567
+  },
+  {
+   "boot": 5,
+   "first_ms": 392.2,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 397.19095,
+   "burn_last_ms": 396.243
+  }
+ ],
+ "first_ms_median": 392.2,
+ "burn_mean_ms_median": 397.19095
+}

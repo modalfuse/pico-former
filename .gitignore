@@ -9,7 +9,11 @@ __pycache__/
 firmware/wifi.yaml
 firmware/include/secrets.h
 firmware/include/wifi_secrets.gen.h
+firmware/include/api_token.gen.h
+firmware/include/https_cert.gen.h
 firmware/include/ceqt_weights.h
+firmware/include/ceqt_weights_s*.h
+firmware/include/ceqt_weights_corrupt.gen.h
 
 # Build artifacts
 *.bin
@@ -24,3 +28,22 @@ host/.cache/
 *.ckpt
 .env
 .env.*
+firmware/include/energy_windows.gen.h
+firmware/include/energy_windows.meta.json
+
+# Generated build headers and test builds
+firmware/include/ceqt_manifest.gen.h
+firmware/include/ceqt_weights_active.gen.h
+code/design_space/latency_fw/include/bench_w_*.h
+code/int8/**/models/
+code/int8/**/build*/
+code/int8/**/managed_components/
+code/int8/**/.cache/
+code/int8/**/sdkconfig.old
+code/firmware-v1.0.1-probe/include/ceqt_weights.h
+code/firmware-v1.0.1-probe/include/wifi_secrets.gen.h
+code/firmware-v1.0.1-probe/wifi.yaml
+*.espdl
+*.npz
+*.npy
+*.log

@@ -1,13 +1,31 @@
 #include "ceqt_infer.h"
 
-#include "ceqt_weights.h"
+#include "ceqt_weights_active.gen.h"
+#include "ceqt_manifest.gen.h"
 
 #include <Arduino.h>
 #include <esp_heap_caps.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <math.h>
+#include <mbedtls/sha256.h>
+#include <soc/soc_memory_layout.h>
 #include <string.h>
+
+#ifndef CEQT_SEGMENT_TIMING
+#define CEQT_SEGMENT_TIMING 1
+#endif
+#if CEQT_SEGMENT_TIMING
+#define SEG_TIME() micros()
+#else
+#define SEG_TIME() 0u
+#endif
+
+#ifndef CEQT_GPIO_INFER
+#define CEQT_GPIO_INFER 4
+#endif
+
+static volatile bool g_poison_next;
 
 static float *g_tok;
 static float *g_tmp;
@@ -17,6 +35,9 @@ static float *g_attn;
 static float *g_curve;
 static float *g_event;
 static bool g_ready;
+
+// Defined in ceqt_release.cpp; kept out of this translation unit so that the inference code is compiled unchanged.
+void ceqt_release_partial(float *a, float *b, float *c, float *d, float *e, float *f, float *g);
 
 static void linear(const float *x, const float *W, const float *b, float *y, int n, int out_d, int in_d) {
     for (int i = 0; i < n; ++i) {
@@ -33,11 +54,12 @@ static void linear(const float *x, const float *W, const float *b, float *y, int
     }
 }
 
+// Exact (erf) GELU, matching torch.nn.GELU() with approximate="none".
 static void gelu_inplace(float *x, int n) {
-    const float k = 0.7978845608f;
+    const float k = 0.70710678118654752f;
     for (int i = 0; i < n; ++i) {
         float v = x[i];
-        x[i] = 0.5f * v * (1.f + tanhf(k * (v + 0.044715f * v * v * v)));
+        x[i] = 0.5f * v * (1.f + erff(v * k));
     }
 }
 
@@ -167,20 +189,145 @@ bool ceqt_init() {
     const size_t tok = (size_t)CEQT_N_TOK * CEQT_D;
     const size_t tmp = (size_t)CEQT_N_TOK * 3 * CEQT_D;
     const size_t qkv = (size_t)CEQT_N_TOK * 3 * CEQT_D;
-    const size_t sc = (size_t)CEQT_N_OUT * CEQT_N_TOK;  // 48*96 enough; self uses 96*96
-    g_tok = (float *)heap_caps_malloc(tok * sizeof(float), MALLOC_CAP_8BIT);
-    g_tmp = (float *)heap_caps_malloc(tmp * sizeof(float), MALLOC_CAP_8BIT);
-    g_qkv = (float *)heap_caps_malloc(qkv * sizeof(float), MALLOC_CAP_8BIT);
-    g_score = (float *)heap_caps_malloc((size_t)CEQT_N_TOK * CEQT_N_TOK * sizeof(float), MALLOC_CAP_8BIT);
-    g_attn = (float *)heap_caps_malloc(tok * sizeof(float), MALLOC_CAP_8BIT);
-    g_curve = (float *)heap_caps_malloc((size_t)CEQT_N_OUT * CEQT_D * sizeof(float), MALLOC_CAP_8BIT);
-    g_event = (float *)heap_caps_malloc((size_t)CEQT_N_EVT * CEQT_D * sizeof(float), MALLOC_CAP_8BIT);
-    (void)sc;
+    const uint32_t caps = MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT;
+    g_tok = (float *)heap_caps_malloc(tok * sizeof(float), caps);
+    g_tmp = (float *)heap_caps_malloc(tmp * sizeof(float), caps);
+    g_qkv = (float *)heap_caps_malloc(qkv * sizeof(float), caps);
+    g_score = (float *)heap_caps_malloc((size_t)CEQT_N_TOK * CEQT_N_TOK * sizeof(float), caps);
+    g_attn = (float *)heap_caps_malloc(tok * sizeof(float), caps);
+    g_curve = (float *)heap_caps_malloc((size_t)CEQT_N_OUT * CEQT_D * sizeof(float), caps);
+    g_event = (float *)heap_caps_malloc((size_t)CEQT_N_EVT * CEQT_D * sizeof(float), caps);
     g_ready = g_tok && g_tmp && g_qkv && g_score && g_attn && g_curve && g_event;
+    if (g_ready) {
+        pinMode(CEQT_GPIO_INFER, OUTPUT);
+        digitalWrite(CEQT_GPIO_INFER, LOW);
+    } else {
+        // Release a partial allocation so that Wi-Fi and the status interfaces can still start and report the fault.
+        ceqt_release_partial(g_tok, g_tmp, g_qkv, g_score, g_attn, g_curve, g_event);
+    }
     return g_ready;
 }
 
+bool ceqt_ready() { return g_ready; }
+
 const float *ceqt_thresholds() { return W_THR; }
+
+void ceqt_debug_poison_next() { g_poison_next = true; }
+
+void ceqt_print_buffers() {
+    const struct {
+        const char *name;
+        const float *p;
+        size_t bytes;
+    } bufs[] = {
+        {"g_tok", g_tok, (size_t)CEQT_N_TOK * CEQT_D * 4},
+        {"g_tmp", g_tmp, (size_t)CEQT_N_TOK * 3 * CEQT_D * 4},
+        {"g_qkv", g_qkv, (size_t)CEQT_N_TOK * 3 * CEQT_D * 4},
+        {"g_score", g_score, (size_t)CEQT_N_TOK * CEQT_N_TOK * 4},
+        {"g_attn", g_attn, (size_t)CEQT_N_TOK * CEQT_D * 4},
+        {"g_curve", g_curve, (size_t)CEQT_N_OUT * CEQT_D * 4},
+        {"g_event", g_event, (size_t)CEQT_N_EVT * CEQT_D * 4},
+    };
+    for (const auto &b : bufs) {
+        Serial.printf("BUF %s addr=%p bytes=%u internal=%d\n", b.name, (const void *)b.p, (unsigned)b.bytes,
+                      (int)(b.p && esp_ptr_internal(b.p)));
+    }
+}
+
+static void sha_hex(const uint8_t *d, char *out) {
+    static const char *hx = "0123456789abcdef";
+    for (int i = 0; i < 32; ++i) {
+        out[2 * i] = hx[d[i] >> 4];
+        out[2 * i + 1] = hx[d[i] & 15];
+    }
+    out[64] = 0;
+}
+
+// M2: SHA-256 over the weight arrays (header order, float32 little-endian) and over the 16 thresholds,
+// compared with digests computed from the source header at build time.
+bool ceqt_check_integrity(bool verbose) {
+    uint8_t dw[32], dt[32];
+    mbedtls_sha256_context c;
+    mbedtls_sha256_init(&c);
+    mbedtls_sha256_starts_ret(&c, 0);
+#define X(name) mbedtls_sha256_update_ret(&c, (const unsigned char *)name, sizeof(name));
+    CEQT_MANIFEST_WEIGHTS
+#undef X
+    mbedtls_sha256_finish_ret(&c, dw);
+    mbedtls_sha256_free(&c);
+    mbedtls_sha256_ret((const unsigned char *)W_THR, sizeof(W_THR), dt, 0);
+    const bool ok_w = memcmp(dw, CEQT_SHA256_WEIGHTS, 32) == 0;
+    const bool ok_t = memcmp(dt, CEQT_SHA256_THRESHOLDS, 32) == 0;
+    if (verbose) {
+        char h[65];
+        sha_hex(dw, h);
+        Serial.printf("SHA weights %s %s\n", h, ok_w ? "ok" : "MISMATCH");
+        sha_hex(dt, h);
+        Serial.printf("SHA thresholds %s %s\n", h, ok_t ? "ok" : "MISMATCH");
+    }
+    return ok_w && ok_t;
+}
+
+static bool mark_dose_ok(int typ, float lg) {
+    if (!(lg > 0.f)) {
+        return false;
+    }
+    const float lim = typ == 0 ? CEQT_LOG1P_MEAL_MAX : (typ == 3 ? CEQT_LOG1P_BASAL_MAX : CEQT_LOG1P_BOLUS_MAX);
+    return lg <= lim;
+}
+
+// R1-R8 on the node. Returns CEQT_OK or a NO_PRED_* status; invalid marks are removed from `clean`.
+static uint8_t validate(const CeqtWindow *win, CeqtWindow *clean, uint8_t *n_dropped) {
+    memcpy(clean, win, sizeof(*clean));
+    *n_dropped = 0;
+    for (int i = 0; i < CEQT_N_CGM; ++i) {
+        if (!isfinite(win->y_hist[i])) {
+            return CEQT_NO_PRED_INVALID;
+        }
+    }
+    for (int i = 0; i < CEQT_N_MARK * 3; ++i) {
+        if (!isfinite(win->marks[i])) {
+            return CEQT_NO_PRED_INVALID;
+        }
+    }
+    for (int i = 0; i < CEQT_N_MARK; ++i) {
+        if (!isfinite(win->mask[i])) {
+            return CEQT_NO_PRED_INVALID;
+        }
+    }
+    for (int i = 0; i < CEQT_N_CGM; ++i) {
+        const float y = win->y_hist[i];
+        if (y < CEQT_CGM_MIN - CEQT_CGM_TOL || y > CEQT_CGM_MAX + CEQT_CGM_TOL) {
+            return CEQT_NO_PRED_GAP;
+        }
+        if (y < CEQT_CGM_MIN || y > CEQT_CGM_MAX) {
+            clean->y_hist[i] = y < CEQT_CGM_MIN ? CEQT_CGM_MIN : CEQT_CGM_MAX;
+            clean->flags |= CEQT_FLAG_CGM_CLAMPED;
+        }
+    }
+    if (win->t0_s && win->t_last_s && (win->t0_s < win->t_last_s || win->t0_s - win->t_last_s > CEQT_STALE_INPUT_S)) {
+        return CEQT_NO_PRED_STALE;
+    }
+    for (int j = 0; j < CEQT_N_MARK; ++j) {
+        if (win->mask[j] == 0.f) {
+            continue;
+        }
+        const float typf = win->marks[j * 3 + 0];
+        const int typ = (int)typf;
+        const bool ok = typf == (float)typ && typ >= 0 && typ <= 3 && mark_dose_ok(typ, win->marks[j * 3 + 1]) &&
+                        win->marks[j * 3 + 2] >= 0.f && win->mask[j] == 1.f;
+        if (!ok) {
+            clean->mask[j] = 0.f;
+            clean->marks[j * 3 + 0] = clean->marks[j * 3 + 1] = clean->marks[j * 3 + 2] = 0.f;
+            (*n_dropped)++;
+        }
+    }
+    if (*n_dropped) {
+        clean->quality_ok = 0;
+        clean->flags |= CEQT_FLAG_MARKS_DROPPED;
+    }
+    return CEQT_OK;
+}
 
 static float maxabs_diff(const float *a, const float *b, int n) {
     float m = 0.f;
@@ -212,13 +359,51 @@ void ceqt_fill_golden_window(CeqtWindow *win) {
     win->quality_ok = 1;
 }
 
-void ceqt_infer_window(const CeqtWindow *win, CeqtResult *out) {
+static void clear_events(CeqtResult *out) {
+    for (int i = 0; i < CEQT_N_EVT; ++i) {
+        out->evt_on[i] = 0;
+    }
+}
+
+static void infer_valid(const CeqtWindow *win, CeqtResult *out);
+
+void ceqt_infer_window(const CeqtWindow *raw, CeqtResult *out) {
     memset(out, 0, sizeof(*out));
     out->infer_core = (int)xPortGetCoreID();
-    memcpy(out->y_hist, win->y_hist, sizeof(out->y_hist));
-    if (!ceqt_init()) {
+    out->t0_s = raw->t0_s;
+    out->flags = raw->flags & CEQT_FLAG_MARKS_TRUNCATED;
+    memcpy(out->y_hist, raw->y_hist, sizeof(out->y_hist));
+    if (!g_ready) {
+        out->status = CEQT_FAULT_INFER;
         return;
     }
+    CeqtWindow win;
+    out->status = validate(raw, &win, &out->n_dropped);
+    out->flags |= win.flags & (CEQT_FLAG_MARKS_DROPPED | CEQT_FLAG_CGM_CLAMPED);
+    if (out->status != CEQT_OK) {
+        return;
+    }
+    digitalWrite(CEQT_GPIO_INFER, HIGH);
+    infer_valid(&win, out);
+    digitalWrite(CEQT_GPIO_INFER, LOW);
+    if (g_poison_next) {
+        g_poison_next = false;
+        out->logits[0] = NAN;
+    }
+    bool ok = true;
+    for (int i = 0; i < CEQT_N_EVT; ++i) {
+        ok = ok && isfinite(out->logits[i]);
+    }
+    for (int i = 0; i < CEQT_N_OUT; ++i) {
+        ok = ok && isfinite(out->yhat[i]) && out->yhat[i] >= 0.f && out->yhat[i] <= CEQT_YHAT_MAX;
+    }
+    if (!ok) {
+        out->status = CEQT_FAULT_OUTPUT;
+        clear_events(out);
+    }
+}
+
+static void infer_valid(const CeqtWindow *win, CeqtResult *out) {
     uint32_t t0 = micros();
 
     for (int i = 0; i < CEQT_N_CGM; ++i) {
@@ -248,16 +433,16 @@ void ceqt_infer_window(const CeqtWindow *win, CeqtResult *out) {
         }
     }
 
-    uint32_t t1 = micros();
+    uint32_t t1 = SEG_TIME();
     enc_layer(g_tok, CEQT_N_TOK, W_E0_IN, B_E0_IN, W_E0_OUT, B_E0_OUT, W_E0_L1, B_E0_L1, W_E0_L2, B_E0_L2, W_E0_N1,
               B_E0_N1, W_E0_N2, B_E0_N2);
     enc_layer(g_tok, CEQT_N_TOK, W_E1_IN, B_E1_IN, W_E1_OUT, B_E1_OUT, W_E1_L1, B_E1_L1, W_E1_L2, B_E1_L2, W_E1_N1,
               B_E1_N1, W_E1_N2, B_E1_N2);
-    uint32_t t2 = micros();
+    uint32_t t2 = SEG_TIME();
 
     mha(W_CURVE_Q, g_tok, CEQT_N_OUT, CEQT_N_TOK, false, W_CROSS_IN, B_CROSS_IN, W_CROSS_OUT, B_CROSS_OUT, g_curve);
     mha(W_EVENT_Q, g_tok, CEQT_N_EVT, CEQT_N_TOK, false, W_CROSS_IN, B_CROSS_IN, W_CROSS_OUT, B_CROSS_OUT, g_event);
-    uint32_t t3 = micros();
+    uint32_t t3 = SEG_TIME();
 
     linear(g_curve, W_DELTA1, B_DELTA1, g_attn, CEQT_N_OUT, CEQT_D, CEQT_D);
     gelu_inplace(g_attn, CEQT_N_OUT * CEQT_D);
@@ -283,12 +468,18 @@ void ceqt_infer_window(const CeqtWindow *win, CeqtResult *out) {
     for (int i = 0; i < CEQT_N_EVT; ++i) {
         out->evt_on[i] = out->logits[i] >= W_THR[i] ? 1 : 0;
     }
-    out->heap_free = (uint32_t)esp_get_free_heap_size();
+    out->heap_free = (uint32_t)heap_caps_get_free_size(MALLOC_CAP_INTERNAL);
 
     uint32_t t4 = micros();
+#if CEQT_SEGMENT_TIMING
     out->us_enc = t2 - t1;
     out->us_cross = t3 - t2;
     out->us_heads = t4 - t3;
+#else
+    (void)t1;
+    (void)t2;
+    (void)t3;
+#endif
     out->us_total = t4 - t0;
 }
 

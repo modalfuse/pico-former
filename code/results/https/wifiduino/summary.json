@@ -1,0 +1,218 @@
+{
+ "tag": "wifiduino",
+ "time": "2026-10-10 07:19:37",
+ "ip": "<board-ip>",
+ "route_interface": "en0",
+ "n": 100,
+ "status_before": {
+  "uptime_s": 4,
+  "fault": 0,
+  "reset_reason": 1,
+  "reset_count": 0,
+  "sha_ok": 1,
+  "sha_checks": 1,
+  "link": "up",
+  "rssi": -55,
+  "reconnects": 0,
+  "down_now_ms": 0,
+  "down_total_ms": 0,
+  "last_down_ms": 0,
+  "int_free": 29576,
+  "int_min": 29232,
+  "int_largest": 21492,
+  "spiram_free": 8370839,
+  "stack_infer": 14244,
+  "stack_serial": 4832,
+  "stack_sup": 3384,
+  "http_req": 0,
+  "http_fail": 0,
+  "https_req": 0,
+  "https_fail": 0,
+  "handler_us_max": 0,
+  "http_stack_hw": 0,
+  "https_stack_hw": 0,
+  "stale_ms": 600000,
+  "lmode": 0
+ },
+ "H1": {
+  "tcp_ms": {
+   "n": 100,
+   "median": 5.700625013560057,
+   "p95": 10.941446194192393,
+   "p99": 42.4303011689338,
+   "min": 3.3979160361923277,
+   "max": 99.20770901953802
+  },
+  "tls_ms": {
+   "n": 100,
+   "median": 910.6840000022203,
+   "p95": 998.334674994112,
+   "p99": 1034.4001335219946,
+   "min": 898.9190419670194,
+   "max": 1037.2926659765653
+  },
+  "req_ms": {
+   "n": 100,
+   "median": 9.960666502593085,
+   "p95": 20.032829212141213,
+   "p99": 33.8843716826523,
+   "min": 8.776583999861032,
+   "max": 39.1062920098193
+  },
+  "total_ms": {
+   "n": 100,
+   "median": 926.6072709870059,
+   "p95": 1020.5700791382696,
+   "p99": 1048.551135667367,
+   "min": 912.9388330038637,
+   "max": 1052.7266249991953
+  },
+  "reused": 0,
+  "status": [
+   200
+  ],
+  "version": [
+   "TLSv1.2"
+  ],
+  "cipher": [
+   "ECDHE-ECDSA-AES256-GCM-SHA384"
+  ]
+ },
+ "H2": {
+  "tcp_ms": {
+   "n": 100,
+   "median": 5.885937018319964,
+   "p95": 12.714483629679306,
+   "p99": 18.302457298268735,
+   "min": 3.1978340120986104,
+   "max": 51.23216600622982
+  },
+  "tls_ms": {
+   "n": 100,
+   "median": 910.8936039847322,
+   "p95": 1003.0540038249455,
+   "p99": 1031.5183800953673,
+   "min": 899.2920420132577,
+   "max": 1040.6557919923216
+  },
+  "req_ms": {
+   "n": 100,
+   "median": 10.17077048891224,
+   "p95": 23.066492000361905,
+   "p99": 29.583076358540108,
+   "min": 8.65345902275294,
+   "max": 53.80029097432271
+  },
+  "total_ms": {
+   "n": 100,
+   "median": 926.8641660164576,
+   "p95": 1020.2033068519086,
+   "p99": 1057.1472305065256,
+   "min": 917.2983749886043,
+   "max": 1083.4215829963796
+  },
+  "reused": 0,
+  "status": [
+   200
+  ],
+  "version": [
+   "TLSv1.2"
+  ],
+  "cipher": [
+   "ECDHE-ECDSA-AES256-GCM-SHA384"
+  ]
+ },
+ "H3": {
+  "req_ms": {
+   "n": 100,
+   "median": 9.936104499502108,
+   "p95": 12.669530962011777,
+   "p99": 14.809983901213878,
+   "min": 8.10750003438443,
+   "max": 19.222208007704467
+  },
+  "status": [
+   200
+  ],
+  "bytes": [
+   55
+  ]
+ },
+ "H4": [
+  {
+   "sessions": 0,
+   "int_free": 29232,
+   "int_largest": 14324,
+   "spiram_free": 8370839
+  },
+  {
+   "sessions": 1,
+   "open_ok": true,
+   "held_alive": [
+    true
+   ],
+   "int_free": 23448,
+   "int_largest": 10996,
+   "spiram_free": 8337367
+  },
+  {
+   "sessions": 2,
+   "open_ok": true,
+   "held_alive": [
+    true,
+    true
+   ],
+   "int_free": 17712,
+   "int_largest": 7668,
+   "spiram_free": 8303895
+  },
+  {
+   "sessions": 3,
+   "open_ok": true,
+   "held_alive": [
+    false,
+    true,
+    true
+   ],
+   "int_free": 17484,
+   "int_largest": 7668,
+   "spiram_free": 8303895
+  },
+  {
+   "sessions": "closed",
+   "int_free": 29032,
+   "int_largest": 8436,
+   "spiram_free": 8370839
+  }
+ ],
+ "status_after": {
+  "uptime_s": 247,
+  "fault": 0,
+  "reset_reason": 1,
+  "reset_count": 0,
+  "sha_ok": 1,
+  "sha_checks": 1,
+  "link": "up",
+  "rssi": -67,
+  "reconnects": 0,
+  "down_now_ms": 0,
+  "down_total_ms": 0,
+  "last_down_ms": 0,
+  "int_free": 29032,
+  "int_min": 9860,
+  "int_largest": 8436,
+  "spiram_free": 8370839,
+  "stack_infer": 14244,
+  "stack_serial": 4784,
+  "stack_sup": 3320,
+  "http_req": 6,
+  "http_fail": 0,
+  "https_req": 309,
+  "https_fail": 0,
+  "handler_us_max": 3650,
+  "http_stack_hw": 3056,
+  "https_stack_hw": 6136,
+  "stale_ms": 600000,
+  "lmode": 0
+ }
+}

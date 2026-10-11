@@ -3,24 +3,25 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22218446.svg)](https://doi.org/10.5281/zenodo.22218446)
 
 Repository: [https://github.com/modalfuse/pico-former](https://github.com/modalfuse/pico-former)  
-Release: [v1.0.1](https://github.com/modalfuse/pico-former/releases/tag/v1.0.1)  
+Release: [v1.1.0](https://github.com/modalfuse/pico-former/releases/tag/v1.1.0)  
 Zenodo: [https://doi.org/10.5281/zenodo.22218446](https://doi.org/10.5281/zenodo.22218446)
 
 Pico-Former is an on-device curve–event glucose predictor for ESP32-S3. One Core-1 forward pass emits a 48-point 1–4 h trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. The network definition and \(\tau\) protocol follow the public RICE-Former archive.
 
-This package contains the MCU kernels, the dual-core firmware glue, the serial audit host, and aggregate on-board audit tables. Raw CGM records, participant event logs, and trained weights are not distributed.
+This package contains the MCU kernels, the dual-core firmware with input checks, fault handling, and HTTP/HTTPS services, the serial audit host, the scripts that produce every table and figure of the revised manuscript, and the aggregate results they read. Raw CGM records, participant windows, trained weights, firmware images, and dataset archives are not distributed.
 
 ## Companion archive
 
-Host protocol, model code, and locked splits: [RICE-Former](https://github.com/modalfuse/rice-former), Zenodo [10.5281/zenodo.22171786](https://doi.org/10.5281/zenodo.22171786).
+Host protocol, model code, and locked splits: [RICE-Former](https://github.com/modalfuse/rice-former) v1.0.6, Zenodo [10.5281/zenodo.22231231](https://doi.org/10.5281/zenodo.22231231) (concept DOI [10.5281/zenodo.22171786](https://doi.org/10.5281/zenodo.22171786)).
 
 ## Repository contents
 
-- `firmware/`: PlatformIO project for ESP32-S3 (self-attention, cross-attention, residual glue, dual-core I/O).
+- `firmware/`: PlatformIO project for ESP32-S3 (self-attention, cross-attention, residual glue, dual-core I/O, input checks, fault handling, HTTP and HTTPS). `env:s3_n16r8` is the node firmware; the other environments are test builds that differ only in build flags.
+- `code/`: scripts of the revised manuscript (board audit, event tables, quantized baseline, design space, input and fault tests, wireless and HTTPS tests, figures) and `code/results/`, the aggregate results they write.
 - `host/`: export and serial-audit scripts. They import `ceqt` from a local RICE-Former checkout.
 - `results/tables/`: aggregate AZT1D holdout curve and event tables.
-- `results/validation/`: on-board agreement, paired FNR/FPR, latency, and energy-band summaries.
-- `docs/`: data access, reproducibility, and GitHub–Zenodo release notes.
+- `results/validation/`: on-board summaries of the original submission (v1.0.x).
+- `docs/`: data access, reproducibility, release notes, and `reproduce.md`, which lists identifiers, environments, and the command for every table and figure.
 
 ## Build the firmware
 
@@ -34,7 +35,7 @@ cd firmware
 pio run -e s3_n16r8 -t upload
 ```
 
-Inference is pinned to Core 1. A 19,152-window holdout audit on ESP32-S3 QFN56 (240 MHz, hardware FP32) reported median latency 398.2 ms (0.13% of a 5 min CGM beat), a working buffer of about 192 KB internal SRAM, 19,143 / 19,152 window agreement, and identical 4 h hypo70 FNR/FPR 0.669/0.043 on the board and the public host of the same checkpoint.
+Inference is pinned to Core 1. In version v1.1.0, every window of five sets (the AZT1D held-out sets of three independently trained models, OhioT1DM, and DiaTrend; 180,029 windows) was replayed to ESP32-S3 boards (chip revision v0.2, 240 MHz, hardware FP32). All 2,880,464 decision cells agree with the float64 host reference of the same checkpoint (largest logit difference 2.6e-5), the paired FNR/FPR are equal on both sides (4 h hypo70 0.669/0.043 for the deployed model), the median pass time on the deployed-model holdout is 393.3 ms, and the 196,608 B working buffer stays in internal SRAM.
 
 ## Host audit
 
@@ -50,9 +51,9 @@ Python 3.13 with the RICE-Former environment is sufficient for the host scripts.
 
 ## Data and model artifacts
 
-This repository contains no raw CGM records, participant event logs, or trained weights. Aggregate tables report cohort-level metrics only.
+This repository contains no raw CGM records, participant windows, trained weights, firmware images, or dataset archives. Aggregate results report cohort-, participant-, or test-level metrics only.
 
-AZT1D remains available from Mendeley Data, <https://doi.org/10.17632/gk9m674wcx.1>. Access terms are set by that provider.
+AZT1D is available from Mendeley Data, <https://doi.org/10.17632/gk9m674wcx.1>; OhioT1DM (2018 and 2020 releases) from Ohio University under a data use agreement; DiaTrend from Synapse, <https://doi.org/10.7303/syn38187184>. Access terms are set by these providers.
 
 ## Citation
 

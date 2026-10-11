@@ -1,0 +1,97 @@
+{
+ "tag": "t3_c4",
+ "time": "2026-10-10 08:14:33",
+ "ip": "<board-ip>",
+ "route_interface": "en0",
+ "clients": 4,
+ "paths": [
+  "/api/last"
+ ],
+ "interval_ms": 200,
+ "timeout_s": 1.5,
+ "push": "azt1d",
+ "note": "",
+ "scheme": "http",
+ "keepalive": false,
+ "wall_s": 8607.0,
+ "requests": {
+  "/api/last": {
+   "n": 167051,
+   "ok": 167028,
+   "fail": 23,
+   "fail_by_type": {
+    "read_timeout": 23
+   },
+   "latency_ms": {
+    "p50": 18.3,
+    "p95": 35.61,
+    "p99": 84.8246000000002,
+    "max": 1352.04
+   },
+   "bytes": [
+    55,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210
+   ],
+   "per_client_n": [
+    41757,
+    41749,
+    41770,
+    41775
+   ]
+  }
+ },
+ "status": {
+  "n": 858,
+  "errors": 0,
+  "int_min_min": 5760,
+  "int_largest_min": 7668,
+  "stack_infer_min": 14244,
+  "stack_sup_min": 2808,
+  "http_stack_hw_min": 2972,
+  "rssi_min": -75,
+  "rssi_max": -55,
+  "reconnects_max": 0,
+  "down_total_ms_max": 0,
+  "board_http_req": 167867,
+  "board_http_fail": 0,
+  "handler_us_max": 14756,
+  "fault": 0
+ },
+ "windows": {
+  "n": 19152,
+  "lost_cycles": 6,
+  "resends": 6,
+  "status": {
+   "0": 19152
+  },
+  "latency_ms": {
+   "median": 414.621,
+   "p95": 419.06635,
+   "p99": 421.85486000000003,
+   "max": 435.627
+  },
+  "int_min_min": 5760,
+  "stack_infer_min": 14244,
+  "stack_serial_min": 2592,
+  "rssi_min": -77,
+  "rssi_max": -52,
+  "reconnects_max": 0,
+  "link_down_windows": 0,
+  "reference": "results/audit/azt1d_full/audit.npz",
+  "evt_cells_disagree_vs_reference": 0,
+  "logit_maxabs_vs_reference": 0.0,
+  "logits_bitwise_equal_vs_reference": true,
+  "reference_latency_ms": {
+   "median": 393.275,
+   "p99": 395.01737,
+   "max": 399.871
+  }
+ }
+}

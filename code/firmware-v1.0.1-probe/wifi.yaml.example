@@ -1,0 +1,4 @@
+# Copy to wifi.yaml in this directory and fill in. wifi.yaml is gitignored.
+# The pre-build script writes include/wifi_secrets.gen.h at compile time.
+ssid: ""
+password: ""

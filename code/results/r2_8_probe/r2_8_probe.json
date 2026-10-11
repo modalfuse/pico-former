@@ -1,0 +1,173 @@
+{
+ "time": "2026-10-09 12:55:22",
+ "port": "<port>",
+ "bufs": [
+  {
+   "name": "g_tok",
+   "addr": "0x3fca0648",
+   "bytes": 18432,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_tmp",
+   "addr": "0x3fca4e58",
+   "bytes": 55296,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_qkv",
+   "addr": "0x3fcb2668",
+   "bytes": 55296,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_score",
+   "addr": "0x3fcbfe78",
+   "bytes": 36864,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_attn",
+   "addr": "0x3fcc8e88",
+   "bytes": 18432,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_curve",
+   "addr": "0x3fcf5054",
+   "bytes": 9216,
+   "internal": 1,
+   "external": 0
+  },
+  {
+   "name": "g_event",
+   "addr": "0x3fcecabc",
+   "bytes": 3072,
+   "internal": 1,
+   "external": 0
+  }
+ ],
+ "heap": {
+  "before_init": {
+   "int_free": 333404,
+   "int_largest": 294900,
+   "int_min": 328256,
+   "spiram_free": 8386035,
+   "total_free": 8719439
+  },
+  "after_init": {
+   "int_free": 136684,
+   "int_largest": 114676,
+   "int_min": 136684,
+   "spiram_free": 8386035,
+   "total_free": 8522719
+  },
+  "before_wifi": {
+   "int_free": 119460,
+   "int_largest": 98292,
+   "int_min": 119360,
+   "spiram_free": 8386035,
+   "total_free": 8505495
+  },
+  "after_wifi": {
+   "int_free": 81436,
+   "int_largest": 71668,
+   "int_min": 80420,
+   "spiram_free": 8370975,
+   "total_free": 8452411
+  },
+  "after_http": {
+   "int_free": 80456,
+   "int_largest": 71668,
+   "int_min": 80232,
+   "spiram_free": 8370975,
+   "total_free": 8451431
+  }
+ },
+ "all_internal": true,
+ "bytes_total": 196608,
+ "vs_original_board": {
+  "n": 512,
+  "logits_bitwise_equal_windows": 512,
+  "yhat_bitwise_equal_windows": 512,
+  "evt_equal_cells": 8192,
+  "logits_maxabs": 0.0,
+  "yhat_maxabs": 0.0
+ },
+ "latency_ms": {
+  "probe_median": 398.132,
+  "orig_median": 398.0295,
+  "probe_p99": 400.30539,
+  "orig_p99": 400.08928
+ },
+ "summary_vs_host_mps32": {
+  "name": "probe",
+  "n": 512,
+  "evt_agree": 1.0,
+  "evt_mismatch": 0,
+  "yhat_maxabs_median": 0.006642699241638184,
+  "yhat_maxabs_max": 0.021148681640625,
+  "logit_maxabs_median": 0.0006840229034423828,
+  "logit_maxabs_max": 0.0011591911315917969,
+  "g_maxabs_max": 0.0,
+  "us_min": 394.491,
+  "us_median": 398.132,
+  "us_p95": 399.67865,
+  "us_max": 405.482,
+  "heap_min": 8451295,
+  "cores": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "core_all_1": true,
+  "hypo70_4h_board": {
+   "tp": 35,
+   "fn": 101,
+   "fp": 16,
+   "tn": 360,
+   "fnr": 0.7426470588235294,
+   "fpr": 0.0425531914893617
+  },
+  "hypo70_4h_pc": {
+   "tp": 35,
+   "fn": 101,
+   "fp": 16,
+   "tn": 360,
+   "fnr": 0.7426470588235294,
+   "fpr": 0.0425531914893617
+  },
+  "hyper180_4h_board": {
+   "tp": 77,
+   "fn": 132,
+   "fp": 8,
+   "tn": 295,
+   "fnr": 0.631578947368421,
+   "fpr": 0.026402640264026403
+  },
+  "hyper180_4h_pc": {
+   "tp": 77,
+   "fn": 132,
+   "fp": 8,
+   "tn": 295,
+   "fnr": 0.631578947368421,
+   "fpr": 0.026402640264026403
+  },
+  "pass_agree": true,
+  "pass_pair": true,
+  "pass_numeric": true,
+  "wall_s": 348.66893911361694,
+  "http_ok": 0,
+  "http_fail": 0
+ }
+}

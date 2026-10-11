@@ -1,0 +1,21 @@
+{
+ "time": "2026-10-10 06:31:27",
+ "bits": 8,
+ "tag": "q8",
+ "n": 512,
+ "serial_retries": 0,
+ "logit_maxabs_board_vs_host_q": 0.125,
+ "delta_norm_maxabs_board_vs_host_q": 0.0625,
+ "windows_bit_identical_logits": 497,
+ "logit_maxabs_board_vs_fp32": 5.708234821546757,
+ "latency_ms": {
+  "median": 63.194,
+  "p95": 63.222,
+  "p99": 63.23289,
+  "max": 69.349,
+  "first": 69.349
+ },
+ "int_free_min": 204411,
+ "int_min_free_min": 104567,
+ "psram_free_min": 7971988
+}

@@ -1,0 +1,86 @@
+{
+ "tag": "cable_check_20261009",
+ "time": "2026-10-09 20:23:01",
+ "port": "<port>",
+ "cache": "$PF_WORKSPACE/runs/20260830_s20260828/cache/azt1d_s20260828_str15.pkl",
+ "split": "test",
+ "ckpt": "$PF_WORKSPACE/runs/20260830_s20260828/ckpt/ceqt.pt",
+ "idx": "first64",
+ "n": 64,
+ "wall_s": 26.906312227249146,
+ "serial_retries": 0,
+ "status_host": {
+  "0": 64
+ },
+ "status_board": {
+  "0": 64
+ },
+ "status_agree": 64,
+ "windows_marks_dropped_host": 0,
+ "windows_marks_dropped_board": 0,
+ "windows_cgm_clamped_host": 0,
+ "windows_cgm_clamped_board": 0,
+ "flags_agree": 64,
+ "evt_cells_compared": 1024,
+ "evt_cells_disagree": 0,
+ "evt_windows_disagree": 0,
+ "disagree_cells": [],
+ "logit_maxabs": 4.687490275934181e-06,
+ "logit_maxabs_median": 2.741742648026957e-06,
+ "yhat_maxabs": 8.109693061442158e-05,
+ "g_maxabs": 0.0,
+ "latency_ms": {
+  "n": 64,
+  "median": 391.77599999999995,
+  "p95": 392.88185,
+  "p99": 393.15517,
+  "max": 393.181,
+  "min": 389.711,
+  "first": 391.647
+ },
+ "mem": {
+  "int_free_min": 29704,
+  "int_min_min": 29480,
+  "int_largest_min": 21492,
+  "spiram_free_min": 8370975,
+  "stack_infer_hw_min": 14244,
+  "stack_serial_hw_min": 2628
+ },
+ "cores": [
+  1
+ ],
+ "reset_count_end": 0,
+ "reconnects_end": 0,
+ "hypo70_4h_board": {
+  "tp": 9,
+  "fn": 22,
+  "fp": 1,
+  "tn": 32,
+  "fnr": 0.7096774193548387,
+  "fpr": 0.030303030303030304
+ },
+ "hypo70_4h_host": {
+  "tp": 9,
+  "fn": 22,
+  "fp": 1,
+  "tn": 32,
+  "fnr": 0.7096774193548387,
+  "fpr": 0.030303030303030304
+ },
+ "hyper180_4h_board": {
+  "tp": 0,
+  "fn": 3,
+  "fp": 0,
+  "tn": 61,
+  "fnr": 1.0,
+  "fpr": 0.0
+ },
+ "hyper180_4h_host": {
+  "tp": 0,
+  "fn": 3,
+  "fp": 0,
+  "tn": 61,
+  "fnr": 1.0,
+  "fpr": 0.0
+ }
+}

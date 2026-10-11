@@ -1,0 +1,28 @@
+{
+ "devkitc_source": "audit.npz",
+ "devkitc_windows": 115934,
+ "sample17000": {
+  "wifiduino_tag": "diatrend17_sample1000",
+  "windows": 17000,
+  "status_differ": 0,
+  "flags_differ": 0,
+  "evt_cells": 272000,
+  "evt_cells_differ": 0,
+  "logits_windows_differ": 0,
+  "yhat_windows_differ": 0,
+  "g_windows_differ": 0,
+  "bit_identical": true
+ },
+ "second_half": {
+  "wifiduino_tag": "fw16b3_diatrend17_second_half",
+  "windows": 57967,
+  "status_differ": 0,
+  "flags_differ": 0,
+  "evt_cells": 927472,
+  "evt_cells_differ": 0,
+  "logits_windows_differ": 0,
+  "yhat_windows_differ": 0,
+  "g_windows_differ": 0,
+  "bit_identical": true
+ }
+}

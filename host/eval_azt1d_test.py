@@ -309,86 +309,86 @@ def write_report(
     bolus_e = pick_event(query_by_slice["bolus_3h"], "hypo70", 240)
 
     lines = [
-        "# AZT1D 留出集重算：RICE-Former",
+        "# AZT1D held-out set recomputation: RICE-Former",
         "",
-        "| 项 | 内容 |",
+        "| Item | Value |",
         "| --- | --- |",
-        "| 日期 | 2026-08-31 |",
-        "| 口径 | same public-archive metrics helpers: `layer1_table` / `event_rows_from_logits` / `event_rows_from_traj` / `slice_masks` |",
-        f"| 权重 | `{CKPT}`（板上同一套） |",
-        f"| 窗口 | {n_win}（论文 19,152） |",
-        f"| 留出参与者 | {', '.join(str(s) for s in subjects)} |",
-        f"| 设备 | {device} |",
+        "| Date | 2026-08-31 |",
+        "| Metrics | same public-archive metrics helpers: `layer1_table` / `event_rows_from_logits` / `event_rows_from_traj` / `slice_masks` |",
+        f"| Weights | `{CKPT}` (same set as on the board) |",
+        f"| Windows | {n_win} (paper: 19,152) |",
+        f"| Held-out participants | {', '.join(str(s) for s in subjects)} |",
+        f"| Device | {device} |",
         "",
-        "RICE-Former 行现场重算。对照模型行取自 `实验/ceqt/runs/20260830_s20260828/tables/`，本轮未重训。已投稿 v1.0 不改。",
+        "RICE-Former rows are recomputed in this run. Baseline rows are taken from `runs/20260830_s20260828/tables/` and were not retrained in this run. The submitted v1.0 is unchanged.",
         "",
-        "## 表 5.2 轨迹（对应图 2）",
+        "## Table 5.2 Trajectory (Fig. 2)",
         "",
-        "| 模型 | MAE 1 h | MAE 2 h | MAE 3 h | MAE 4 h | SSA 1 h | SSA 2 h | SSA 3 h | SSA 4 h |",
+        "| Model | MAE 1 h | MAE 2 h | MAE 3 h | MAE 4 h | SSA 1 h | SSA 2 h | SSA 3 h | SSA 4 h |",
         "| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
         (
-            f"| RICE-Former（本轮） | **{c[60].mae:.2f}** | **{c[120].mae:.2f}** | **{c[180].mae:.2f}** | **{c[240].mae:.2f}** "
+            f"| RICE-Former (this run) | **{c[60].mae:.2f}** | **{c[120].mae:.2f}** | **{c[180].mae:.2f}** | **{c[240].mae:.2f}** "
             f"| **{c[60].ssa:.3f}** | **{c[120].ssa:.3f}** | **{c[180].ssa:.3f}** | **{c[240].ssa:.3f}** |"
         ),
-        "| RICE-Former（稿） | **14.54** | **21.04** | **24.69** | **26.79** | **0.644** | **0.675** | **0.683** | **0.679** |",
-        "| LSTM+X（归档） | 15.84 | 22.14 | 25.83 | 27.95 | 0.620 | 0.646 | 0.654 | 0.653 |",
+        "| RICE-Former (manuscript) | **14.54** | **21.04** | **24.69** | **26.79** | **0.644** | **0.675** | **0.683** | **0.679** |",
+        "| LSTM+X (archived) | 15.84 | 22.14 | 25.83 | 27.95 | 0.620 | 0.646 | 0.654 | 0.653 |",
         "",
-        f"RMSE 1–4 h：{c[60].rmse:.2f} / {c[120].rmse:.2f} / {c[180].rmse:.2f} / {c[240].rmse:.2f}。",
-        f"峰值时间误差：{c[60].peak_mae_min:.1f} / {c[120].peak_mae_min:.1f} / {c[180].peak_mae_min:.1f} / {c[240].peak_mae_min:.1f} min。",
+        f"RMSE 1–4 h: {c[60].rmse:.2f} / {c[120].rmse:.2f} / {c[180].rmse:.2f} / {c[240].rmse:.2f}.",
+        f"Peak time error: {c[60].peak_mae_min:.1f} / {c[120].peak_mae_min:.1f} / {c[180].peak_mae_min:.1f} / {c[240].peak_mae_min:.1f} min.",
         "",
-        "![不同预测时程下的曲线性能](images/fig-2-curve-performance-by-horizon.png)",
+        "![Curve performance across prediction horizons](images/fig-2-curve-performance-by-horizon.png)",
         "",
-        "*图 2. AZT1D 留出集轨迹性能。RICE-Former 为本次重算；其余神经对照取自归档表。*",
+        "*Fig. 2. Trajectory performance on the AZT1D held-out set. RICE-Former is recomputed in this run; other neural baselines are taken from archived tables.*",
         "",
-        "## 表 5.3 惯性–残差与轨迹设阈",
+        "## Table 5.3 Inertia–residual and trajectory thresholding",
         "",
-        "| 配置 | 1 h MAE | 4 h MAE | 4 h SSA | 4 h hypo70 FNR/FPR | 4 h hyper180 FNR/FPR |",
+        "| Configuration | 1 h MAE | 4 h MAE | 4 h SSA | 4 h hypo70 FNR/FPR | 4 h hyper180 FNR/FPR |",
         "| --- | ---: | ---: | ---: | ---: | ---: |",
         (
-            f"| 完整 RICE-Former | {c[60].mae:.2f} | {c[240].mae:.2f} | {c[240].ssa:.3f} "
+            f"| Full RICE-Former | {c[60].mae:.2f} | {c[240].mae:.2f} | {c[240].ssa:.3f} "
             f"| {qpair(q70, 240)} | {qpair(q180, 240)} |"
         ),
         (
-            f"| 无学习所得残差 | {go[60].mae:.2f} | {go[240].mae:.2f} | 常数路径不定义 "
+            f"| Without learned residual | {go[60].mae:.2f} | {go[240].mae:.2f} | undefined for constant path "
             f"| {qpair(q70, 240)} | {qpair(q180, 240)} |"
         ),
         (
-            f"| 由轨迹阈值生成事件 | {c[60].mae:.2f} | {c[240].mae:.2f} | {c[240].ssa:.3f} "
+            f"| Events from trajectory thresholds | {c[60].mae:.2f} | {c[240].mae:.2f} | {c[240].ssa:.3f} "
             f"| {qpair(t70, 240)} | {qpair(t180, 240)} |"
         ),
         "",
-        f"残差在 1 h / 4 h 的 MAE 贡献：{go[60].mae - c[60].mae:.2f} / {go[240].mae - c[240].mae:.2f} mg/dL。",
+        f"Residual contribution to MAE at 1 h / 4 h: {go[60].mae - c[60].mae:.2f} / {go[240].mae - c[240].mae:.2f} mg/dL.",
         "",
-        "## 表 5.4 事件工作点（对应图 3）",
+        "## Table 5.4 Event operating points (Fig. 3)",
         "",
-        "| 模型/输出头 | hypo70 2 h | hypo70 4 h | hyper180 2 h | hyper180 4 h |",
+        "| Model/output head | hypo70 2 h | hypo70 4 h | hyper180 2 h | hyper180 4 h |",
         "| --- | ---: | ---: | ---: | ---: |",
         (
-            f"| RICE-Former 事件查询（本轮） | {qpair(q70, 120)} | {qpair(q70, 240)} "
+            f"| RICE-Former event query (this run) | {qpair(q70, 120)} | {qpair(q70, 240)} "
             f"| {qpair(q180, 120)} | {qpair(q180, 240)} |"
         ),
-        f"| 同曲线轨迹设阈（本轮） | {qpair(t70, 120)} | {qpair(t70, 240)} | {qpair(t180, 120)} | {qpair(t180, 240)} |",
-        "| RICE-Former 事件查询（稿） | 0.458/0.060 | 0.669/0.043 | 0.467/0.045 | 0.635/0.048 |",
-        "| LSTM+X 轨迹（归档） | 0.954/0.001 | 0.970/0.001 | 0.570/0.020 | 0.706/0.021 |",
+        f"| Trajectory thresholding of the same curve (this run) | {qpair(t70, 120)} | {qpair(t70, 240)} | {qpair(t180, 120)} | {qpair(t180, 240)} |",
+        "| RICE-Former event query (manuscript) | 0.458/0.060 | 0.669/0.043 | 0.467/0.045 | 0.635/0.048 |",
+        "| LSTM+X trajectory (archived) | 0.954/0.001 | 0.970/0.001 | 0.570/0.020 | 0.706/0.021 |",
         "",
-        f"1 h hypo70 事件查询：{qpair(q70, 60)}（稿 0.209/0.079）。2 / 3 / 4 h FPR：{float(q70[120].fpr):.3f} / {float(q70[180].fpr):.3f} / {float(q70[240].fpr):.3f}。",
+        f"1 h hypo70 event query: {qpair(q70, 60)} (manuscript 0.209/0.079). 2 / 3 / 4 h FPR: {float(q70[120].fpr):.3f} / {float(q70[180].fpr):.3f} / {float(q70[240].fpr):.3f}.",
         "",
-        "![事件工作点](images/fig-3-event-operating-points.png)",
+        "![Event operating points](images/fig-3-event-operating-points.png)",
         "",
-        "*图 3. AZT1D 留出集 FPR–FNR。蓝点与棕方为本轮 RICE 事件查询与轨迹设阈；其余对照取自归档表。虚线为验证集 0.06 FPR 预算。*",
+        "*Fig. 3. FPR–FNR on the AZT1D held-out set. Blue dots and brown squares are the RICE event query and trajectory thresholding from this run; other baselines are taken from archived tables. The dashed line is the 0.06 FPR budget on the validation set.*",
         "",
-        "## 图 4 事件条件化分层",
+        "## Fig. 4 Event-conditioned slices",
         "",
-        f"全部窗口 1 h MAE {c[60].mae:.2f}；餐后 2 h {float(meal_c.mae):.2f}（{int(meal_c.n) // 12} 窗）；大剂量后 3 h {float(bolus_c.mae):.2f}（{int(bolus_c.n) // 12} 窗）。",
-        f"4 h hypo70：全部 {qpair(q70, 240)}；餐后 {fmt_pair(float(meal_e.fnr), float(meal_e.fpr))}；大剂量后 {fmt_pair(float(bolus_e.fnr), float(bolus_e.fpr))}。",
+        f"All windows 1 h MAE {c[60].mae:.2f}; within 2 h after a meal {float(meal_c.mae):.2f} ({int(meal_c.n) // 12} windows); within 3 h after a bolus {float(bolus_c.mae):.2f} ({int(bolus_c.n) // 12} windows).",
+        f"4 h hypo70: all {qpair(q70, 240)}; after meal {fmt_pair(float(meal_e.fnr), float(meal_e.fpr))}; after bolus {fmt_pair(float(bolus_e.fnr), float(bolus_e.fpr))}.",
         "",
-        "![事件条件化性能](images/fig-4-event-slice-performance.png)",
+        "![Event-conditioned performance](images/fig-4-event-slice-performance.png)",
         "",
-        "*图 4. 全部 / 近 2 h 进餐 / 近 3 h 大剂量分层。RICE 柱为本轮；LSTM+X 柱取自归档 `slice_azt1d.csv`。*",
+        "*Fig. 4. Slices: all / meal within the last 2 h / bolus within the last 3 h. RICE bars are from this run; LSTM+X bars are taken from the archived `slice_azt1d.csv`.*",
         "",
-        "## 16 格事件查询（全部窗口）",
+        "## Event query over 16 decision cells (all windows)",
         "",
-        "| 事件 | 1 h | 2 h | 3 h | 4 h |",
+        "| Event | 1 h | 2 h | 3 h | 4 h |",
         "| --- | ---: | ---: | ---: | ---: |",
     ]
     for ev in ("hypo70", "hypo54", "hyper180", "hyper250"):
@@ -396,18 +396,18 @@ def write_report(
         lines.append(f"| {ev} | {cells[0]} | {cells[1]} | {cells[2]} | {cells[3]} |")
     lines += [
         "",
-        r"决策为 logit ≥ 验证集冻结阈值，不是对 \(\hat y\) 再设 70/180。分数未经概率校准。",
+        r"A decision is logit ≥ the frozen validation-set threshold; no 70/180 threshold is applied to \(\hat y\). Scores are not probability-calibrated.",
         "",
-        "## 与 32 窗抽检的关系",
+        "## Relation to the 32-window spot check",
         "",
-        "板上黄金窗与 `pc_metrics_32.json` 只用于固件对齐，不能代替本表。32 窗 MAE 偏高，是因为取了 test 序列最前面一段，不是全文 19,152 窗。",
+        "The on-board golden windows and `pc_metrics_32.json` are used only for firmware alignment and do not replace this table. The 32-window MAE is higher because those windows are the first segment of the test sequence, not the full 19,152 windows.",
         "",
-        "## 文件",
+        "## Files",
         "",
         "- `curve.csv` / `event_query.csv` / `event_traj.csv` / `curve_g_off.csv` / `slice_curve.csv` / `slice_event.csv`",
         "- `summary.json`",
     ]
-    (OUT / "AZT1D测试集重算 20260831.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (OUT / "azt1d-test-report.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:

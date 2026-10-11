@@ -1,0 +1,101 @@
+{
+ "tag": "https_keep_c2",
+ "time": "2026-10-10 10:38:35",
+ "ip": "<board-ip>",
+ "route_interface": "en0",
+ "clients": 2,
+ "paths": [
+  "/api/last"
+ ],
+ "interval_ms": 200,
+ "timeout_s": 1.5,
+ "push": "azt1d",
+ "note": "",
+ "scheme": "https",
+ "keepalive": true,
+ "wall_s": 221.7,
+ "requests": {
+  "/api/last": {
+   "n": 2121,
+   "ok": 2120,
+   "fail": 1,
+   "fail_by_type": {
+    "connect_timeout": 1
+   },
+   "latency_ms": {
+    "p50": 11.29,
+    "p95": 17.3905,
+    "p99": 46.92729999999998,
+    "max": 1652.53
+   },
+   "bytes": [
+    55,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208
+   ],
+   "per_client_n": [
+    1060,
+    1061
+   ],
+   "new_connections": 3,
+   "reused_latency_ms": {
+    "n": 2118,
+    "p50": 11.29,
+    "p95": 17.354499999999998,
+    "p99": 45.48609999999959,
+    "max": 954.22
+   }
+  }
+ },
+ "status": {
+  "n": 22,
+  "errors": 0,
+  "int_min_min": 8504,
+  "int_largest_min": 7668,
+  "stack_infer_min": 14244,
+  "stack_sup_min": 3368,
+  "http_stack_hw_min": 0,
+  "rssi_min": -67,
+  "rssi_max": -57,
+  "reconnects_max": 0,
+  "down_total_ms_max": 0,
+  "board_http_req": 21,
+  "board_http_fail": 0,
+  "handler_us_max": 7587,
+  "fault": 0
+ },
+ "windows": {
+  "n": 512,
+  "lost_cycles": 0,
+  "resends": 0,
+  "status": {
+   "0": 512
+  },
+  "latency_ms": {
+   "median": 400.02599999999995,
+   "p95": 403.10790000000003,
+   "p99": 405.18142,
+   "max": 466.571
+  },
+  "int_min_min": 8504,
+  "stack_infer_min": 14244,
+  "stack_serial_min": 2624,
+  "rssi_min": -68,
+  "rssi_max": -57,
+  "reconnects_max": 0,
+  "link_down_windows": 0,
+  "reference": "results/audit/azt1d_full/audit.npz",
+  "evt_cells_disagree_vs_reference": 0,
+  "logit_maxabs_vs_reference": 0.0,
+  "logits_bitwise_equal_vs_reference": true,
+  "reference_latency_ms": {
+   "median": 391.81449999999995,
+   "p99": 393.52531,
+   "max": 397.004
+  }
+ }
+}

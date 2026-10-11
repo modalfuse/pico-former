@@ -1,0 +1,112 @@
+{
+ "tag": "wifiduino_erf",
+ "port": "<port>",
+ "time": "2026-10-09 12:46:49",
+ "banner_tail": "ESP-ROM:esp32s3-20210327\r\nBuild:Mar 27 2021\r\nrst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)\r\nSPIWP:0xee\r\nmode:DIO, clock div:1\r\nload:0x3fce3808,len:0x4bc\r\nload:0x403c9700,len:0xbd8\r\nload:0x403cc700,len:0x2a0c\r\nentry 0x403c98d0\r\nPico-Former rice-s3\r\ninfer on core 1\ndone total=390.1 ms  dMax=0.0001  lMax=0.00000  yMax=0.0001  1h=114.3  4h=156.3\nwifi <board-ip>\nhttp://<board-ip>/\nPico-Former ready\r\n",
+ "n_windows": 605,
+ "summary_vs_host_mps32": {
+  "name": "wifiduino_erf",
+  "n": 605,
+  "evt_agree": 1.0,
+  "evt_mismatch": 0,
+  "yhat_maxabs_median": 1.9073486328125e-05,
+  "yhat_maxabs_max": 9.1552734375e-05,
+  "logit_maxabs_median": 1.9073486328125e-06,
+  "logit_maxabs_max": 1.0013580322265625e-05,
+  "g_maxabs_max": 0.0,
+  "us_min": 392.314,
+  "us_median": 396.121,
+  "us_p95": 397.3676,
+  "us_max": 401.84,
+  "heap_min": 8451099,
+  "cores": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "core_all_1": true,
+  "hypo70_4h_board": {
+   "tp": 45,
+   "fn": 113,
+   "fp": 36,
+   "tn": 411,
+   "fnr": 0.7151898734177216,
+   "fpr": 0.08053691275167785
+  },
+  "hypo70_4h_pc": {
+   "tp": 45,
+   "fn": 113,
+   "fp": 36,
+   "tn": 411,
+   "fnr": 0.7151898734177216,
+   "fpr": 0.08053691275167785
+  },
+  "hyper180_4h_board": {
+   "tp": 90,
+   "fn": 152,
+   "fp": 21,
+   "tn": 342,
+   "fnr": 0.628099173553719,
+   "fpr": 0.05785123966942149
+  },
+  "hyper180_4h_pc": {
+   "tp": 90,
+   "fn": 152,
+   "fp": 21,
+   "tn": 342,
+   "fnr": 0.628099173553719,
+   "fpr": 0.05785123966942149
+  },
+  "pass_agree": true,
+  "pass_pair": true,
+  "pass_numeric": true,
+  "wall_s": 410.20677185058594,
+  "http_ok": 0,
+  "http_fail": 0
+ },
+ "vs_host64": {
+  "all": {
+   "cells_disagree": 0,
+   "logit_maxabs": 9.157943298365723e-06,
+   "logit_maxabs_median": 1.7627313493306929e-06
+  },
+  "sample512": {
+   "windows": 512,
+   "cells_disagree_vs_host64": 0,
+   "windows_disagree_vs_host64": 0,
+   "cells_disagree_vs_tanh_host": 0,
+   "logit_maxabs_vs_host64": 9.157943298365723e-06
+  },
+  "flips9": {
+   "windows": 9,
+   "cells_disagree_vs_host64": 0,
+   "windows_disagree_vs_host64": 0,
+   "cells_disagree_vs_tanh_host": 9,
+   "logit_maxabs_vs_host64": 3.3105269183764108e-06
+  },
+  "near": {
+   "windows": 93,
+   "cells_disagree_vs_host64": 0,
+   "windows_disagree_vs_host64": 0,
+   "cells_disagree_vs_tanh_host": 9,
+   "logit_maxabs_vs_host64": 4.102474619127605e-06
+  }
+ },
+ "latency_ms": {
+  "median": 396.121,
+  "p95": 397.3676,
+  "p99": 397.911,
+  "max": 401.84
+ },
+ "burn": {
+  "n": 80,
+  "wall_us": 31617746,
+  "last_us": 394157,
+  "heap": 8451295
+ }
+}

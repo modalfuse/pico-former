@@ -1,0 +1,621 @@
+{
+ "runs": [
+  {
+   "set": "AZT1D s20260828",
+   "board": "WiFiduino",
+   "dir": "azt1d_full",
+   "windows": 19152,
+   "time": "2026-10-09 20:19:50",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29408,
+    "int_min_min": 29140,
+    "int_largest_min": 20980,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2592
+   },
+   "n_boots": 1,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced814",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 322976,
+     "int_largest": 286708,
+     "int_min": 317728,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126256,
+     "int_largest": 106484,
+     "int_min": 126256,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 108904,
+     "int_largest": 90100,
+     "int_min": 108804,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43424,
+     "int_largest": 34804,
+     "int_min": 43424,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43224,
+     "int_largest": 34804,
+     "int_min": 43124,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65480,
+   "net_drop_spiram": 14816
+  },
+  {
+   "set": "AZT1D s20260829",
+   "board": "WiFiduino",
+   "dir": "s20260829_full",
+   "windows": 17960,
+   "time": "2026-10-09 23:35:04",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29396,
+    "int_min_min": 29136,
+    "int_largest_min": 20980,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2588
+   },
+   "n_boots": 1,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced814",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 322976,
+     "int_largest": 286708,
+     "int_min": 317728,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126256,
+     "int_largest": 106484,
+     "int_min": 126256,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 108904,
+     "int_largest": 90100,
+     "int_min": 108804,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43420,
+     "int_largest": 34804,
+     "int_min": 43420,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43220,
+     "int_largest": 34804,
+     "int_min": 43120,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65484,
+   "net_drop_spiram": 14816
+  },
+  {
+   "set": "AZT1D s20260830",
+   "board": "WiFiduino",
+   "dir": "s20260830_full",
+   "windows": 18364,
+   "time": "2026-10-10 01:48:14",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29408,
+    "int_min_min": 29140,
+    "int_largest_min": 20980,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2452
+   },
+   "n_boots": 1,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced814",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 322976,
+     "int_largest": 286708,
+     "int_min": 317728,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126256,
+     "int_largest": 106484,
+     "int_min": 126256,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 108904,
+     "int_largest": 90100,
+     "int_min": 108804,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43424,
+     "int_largest": 34804,
+     "int_min": 43424,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43224,
+     "int_largest": 34804,
+     "int_min": 43124,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65480,
+   "net_drop_spiram": 14816
+  },
+  {
+   "set": "OhioT1DM",
+   "board": "WiFiduino",
+   "dir": "ohio_full",
+   "windows": 8619,
+   "time": "2026-10-09 21:26:20",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29408,
+    "int_min_min": 29140,
+    "int_largest_min": 20980,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2592
+   },
+   "n_boots": 1,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced814",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 322976,
+     "int_largest": 286708,
+     "int_min": 317728,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126256,
+     "int_largest": 106484,
+     "int_min": 126256,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 108904,
+     "int_largest": 90100,
+     "int_min": 108804,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43424,
+     "int_largest": 34804,
+     "int_min": 43424,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43224,
+     "int_largest": 34804,
+     "int_min": 43124,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65480,
+   "net_drop_spiram": 14816
+  },
+  {
+   "set": "DiaTrend",
+   "board": "DevKitC",
+   "dir": "devkitc_diatrend17_full",
+   "windows": 115934,
+   "time": "2026-10-10 22:20:50",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29684,
+    "int_min_min": 28904,
+    "int_largest_min": 21492,
+    "spiram_free_min": 8370703,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2592
+   },
+   "n_boots": 2,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced6f4",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 323264,
+     "int_largest": 286708,
+     "int_min": 318016,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126544,
+     "int_largest": 106484,
+     "int_min": 126544,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 109192,
+     "int_largest": 90100,
+     "int_min": 109092,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43688,
+     "int_largest": 35828,
+     "int_min": 43688,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43488,
+     "int_largest": 34804,
+     "int_min": 43388,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65504,
+   "net_drop_spiram": 14816
+  },
+  {
+   "set": "AZT1D s20260828",
+   "board": "DevKitC",
+   "dir": "devkitc_azt1d_full",
+   "windows": 19152,
+   "time": "2026-10-10 08:35:58",
+   "evt_cells_disagree": 0,
+   "mem": {
+    "int_free_min": 29696,
+    "int_min_min": 29428,
+    "int_largest_min": 21492,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2592
+   },
+   "n_boots": 1,
+   "all_internal": true,
+   "bufs": [
+    {
+     "name": "g_tok",
+     "addr": "0x3fca2148",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_tmp",
+     "addr": "0x3fca6958",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_qkv",
+     "addr": "0x3fcb4168",
+     "bytes": 55296,
+     "internal": 1
+    },
+    {
+     "name": "g_score",
+     "addr": "0x3fcc1978",
+     "bytes": 36864,
+     "internal": 1
+    },
+    {
+     "name": "g_attn",
+     "addr": "0x3fcca988",
+     "bytes": 18432,
+     "internal": 1
+    },
+    {
+     "name": "g_curve",
+     "addr": "0x3fcf50b8",
+     "bytes": 9216,
+     "internal": 1
+    },
+    {
+     "name": "g_event",
+     "addr": "0x3fced6f4",
+     "bytes": 3072,
+     "internal": 1
+    }
+   ],
+   "heap_stages": {
+    "before_init": {
+     "int_free": 323264,
+     "int_largest": 286708,
+     "int_min": 318016,
+     "spiram_free": 8385791
+    },
+    "after_init": {
+     "int_free": 126544,
+     "int_largest": 106484,
+     "int_min": 126544,
+     "spiram_free": 8385791
+    },
+    "before_wifi": {
+     "int_free": 109192,
+     "int_largest": 90100,
+     "int_min": 109092,
+     "spiram_free": 8385791
+    },
+    "after_web": {
+     "int_free": 43688,
+     "int_largest": 35828,
+     "int_min": 43688,
+     "spiram_free": 8370975
+    },
+    "before_ready": {
+     "int_free": 43488,
+     "int_largest": 34804,
+     "int_min": 43388,
+     "spiram_free": 8370975
+    }
+   },
+   "init_drop_int": 196720,
+   "init_drop_spiram": 0,
+   "net_drop_int": 65504,
+   "net_drop_spiram": 14816
+  }
+ ],
+ "overall": {
+  "int_min_min": 28904,
+  "int_largest_min": 20980,
+  "stack_infer_hw_min": 14244,
+  "stack_serial_hw_min": 2452,
+  "windows": 199181
+ },
+ "sections": {
+  "10cba768 (replays, seed 20260828)": {
+   ".iram0.vectors": 1027,
+   ".iram0.text": 67183,
+   ".dram0.data": 22336,
+   ".dram0.bss": 30704,
+   ".flash.text": 632007,
+   ".flash.rodata": 378512,
+   "static_ram": 53040,
+   "iram_code": 68210
+  },
+  "16b32e5f (release, seed 20260828)": {
+   ".iram0.vectors": 1027,
+   ".iram0.text": 67183,
+   ".dram0.data": 22336,
+   ".dram0.bss": 30704,
+   ".flash.text": 632083,
+   ".flash.rodata": 378552,
+   "static_ram": 53040,
+   "iram_code": 68210
+  }
+ }
+}

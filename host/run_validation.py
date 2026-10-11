@@ -475,7 +475,7 @@ def phase_c(board, n: int = 80) -> dict:
         "wall_us": wall,
         "wall_ms_per": (wall / n / 1000.0) if wall else None,
         "current_source": "none",
-        "note": "无电流计：只记录墙钟。电流与 mJ 待仪表。",
+        "note": "No current meter: wall-clock time only. Current and mJ pending instrumentation.",
     }
     dump(OUT / "energy.json", out)
     return out

@@ -1,0 +1,252 @@
+{
+ "n_windows": 19152,
+ "thresholds_from": "$PF_WORKSPACE/runs/20260830_s20260828/ckpt/ceqt.pt",
+ "decision_pairs": {
+  "ref_mps32|ref_cpu64": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  },
+  "ref_mps32|tanh_cpu32": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "ref_mps32|erf_cpu32": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  },
+  "ref_mps32|tanh_cpu64": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "ref_mps32|board_fw_tanh": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "ref_cpu64|tanh_cpu32": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "ref_cpu64|erf_cpu32": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  },
+  "ref_cpu64|tanh_cpu64": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "ref_cpu64|board_fw_tanh": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "tanh_cpu32|erf_cpu32": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "tanh_cpu32|tanh_cpu64": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  },
+  "tanh_cpu32|board_fw_tanh": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  },
+  "erf_cpu32|tanh_cpu64": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "erf_cpu32|board_fw_tanh": {
+   "cells": 9,
+   "windows": 9,
+   "window_agree": 19143
+  },
+  "tanh_cpu64|board_fw_tanh": {
+   "cells": 0,
+   "windows": 0,
+   "window_agree": 19152
+  }
+ },
+ "logit_maxabs_pairs": {
+  "ref_mps32|tanh_cpu32": 0.0018346309661865234,
+  "ref_mps32|tanh_cpu64": 0.001834141192623484,
+  "ref_cpu64|ref_mps32": 4.805257830753362e-06,
+  "ref_cpu64|tanh_cpu32": 0.0018353069392400556,
+  "ref_cpu64|tanh_cpu64": 0.0018348171656770162,
+  "tanh_cpu32|tanh_cpu64": 6.139768207624741e-06,
+  "erf_cpu32|ref_mps32": 6.67572021484375e-06,
+  "erf_cpu32|ref_cpu64": 5.8976947094890875e-06,
+  "erf_cpu32|tanh_cpu32": 0.0018355846405029297,
+  "erf_cpu32|tanh_cpu64": 0.0018350948669398903
+ },
+ "board_vs_host_logits_sample512": {
+  "ref_mps32": {
+   "max": 0.0011591911315917969,
+   "median_of_window_max": 0.0006840229034423828
+  },
+  "ref_cpu64": {
+   "max": 0.0011584079190369856,
+   "median_of_window_max": 0.0006838844976363445
+  },
+  "tanh_cpu32": {
+   "max": 7.62939453125e-06,
+   "median_of_window_max": 1.9073486328125e-06
+  },
+  "erf_cpu32": {
+   "max": 0.0011553764343261719,
+   "median_of_window_max": 0.0006840229034423828
+  },
+  "tanh_cpu64": {
+   "max": 9.406590808946902e-06,
+   "median_of_window_max": 1.8888625723523234e-06
+  }
+ },
+ "flips_vs_ref": [
+  {
+   "idx": 299,
+   "cell": 6,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.0002295970916748047,
+   "margin_ref_cpu64": -0.00022920494828815308,
+   "margin_tanh_cpu32": 0.0007686614990234375,
+   "margin_erf_cpu32": -0.00022840499877929688,
+   "margin_tanh_cpu64": 0.000768865734652735
+  },
+  {
+   "idx": 3840,
+   "cell": 7,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.0001442432403564453,
+   "margin_ref_cpu64": -0.00014422315433648691,
+   "margin_tanh_cpu32": 0.0005116462707519531,
+   "margin_erf_cpu32": -0.00014448165893554688,
+   "margin_tanh_cpu64": 0.0005112659702506406
+  },
+  {
+   "idx": 8311,
+   "cell": 4,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.0002655982971191406,
+   "margin_ref_cpu64": -0.00026617545096474515,
+   "margin_tanh_cpu32": 0.00048732757568359375,
+   "margin_erf_cpu32": -0.0002665519714355469,
+   "margin_tanh_cpu64": 0.0004866225693609394
+  },
+  {
+   "idx": 11695,
+   "cell": 7,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.00015020370483398438,
+   "margin_ref_cpu64": -0.000150130244114699,
+   "margin_tanh_cpu32": 0.0004611015319824219,
+   "margin_erf_cpu32": -0.00015044212341308594,
+   "margin_tanh_cpu64": 0.00046069004629822885
+  },
+  {
+   "idx": 12086,
+   "cell": 9,
+   "board": 0,
+   "ref_mps32": 1,
+   "ref_cpu64": 1,
+   "tanh_cpu32": 0,
+   "erf_cpu32": 1,
+   "tanh_cpu64": 0,
+   "margin_ref_mps32": 1.1742115020751953e-05,
+   "margin_ref_cpu64": 1.1679310069290239e-05,
+   "margin_tanh_cpu32": -0.00015649199485778809,
+   "margin_erf_cpu32": 1.1563301086425781e-05,
+   "margin_tanh_cpu64": -0.00015700521370587417
+  },
+  {
+   "idx": 12293,
+   "cell": 11,
+   "board": 0,
+   "ref_mps32": 1,
+   "ref_cpu64": 1,
+   "tanh_cpu32": 0,
+   "erf_cpu32": 1,
+   "tanh_cpu64": 0,
+   "margin_ref_mps32": 0.0002772808074951172,
+   "margin_ref_cpu64": 0.0002774368256276416,
+   "margin_tanh_cpu32": -8.45789909362793e-05,
+   "margin_erf_cpu32": 0.0002772510051727295,
+   "margin_tanh_cpu64": -8.550147554176046e-05
+  },
+  {
+   "idx": 13250,
+   "cell": 2,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.0004475116729736328,
+   "margin_ref_cpu64": -0.00044756057346972966,
+   "margin_tanh_cpu32": 0.0002079010009765625,
+   "margin_erf_cpu32": -0.0004477500915527344,
+   "margin_tanh_cpu64": 0.00020767229300311385
+  },
+  {
+   "idx": 15809,
+   "cell": 11,
+   "board": 0,
+   "ref_mps32": 1,
+   "ref_cpu64": 1,
+   "tanh_cpu32": 0,
+   "erf_cpu32": 1,
+   "tanh_cpu64": 0,
+   "margin_ref_mps32": 5.841255187988281e-06,
+   "margin_ref_cpu64": 5.684043539289085e-06,
+   "margin_tanh_cpu32": -9.712576866149902e-05,
+   "margin_erf_cpu32": 5.9604644775390625e-06,
+   "margin_tanh_cpu64": -9.719578326827794e-05
+  },
+  {
+   "idx": 16451,
+   "cell": 2,
+   "board": 1,
+   "ref_mps32": 0,
+   "ref_cpu64": 0,
+   "tanh_cpu32": 1,
+   "erf_cpu32": 0,
+   "tanh_cpu64": 1,
+   "margin_ref_mps32": -0.0006215572357177734,
+   "margin_ref_cpu64": -0.0006216759511830094,
+   "margin_tanh_cpu32": 0.000102996826171875,
+   "margin_erf_cpu32": -0.0006215572357177734,
+   "margin_tanh_cpu64": 0.00010254098819184598
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "tag": "linkdrop",
+ "time": "2026-10-10 12:12:14",
+ "ip": "<board-ip>",
+ "args": {
+  "port": "<port>",
+  "tag": "linkdrop",
+  "events": 3,
+  "pre_s": 45,
+  "hold_s": 60.0,
+  "post_s": 60,
+  "gap_s": 1.5,
+  "clients": 2
+ },
+ "windows": 252,
+ "resends": 2,
+ "status_counts": {
+  "0": 252
+ },
+ "evt_cells_disagree_vs_reference": 0,
+ "logits_bitwise_equal_vs_reference": true,
+ "reference": "results/audit/azt1d_full/audit.npz",
+ "events": [
+  {
+   "event": 0,
+   "cmd_t_s": 46.471,
+   "hold_end_t_s": 106.471,
+   "last_ok_request_before_s": 46.441,
+   "first_link0_window_after_cmd_s": 0.435,
+   "board_link_down_line": "   46.906 LINK down t=49388",
+   "board_down_ms": 60809,
+   "first_link1_window_after_hold_s": 1.223,
+   "first_ok_request_after_hold_s": 0.151,
+   "requests_during_outage": 80,
+   "failed_during_outage_by_type": {
+    "connect_timeout": 80
+   },
+   "windows_during_hold": 29,
+   "status_during_hold": {
+    "0": 29
+   },
+   "infer_ms_during_hold": {
+    "median": 391.877,
+    "max": 392.598
+   },
+   "history_read_after_hold_s": 20.172,
+   "history_items": 39,
+   "hold_windows_in_history_and_equal": 29,
+   "history_error": null
+  },
+  {
+   "event": 1,
+   "cmd_t_s": 211.706,
+   "hold_end_t_s": 271.706,
+   "last_ok_request_before_s": 211.6,
+   "first_link0_window_after_cmd_s": 0.433,
+   "board_link_down_line": "  212.139 LINK down t=214534",
+   "board_down_ms": 60813,
+   "first_link1_window_after_hold_s": 1.923,
+   "first_ok_request_after_hold_s": 0.198,
+   "requests_during_outage": 80,
+   "failed_during_outage_by_type": {
+    "connect_timeout": 80
+   },
+   "windows_during_hold": 32,
+   "status_during_hold": {
+    "0": 32
+   },
+   "infer_ms_during_hold": {
+    "median": 391.3905,
+    "max": 392.786
+   },
+   "history_read_after_hold_s": 18.919,
+   "history_items": 41,
+   "hold_windows_in_history_and_equal": 32,
+   "history_error": null
+  },
+  {
+   "event": 2,
+   "cmd_t_s": 375.764,
+   "hold_end_t_s": 435.764,
+   "last_ok_request_before_s": 375.631,
+   "first_link0_window_after_cmd_s": 5.448,
+   "board_link_down_line": null,
+   "board_down_ms": 60809,
+   "first_link1_window_after_hold_s": 1.19,
+   "first_ok_request_after_hold_s": 0.115,
+   "requests_during_outage": 80,
+   "failed_during_outage_by_type": {
+    "connect_timeout": 80
+   },
+   "windows_during_hold": 29,
+   "status_during_hold": {
+    "0": 29
+   },
+   "infer_ms_during_hold": {
+    "median": 391.396,
+    "max": 392.229
+   },
+   "history_read_after_hold_s": 20.152,
+   "history_items": 39,
+   "hold_windows_in_history_and_equal": 29,
+   "history_error": null
+  }
+ ],
+ "infer_ms": {
+  "median": 400.842,
+  "max": 414.974
+ },
+ "reconnects_final": 3
+}

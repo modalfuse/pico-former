@@ -1,0 +1,91 @@
+{
+ "time": "2026-10-10 10:55:50",
+ "ip": "<board-ip>",
+ "status_before": {
+  "int_free": 29552,
+  "int_min": 29200,
+  "int_largest": 20980,
+  "spiram_free": 8370839,
+  "https_req": 0,
+  "https_fail": 0,
+  "https_stack_hw": 0
+ },
+ "attempts": [
+  {
+   "i": 0,
+   "t_s": 3.143,
+   "ok": false,
+   "error": "ConnectionResetError: [Errno 54] Connection reset by peer",
+   "status_after": {
+    "int_free": 29248,
+    "int_min": 8588,
+    "int_largest": 17396,
+    "spiram_free": 8370839,
+    "https_req": 0,
+    "https_fail": 0,
+    "https_stack_hw": 0
+   }
+  },
+  {
+   "i": 1,
+   "t_s": 4.193,
+   "ok": false,
+   "error": "ConnectionResetError: [Errno 54] Connection reset by peer",
+   "status_after": {
+    "int_free": 29248,
+    "int_min": 8588,
+    "int_largest": 17396,
+    "spiram_free": 8370839,
+    "https_req": 0,
+    "https_fail": 0,
+    "https_stack_hw": 0
+   }
+  },
+  {
+   "i": 2,
+   "t_s": 5.238,
+   "ok": false,
+   "error": "ConnectionResetError: [Errno 54] Connection reset by peer",
+   "status_after": {
+    "int_free": 29252,
+    "int_min": 8588,
+    "int_largest": 17396,
+    "spiram_free": 8370839,
+    "https_req": 0,
+    "https_fail": 0,
+    "https_stack_hw": 0
+   }
+  },
+  {
+   "i": 3,
+   "t_s": 6.284,
+   "ok": false,
+   "error": "ConnectionResetError: [Errno 54] Connection reset by peer",
+   "status_after": {
+    "int_free": 29248,
+    "int_min": 8588,
+    "int_largest": 17396,
+    "spiram_free": 8370839,
+    "https_req": 0,
+    "https_fail": 0,
+    "https_stack_hw": 0
+   }
+  },
+  {
+   "i": 4,
+   "t_s": 7.332,
+   "ok": false,
+   "error": "ConnectionResetError: [Errno 54] Connection reset by peer",
+   "status_after": {
+    "int_free": 29240,
+    "int_min": 8588,
+    "int_largest": 17396,
+    "spiram_free": 8370839,
+    "https_req": 0,
+    "https_fail": 0,
+    "https_stack_hw": 0
+   }
+  }
+ ],
+ "n_ok": 0
+}

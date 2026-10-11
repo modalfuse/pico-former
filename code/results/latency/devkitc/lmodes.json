@@ -1,0 +1,964 @@
+{
+ "time": "2026-10-10 06:13:49",
+ "port": "<port>",
+ "modes": {
+  "1": {
+   "runs": [
+    {
+     "rep": 0,
+     "reset_reason": 1,
+     "lmode_seen": 1,
+     "lrun": [
+      {
+       "mode": 1,
+       "i": 0,
+       "us_total": 391409,
+       "us_enc": 283740,
+       "us_cross": 94030,
+       "us_heads": 9567,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 1,
+       "us_total": 391234,
+       "us_enc": 283702,
+       "us_cross": 94022,
+       "us_heads": 9525,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 2,
+       "us_total": 391228,
+       "us_enc": 283691,
+       "us_cross": 94025,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 3,
+       "us_total": 391220,
+       "us_enc": 283694,
+       "us_cross": 94020,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 4,
+       "us_total": 391234,
+       "us_enc": 283699,
+       "us_cross": 94019,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 5,
+       "us_total": 391229,
+       "us_enc": 283696,
+       "us_cross": 94028,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 6,
+       "us_total": 391237,
+       "us_enc": 283702,
+       "us_cross": 94019,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 7,
+       "us_total": 391209,
+       "us_enc": 283684,
+       "us_cross": 94024,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 8,
+       "us_total": 391237,
+       "us_enc": 283698,
+       "us_cross": 94023,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 9,
+       "us_total": 391216,
+       "us_enc": 283683,
+       "us_cross": 94023,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 10,
+       "us_total": 391227,
+       "us_enc": 283695,
+       "us_cross": 94026,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 11,
+       "us_total": 391231,
+       "us_enc": 283693,
+       "us_cross": 94023,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 12,
+       "us_total": 391241,
+       "us_enc": 283709,
+       "us_cross": 94025,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 13,
+       "us_total": 391222,
+       "us_enc": 283696,
+       "us_cross": 94021,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 14,
+       "us_total": 391221,
+       "us_enc": 283691,
+       "us_cross": 94025,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 15,
+       "us_total": 391226,
+       "us_enc": 283689,
+       "us_cross": 94024,
+       "us_heads": 9533,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 16,
+       "us_total": 391216,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 17,
+       "us_total": 391225,
+       "us_enc": 283700,
+       "us_cross": 94018,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 18,
+       "us_total": 391228,
+       "us_enc": 283692,
+       "us_cross": 94023,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 19,
+       "us_total": 391221,
+       "us_enc": 283695,
+       "us_cross": 94021,
+       "us_heads": 9523,
+       "wifi": 255
+      }
+     ]
+    },
+    {
+     "rep": 1,
+     "reset_reason": 1,
+     "lmode_seen": 1,
+     "lrun": [
+      {
+       "mode": 1,
+       "i": 0,
+       "us_total": 391408,
+       "us_enc": 283740,
+       "us_cross": 94030,
+       "us_heads": 9567,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 1,
+       "us_total": 391234,
+       "us_enc": 283702,
+       "us_cross": 94023,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 2,
+       "us_total": 391229,
+       "us_enc": 283690,
+       "us_cross": 94025,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 3,
+       "us_total": 391220,
+       "us_enc": 283693,
+       "us_cross": 94021,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 4,
+       "us_total": 391234,
+       "us_enc": 283699,
+       "us_cross": 94019,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 5,
+       "us_total": 391229,
+       "us_enc": 283696,
+       "us_cross": 94029,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 6,
+       "us_total": 391237,
+       "us_enc": 283701,
+       "us_cross": 94020,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 7,
+       "us_total": 391210,
+       "us_enc": 283684,
+       "us_cross": 94024,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 8,
+       "us_total": 391236,
+       "us_enc": 283698,
+       "us_cross": 94023,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 9,
+       "us_total": 391216,
+       "us_enc": 283682,
+       "us_cross": 94023,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 10,
+       "us_total": 391227,
+       "us_enc": 283696,
+       "us_cross": 94026,
+       "us_heads": 9520,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 11,
+       "us_total": 391230,
+       "us_enc": 283692,
+       "us_cross": 94023,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 12,
+       "us_total": 391240,
+       "us_enc": 283709,
+       "us_cross": 94026,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 13,
+       "us_total": 391221,
+       "us_enc": 283696,
+       "us_cross": 94022,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 14,
+       "us_total": 391221,
+       "us_enc": 283691,
+       "us_cross": 94026,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 15,
+       "us_total": 391226,
+       "us_enc": 283689,
+       "us_cross": 94024,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 16,
+       "us_total": 391215,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 17,
+       "us_total": 391225,
+       "us_enc": 283701,
+       "us_cross": 94017,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 18,
+       "us_total": 391228,
+       "us_enc": 283692,
+       "us_cross": 94024,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 19,
+       "us_total": 391220,
+       "us_enc": 283695,
+       "us_cross": 94020,
+       "us_heads": 9523,
+       "wifi": 255
+      }
+     ]
+    },
+    {
+     "rep": 2,
+     "reset_reason": 1,
+     "lmode_seen": 1,
+     "lrun": [
+      {
+       "mode": 1,
+       "i": 0,
+       "us_total": 391408,
+       "us_enc": 283740,
+       "us_cross": 94030,
+       "us_heads": 9567,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 1,
+       "us_total": 391234,
+       "us_enc": 283701,
+       "us_cross": 94023,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 2,
+       "us_total": 391229,
+       "us_enc": 283690,
+       "us_cross": 94025,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 3,
+       "us_total": 391220,
+       "us_enc": 283693,
+       "us_cross": 94021,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 4,
+       "us_total": 391234,
+       "us_enc": 283700,
+       "us_cross": 94018,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 5,
+       "us_total": 391229,
+       "us_enc": 283697,
+       "us_cross": 94028,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 6,
+       "us_total": 391237,
+       "us_enc": 283701,
+       "us_cross": 94020,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 7,
+       "us_total": 391210,
+       "us_enc": 283684,
+       "us_cross": 94024,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 8,
+       "us_total": 391236,
+       "us_enc": 283699,
+       "us_cross": 94022,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 9,
+       "us_total": 391215,
+       "us_enc": 283682,
+       "us_cross": 94023,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 10,
+       "us_total": 391227,
+       "us_enc": 283696,
+       "us_cross": 94026,
+       "us_heads": 9520,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 11,
+       "us_total": 391230,
+       "us_enc": 283693,
+       "us_cross": 94023,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 12,
+       "us_total": 391240,
+       "us_enc": 283708,
+       "us_cross": 94026,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 13,
+       "us_total": 391221,
+       "us_enc": 283696,
+       "us_cross": 94022,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 14,
+       "us_total": 391221,
+       "us_enc": 283691,
+       "us_cross": 94026,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 15,
+       "us_total": 391226,
+       "us_enc": 283689,
+       "us_cross": 94024,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 16,
+       "us_total": 391215,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 17,
+       "us_total": 391225,
+       "us_enc": 283701,
+       "us_cross": 94017,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 18,
+       "us_total": 391228,
+       "us_enc": 283692,
+       "us_cross": 94024,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 19,
+       "us_total": 391220,
+       "us_enc": 283695,
+       "us_cross": 94020,
+       "us_heads": 9523,
+       "wifi": 255
+      }
+     ]
+    },
+    {
+     "rep": 3,
+     "reset_reason": 1,
+     "lmode_seen": 1,
+     "lrun": [
+      {
+       "mode": 1,
+       "i": 0,
+       "us_total": 391408,
+       "us_enc": 283740,
+       "us_cross": 94030,
+       "us_heads": 9567,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 1,
+       "us_total": 391234,
+       "us_enc": 283701,
+       "us_cross": 94023,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 2,
+       "us_total": 391229,
+       "us_enc": 283690,
+       "us_cross": 94025,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 3,
+       "us_total": 391220,
+       "us_enc": 283693,
+       "us_cross": 94021,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 4,
+       "us_total": 391234,
+       "us_enc": 283700,
+       "us_cross": 94018,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 5,
+       "us_total": 391229,
+       "us_enc": 283697,
+       "us_cross": 94028,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 6,
+       "us_total": 391237,
+       "us_enc": 283701,
+       "us_cross": 94020,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 7,
+       "us_total": 391210,
+       "us_enc": 283684,
+       "us_cross": 94024,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 8,
+       "us_total": 391236,
+       "us_enc": 283699,
+       "us_cross": 94022,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 9,
+       "us_total": 391215,
+       "us_enc": 283682,
+       "us_cross": 94023,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 10,
+       "us_total": 391227,
+       "us_enc": 283696,
+       "us_cross": 94026,
+       "us_heads": 9520,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 11,
+       "us_total": 391230,
+       "us_enc": 283693,
+       "us_cross": 94023,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 12,
+       "us_total": 391240,
+       "us_enc": 283708,
+       "us_cross": 94026,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 13,
+       "us_total": 391221,
+       "us_enc": 283696,
+       "us_cross": 94022,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 14,
+       "us_total": 391221,
+       "us_enc": 283691,
+       "us_cross": 94026,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 15,
+       "us_total": 391226,
+       "us_enc": 283689,
+       "us_cross": 94024,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 16,
+       "us_total": 391215,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 17,
+       "us_total": 391225,
+       "us_enc": 283701,
+       "us_cross": 94017,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 18,
+       "us_total": 391228,
+       "us_enc": 283692,
+       "us_cross": 94024,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 19,
+       "us_total": 391220,
+       "us_enc": 283695,
+       "us_cross": 94020,
+       "us_heads": 9523,
+       "wifi": 255
+      }
+     ]
+    },
+    {
+     "rep": 4,
+     "reset_reason": 1,
+     "lmode_seen": 1,
+     "lrun": [
+      {
+       "mode": 1,
+       "i": 0,
+       "us_total": 391409,
+       "us_enc": 283740,
+       "us_cross": 94029,
+       "us_heads": 9568,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 1,
+       "us_total": 391234,
+       "us_enc": 283702,
+       "us_cross": 94022,
+       "us_heads": 9525,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 2,
+       "us_total": 391229,
+       "us_enc": 283690,
+       "us_cross": 94026,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 3,
+       "us_total": 391220,
+       "us_enc": 283694,
+       "us_cross": 94020,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 4,
+       "us_total": 391233,
+       "us_enc": 283700,
+       "us_cross": 94019,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 5,
+       "us_total": 391229,
+       "us_enc": 283696,
+       "us_cross": 94028,
+       "us_heads": 9523,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 6,
+       "us_total": 391237,
+       "us_enc": 283702,
+       "us_cross": 94019,
+       "us_heads": 9532,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 7,
+       "us_total": 391210,
+       "us_enc": 283684,
+       "us_cross": 94024,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 8,
+       "us_total": 391237,
+       "us_enc": 283698,
+       "us_cross": 94023,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 9,
+       "us_total": 391216,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 10,
+       "us_total": 391227,
+       "us_enc": 283695,
+       "us_cross": 94026,
+       "us_heads": 9521,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 11,
+       "us_total": 391231,
+       "us_enc": 283693,
+       "us_cross": 94023,
+       "us_heads": 9531,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 12,
+       "us_total": 391241,
+       "us_enc": 283709,
+       "us_cross": 94025,
+       "us_heads": 9524,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 13,
+       "us_total": 391222,
+       "us_enc": 283696,
+       "us_cross": 94021,
+       "us_heads": 9530,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 14,
+       "us_total": 391221,
+       "us_enc": 283691,
+       "us_cross": 94025,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 15,
+       "us_total": 391227,
+       "us_enc": 283689,
+       "us_cross": 94024,
+       "us_heads": 9533,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 16,
+       "us_total": 391216,
+       "us_enc": 283683,
+       "us_cross": 94022,
+       "us_heads": 9528,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 17,
+       "us_total": 391224,
+       "us_enc": 283700,
+       "us_cross": 94018,
+       "us_heads": 9522,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 18,
+       "us_total": 391228,
+       "us_enc": 283692,
+       "us_cross": 94023,
+       "us_heads": 9529,
+       "wifi": 255
+      },
+      {
+       "mode": 1,
+       "i": 19,
+       "us_total": 391220,
+       "us_enc": 283695,
+       "us_cross": 94020,
+       "us_heads": 9523,
+       "wifi": 255
+      }
+     ]
+    }
+   ],
+   "n_boots": 5,
+   "first_ms": [
+    391.409,
+    391.408,
+    391.408,
+    391.408,
+    391.409
+   ],
+   "first_median_ms": 391.408,
+   "warm_median_ms": 391.227,
+   "warm_p99_ms": 391.241,
+   "first_minus_warm_ms": 0.18100000000004002,
+   "enc_first_median_ms": 283.74,
+   "enc_warm_median_ms": 283.695,
+   "cross_first_median_ms": 94.03,
+   "cross_warm_median_ms": 94.023,
+   "heads_first_median_ms": 9.567,
+   "heads_warm_median_ms": 9.528
+  }
+ },
+ "lmode_after": 0
+}

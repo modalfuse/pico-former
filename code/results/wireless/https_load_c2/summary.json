@@ -1,0 +1,93 @@
+{
+ "tag": "https_load_c2",
+ "time": "2026-10-10 07:23:43",
+ "ip": "<board-ip>",
+ "route_interface": "en0",
+ "clients": 2,
+ "paths": [
+  "/api/last"
+ ],
+ "interval_ms": 200,
+ "timeout_s": 1.5,
+ "push": "azt1d",
+ "note": "",
+ "scheme": "https",
+ "wall_s": 1054.9,
+ "requests": {
+  "/api/last": {
+   "n": 1192,
+   "ok": 590,
+   "fail": 602,
+   "fail_by_type": {
+    "connect_timeout": 595,
+    "connect_error": 7
+   },
+   "latency_ms": {
+    "p50": 2033.0500000000002,
+    "p95": 2331.46,
+    "p99": 2388.563,
+    "max": 2445.81
+   },
+   "bytes": [
+    55,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208
+   ],
+   "per_client_n": [
+    595,
+    597
+   ]
+  }
+ },
+ "status": {
+  "n": 104,
+  "errors": 0,
+  "int_min_min": 372,
+  "int_largest_min": 2036,
+  "stack_infer_min": 14244,
+  "stack_sup_min": 3324,
+  "http_stack_hw_min": 0,
+  "rssi_min": -69,
+  "rssi_max": -55,
+  "reconnects_max": 0,
+  "down_total_ms_max": 0,
+  "board_http_req": 103,
+  "board_http_fail": 0,
+  "handler_us_max": 8782,
+  "fault": 0
+ },
+ "windows": {
+  "n": 512,
+  "lost_cycles": 16,
+  "resends": 17,
+  "status": {
+   "0": 512
+  },
+  "latency_ms": {
+   "median": 472.027,
+   "p95": 475.78785,
+   "p99": 478.32660000000004,
+   "max": 484.12
+  },
+  "int_min_min": 372,
+  "stack_infer_min": 14244,
+  "stack_serial_min": 2628,
+  "rssi_min": -69,
+  "rssi_max": -55,
+  "reconnects_max": 0,
+  "link_down_windows": 0,
+  "reference": "results/audit/azt1d_full/audit.npz",
+  "evt_cells_disagree_vs_reference": 0,
+  "logit_maxabs_vs_reference": 0.0,
+  "logits_bitwise_equal_vs_reference": true,
+  "reference_latency_ms": {
+   "median": 391.81449999999995,
+   "p99": 393.52531,
+   "max": 397.004
+  }
+ }
+}

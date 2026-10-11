@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software or its archived results, please cite it using these metadata."
 title: "Pico-Former: a curve–event glucose Transformer on ESP32-S3"
 type: software
-version: 1.0.1
-date-released: 2026-09-01
+version: 1.1.0
+date-released: 2026-10-11
 doi: 10.5281/zenodo.22218446
 license: MIT
 authors:

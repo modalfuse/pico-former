@@ -1,0 +1,86 @@
+{
+ "tag": "devkitc_diatrend17_full",
+ "time": "2026-10-10 22:20:50",
+ "port": "<port>",
+ "cache": "code/results/external_cache/diatrend17_str15.pkl",
+ "split": "test",
+ "ckpt": "$PF_WORKSPACE/runs/20260830_s20260828/ckpt/ceqt.pt",
+ "idx": "all",
+ "n": 115934,
+ "wall_s": 5849.748315811157,
+ "serial_retries": 0,
+ "status_host": {
+  "0": 115934
+ },
+ "status_board": {
+  "0": 115934
+ },
+ "status_agree": 115934,
+ "windows_marks_dropped_host": 0,
+ "windows_marks_dropped_board": 0,
+ "windows_cgm_clamped_host": 2551,
+ "windows_cgm_clamped_board": 2551,
+ "flags_agree": 115934,
+ "evt_cells_compared": 1854944,
+ "evt_cells_disagree": 0,
+ "evt_windows_disagree": 0,
+ "disagree_cells": [],
+ "logit_maxabs": 2.5454288071102837e-05,
+ "logit_maxabs_median": 2.7080064086693056e-06,
+ "yhat_maxabs": 0.00025968024783651344,
+ "g_maxabs": 0.0,
+ "latency_ms": {
+  "n": 115934,
+  "median": 392.664,
+  "p95": 394.307,
+  "p99": 394.826,
+  "max": 406.985,
+  "min": 388.377,
+  "first": 392.412
+ },
+ "mem": {
+  "int_free_min": 29684,
+  "int_min_min": 28904,
+  "int_largest_min": 21492,
+  "spiram_free_min": 8370703,
+  "stack_infer_hw_min": 14244,
+  "stack_serial_hw_min": 2592
+ },
+ "cores": [
+  1
+ ],
+ "reset_count_end": 0,
+ "reconnects_end": 0,
+ "hypo70_4h_board": {
+  "tp": 3183,
+  "fn": 7511,
+  "fp": 4648,
+  "tn": 100592,
+  "fnr": 0.702356461567234,
+  "fpr": 0.04416571645762068
+ },
+ "hypo70_4h_host": {
+  "tp": 3183,
+  "fn": 7511,
+  "fp": 4648,
+  "tn": 100592,
+  "fnr": 0.702356461567234,
+  "fpr": 0.04416571645762068
+ },
+ "hyper180_4h_board": {
+  "tp": 47969,
+  "fn": 36002,
+  "fp": 1714,
+  "tn": 30249,
+  "fnr": 0.428743256600493,
+  "fpr": 0.0536245033319776
+ },
+ "hyper180_4h_host": {
+  "tp": 47969,
+  "fn": 36002,
+  "fp": 1714,
+  "tn": 30249,
+  "fnr": 0.428743256600493,
+  "fpr": 0.0536245033319776
+ }
+}

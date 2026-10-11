@@ -1,0 +1,56 @@
+{
+ "tag": "t2_c1",
+ "time": "2026-10-10 07:44:21",
+ "ip": "<board-ip>",
+ "route_interface": "en0",
+ "clients": 1,
+ "paths": [
+  "/api/last"
+ ],
+ "interval_ms": 200,
+ "timeout_s": 1.5,
+ "push": "none",
+ "note": "",
+ "scheme": "http",
+ "keepalive": false,
+ "wall_s": 600.6,
+ "requests": {
+  "/api/last": {
+   "n": 2923,
+   "ok": 2922,
+   "fail": 1,
+   "fail_by_type": {
+    "read_timeout": 1
+   },
+   "latency_ms": {
+    "p50": 15.68,
+    "p95": 21.978999999999996,
+    "p99": 46.538099999999986,
+    "max": 297.74
+   },
+   "bytes": [
+    55
+   ],
+   "per_client_n": [
+    2923
+   ]
+  }
+ },
+ "status": {
+  "n": 59,
+  "errors": 0,
+  "int_min_min": 23560,
+  "int_largest_min": 16884,
+  "stack_infer_min": 14244,
+  "stack_sup_min": 3288,
+  "http_stack_hw_min": 3020,
+  "rssi_min": -74,
+  "rssi_max": -55,
+  "reconnects_max": 0,
+  "down_total_ms_max": 0,
+  "board_http_req": 2935,
+  "board_http_fail": 0,
+  "handler_us_max": 6755,
+  "fault": 0
+ }
+}

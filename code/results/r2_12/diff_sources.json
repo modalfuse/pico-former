@@ -1,0 +1,79 @@
+{
+ "n_windows": 19152,
+ "torch": "2.6.0",
+ "float64_rerun_vs_audit_max": 0.0,
+ "board_vs_cpu64": {
+  "max": 1.2590370467080447e-05,
+  "median": 5.010804703386995e-07,
+  "p99": 3.256253571359836e-06,
+  "bitwise_equal_cells_fp32": 43902,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "board_vs_cpu32": {
+  "max": 1.4781951904296875e-05,
+  "median": 4.76837158203125e-07,
+  "p99": 3.452450037002598e-06,
+  "bitwise_equal_cells_fp32": 40119,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "cpu32_vs_cpu64": {
+  "max": 6.244910956354488e-06,
+  "median": 2.84609113609946e-07,
+  "p99": 1.7592674976896212e-06,
+  "bitwise_equal_cells_fp32": 75958,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "board_vs_mps32": {
+  "max": 1.2874603271484375e-05,
+  "median": 4.76837158203125e-07,
+  "p99": 3.337860107421875e-06,
+  "bitwise_equal_cells_fp32": 39927,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "mps32_vs_cpu64": {
+  "max": 4.637440085275557e-06,
+  "median": 2.2121661302776374e-07,
+  "p99": 1.238907907818998e-06,
+  "bitwise_equal_cells_fp32": 92448,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "cpu32_vs_mps32": {
+  "max": 7.152557373046875e-06,
+  "median": 3.8743019104003906e-07,
+  "p99": 1.9073486328125e-06,
+  "bitwise_equal_cells_fp32": 74328,
+  "cells": 306432,
+  "decision_cells_differ": 0
+ },
+ "sample512": {
+  "nofma_vs_fma": {
+   "max": 5.7220458984375e-06,
+   "median": 3.296881914138794e-07,
+   "p99": 2.384185791015625e-06,
+   "bitwise_equal_cells_fp32": 1896,
+   "cells": 8192,
+   "decision_cells_differ": 0
+  },
+  "fma_vs_cpu64": {
+   "max": 9.968229242041104e-06,
+   "median": 5.406500858118335e-07,
+   "p99": 3.506168869178432e-06,
+   "bitwise_equal_cells_fp32": 1121,
+   "cells": 8192,
+   "decision_cells_differ": 0
+  },
+  "nofma_vs_cpu64": {
+   "max": 7.594835079061113e-06,
+   "median": 5.599974739478597e-07,
+   "p99": 3.5473508117778165e-06,
+   "bitwise_equal_cells_fp32": 1081,
+   "cells": 8192,
+   "decision_cells_differ": 0
+  }
+ }
+}

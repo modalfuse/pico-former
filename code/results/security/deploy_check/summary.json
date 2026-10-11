@@ -1,0 +1,26 @@
+{
+ "date": "2026-10-10 20:15:44",
+ "ip": "<board-ip>",
+ "D1_web_line": "WEB http=0 https=1 ok=1",
+ "D1_ready": true,
+ "D1_ok": true,
+ "D2_port80": "refused",
+ "D2_ok": true,
+ "D3_status": {
+  "/api/last": 401,
+  "/api/history": 401,
+  "/api/status": 401
+ },
+ "D3_ok": true,
+ "D4_sha_ok": 1,
+ "D4_fault": 0,
+ "D4_status": {
+  "/api/last": 200,
+  "/api/history": 200,
+  "/api/status": 200
+ },
+ "D4_ok": true,
+ "D5_serial_bytes": 1,
+ "D5_ok": true,
+ "all_ok": true
+}

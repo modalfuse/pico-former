@@ -1,0 +1,47 @@
+{
+ "firmware": "rice-s3/firmware .pio/build/s3_n16r8/firmware.bin",
+ "runs": [
+  {
+   "boot": 1,
+   "first_ms": 407.6,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 413.09135,
+   "burn_last_ms": 412.537
+  },
+  {
+   "boot": 2,
+   "first_ms": 407.6,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 412.99134999999995,
+   "burn_last_ms": 412.05
+  },
+  {
+   "boot": 3,
+   "first_ms": 407.6,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 413.04134999999997,
+   "burn_last_ms": 412.052
+  },
+  {
+   "boot": 4,
+   "first_ms": 407.6,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 413.44125,
+   "burn_last_ms": 412.094
+  },
+  {
+   "boot": 5,
+   "first_ms": 407.6,
+   "wifi_connected": true,
+   "burn_n": 20,
+   "burn_mean_ms": 413.19140000000004,
+   "burn_last_ms": 413.279
+  }
+ ],
+ "first_ms_median": 407.6,
+ "burn_mean_ms_median": 413.09135
+}
