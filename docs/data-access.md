@@ -1,6 +1,6 @@
 # Data access
 
-Pico-Former does not redistribute CGM recordings or trained weights.
+Pico-Former does not redistribute CGM recordings or participant windows. The three trained checkpoints are provided in `checkpoints/` under CC BY 4.0.
 
 ## Datasets
 
@@ -22,12 +22,14 @@ Locked splits and \(\tau\) selection follow `protocol.json` and `split_azt1d.jso
 
 ## Weights
 
-`firmware/include/ceqt_weights.h` is generated locally from an authorized checkpoint:
+`firmware/include/ceqt_weights.h` is generated locally from a checkpoint in `checkpoints/` (seed 20260828 is the deployed model; SHA-256 values in `checkpoints/README.md`):
 
 ```bash
-export RICE_CKPT="/absolute/path/to/ceqt.pt"
+export RICE_CKPT="checkpoints/s20260828/ceqt.pt"
 export RICE_CACHE="/absolute/path/to/azt1d_cache.pkl"
 python host/export_golden.py
 ```
 
 The exporter also writes a local golden window under `gold/`. That file contains participant-level series and is gitignored.
+
+The checkpoints are derived from AZT1D; cite the dataset (doi:10.17632/gk9m674wcx.1) together with this archive when using them.

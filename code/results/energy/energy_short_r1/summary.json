@@ -1,0 +1,338 @@
+{
+ "plan": "short",
+ "channel": "wifi",
+ "uart_released": true,
+ "date": "2026-10-13 17:07:41",
+ "steps": [
+  {
+   "step": "E1",
+   "mode": 1,
+   "param": 85,
+   "t_start_s": 1791882103.465436,
+   "id": 2,
+   "wall_s": 35.11915588378906,
+   "log": "mode=1 param=85 cpu_mhz=240 wifi=255 sleep=0 rssi=0 ch=0 int_free=38916 int_min=13492;infer n=85 wall_ms=33216 min_us=390652 max_us=390964 mean_us=390681;mode=1 param=85 cpu_mhz=240 wifi=3 sleep=0 rssi=-58 ch=7 int_free=17132 int_min=13492;",
+   "energy": [
+    {
+     "kind": "mode=1",
+     "param": 85,
+     "cpu_mhz": 240,
+     "wifi": 255,
+     "sleep": 0,
+     "rssi": 0,
+     "ch": 0,
+     "int_free": 38916,
+     "int_min": 13492
+    },
+    {
+     "kind": "infer",
+     "n": 85,
+     "wall_ms": 33216,
+     "min_us": 390652,
+     "max_us": 390964,
+     "mean_us": 390681
+    },
+    {
+     "kind": "mode=1",
+     "param": 85,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -58,
+     "ch": 7,
+     "int_free": 17132,
+     "int_min": 13492
+    }
+   ]
+  },
+  {
+   "step": "restore",
+   "mode": 0,
+   "param": 0,
+   "t_start_s": 1791882138.584727,
+   "id": 3,
+   "wall_s": 1.0433998107910156,
+   "log": "mode=0 param=0 cpu_mhz=240 wifi=3 sleep=0 rssi=-58 ch=7 int_free=17112 int_min=13344;",
+   "energy": [
+    {
+     "kind": "mode=0",
+     "param": 0,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -58,
+     "ch": 7,
+     "int_free": 17112,
+     "int_min": 13344
+    }
+   ]
+  },
+  {
+   "step": "E2",
+   "mode": 2,
+   "param": 60,
+   "t_start_s": 1791882139.628204,
+   "id": 4,
+   "wall_s": 60.48289680480957,
+   "log": "mode=2 param=60 cpu_mhz=240 wifi=3 sleep=0 rssi=-72 ch=7 int_free=17124 int_min=13344;mode=2 param=60 cpu_mhz=240 wifi=3 sleep=0 rssi=-59 ch=7 int_free=17120 int_min=13192;",
+   "energy": [
+    {
+     "kind": "mode=2",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -72,
+     "ch": 7,
+     "int_free": 17124,
+     "int_min": 13344
+    },
+    {
+     "kind": "mode=2",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -59,
+     "ch": 7,
+     "int_free": 17120,
+     "int_min": 13192
+    }
+   ]
+  },
+  {
+   "step": "E3",
+   "mode": 3,
+   "param": 85,
+   "t_start_s": 1791882200.111189,
+   "id": 5,
+   "wall_s": 33.798665046691895,
+   "log": "mode=3 param=85 cpu_mhz=240 wifi=3 sleep=0 rssi=-60 ch=7 int_free=17132 int_min=13192;infer n=85 wall_ms=33330 min_us=390692 max_us=395242 mean_us=391983;mode=3 param=85 cpu_mhz=240 wifi=3 sleep=0 rssi=-69 ch=7 int_free=17164 int_min=13192;",
+   "energy": [
+    {
+     "kind": "mode=3",
+     "param": 85,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -60,
+     "ch": 7,
+     "int_free": 17132,
+     "int_min": 13192
+    },
+    {
+     "kind": "infer",
+     "n": 85,
+     "wall_ms": 33330,
+     "min_us": 390692,
+     "max_us": 395242,
+     "mean_us": 391983
+    },
+    {
+     "kind": "mode=3",
+     "param": 85,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -69,
+     "ch": 7,
+     "int_free": 17164,
+     "int_min": 13192
+    }
+   ]
+  },
+  {
+   "step": "E4",
+   "mode": 4,
+   "param": 60,
+   "t_start_s": 1791882233.9103072,
+   "id": 6,
+   "wall_s": 60.71083378791809,
+   "log": "mode=4 param=60 cpu_mhz=240 wifi=3 sleep=1 rssi=-69 ch=7 int_free=17156 int_min=13192;mode=4 param=60 cpu_mhz=240 wifi=3 sleep=1 rssi=-57 ch=7 int_free=17164 int_min=13192;",
+   "energy": [
+    {
+     "kind": "mode=4",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 1,
+     "rssi": -69,
+     "ch": 7,
+     "int_free": 17156,
+     "int_min": 13192
+    },
+    {
+     "kind": "mode=4",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 1,
+     "rssi": -57,
+     "ch": 7,
+     "int_free": 17164,
+     "int_min": 13192
+    }
+   ]
+  },
+  {
+   "step": "E5",
+   "mode": 5,
+   "param": 60,
+   "t_start_s": 1791882294.6214972,
+   "id": 7,
+   "wall_s": 60.414790868759155,
+   "log": "mode=5 param=60 cpu_mhz=240 wifi=3 sleep=0 rssi=-57 ch=7 int_free=17032 int_min=11204;mode=5 param=60 cpu_mhz=240 wifi=3 sleep=0 rssi=-57 ch=7 int_free=16992 int_min=9464;",
+   "energy": [
+    {
+     "kind": "mode=5",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -57,
+     "ch": 7,
+     "int_free": 17032,
+     "int_min": 11204
+    },
+    {
+     "kind": "mode=5",
+     "param": 60,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -57,
+     "ch": 7,
+     "int_free": 16992,
+     "int_min": 9464
+    }
+   ]
+  },
+  {
+   "step": "E6",
+   "mode": 6,
+   "param": 2570,
+   "t_start_s": 1791882355.036832,
+   "id": 8,
+   "wall_s": 105.30888795852661,
+   "log": "mode=6 param=2570 cpu_mhz=240 wifi=255 sleep=0 rssi=0 ch=0 int_free=38784 int_min=9464;e6 i=0 us=390916 slept_ms=0;e6 i=1 us=390675 slept_ms=9999;e6 i=2 us=390778 slept_ms=10000;e6 i=3 us=390725 slept_ms=10000;e6 i=4 us=390770 slept_ms=10000;e6 i=5 us=390729 slept_ms=10000;e6 i=6 us=390728 slept_ms=10000;e6 i=7 us=390720 slept_ms=10000;e6 i=8 us=390762 slept_ms=10000;e6 i=9 us=390697 slept_ms=10000;e6 last_slept_ms=10000;mode=6 param=2570 cpu_mhz=240 wifi=3 sleep=0 rssi=-60 ch=7 int_free=15372 int_min=9464;",
+   "energy": [
+    {
+     "kind": "mode=6",
+     "param": 2570,
+     "cpu_mhz": 240,
+     "wifi": 255,
+     "sleep": 0,
+     "rssi": 0,
+     "ch": 0,
+     "int_free": 38784,
+     "int_min": 9464
+    },
+    {
+     "kind": "e6",
+     "i": 0,
+     "us": 390916,
+     "slept_ms": 0
+    },
+    {
+     "kind": "e6",
+     "i": 1,
+     "us": 390675,
+     "slept_ms": 9999
+    },
+    {
+     "kind": "e6",
+     "i": 2,
+     "us": 390778,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 3,
+     "us": 390725,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 4,
+     "us": 390770,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 5,
+     "us": 390729,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 6,
+     "us": 390728,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 7,
+     "us": 390720,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 8,
+     "us": 390762,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "i": 9,
+     "us": 390697,
+     "slept_ms": 10000
+    },
+    {
+     "kind": "e6",
+     "last_slept_ms": 10000
+    },
+    {
+     "kind": "mode=6",
+     "param": 2570,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -60,
+     "ch": 7,
+     "int_free": 15372,
+     "int_min": 9464
+    }
+   ]
+  },
+  {
+   "step": "restore",
+   "mode": 0,
+   "param": 0,
+   "t_start_s": 1791882460.346124,
+   "id": 9,
+   "wall_s": 1.0717170238494873,
+   "log": "mode=0 param=0 cpu_mhz=240 wifi=3 sleep=0 rssi=-69 ch=7 int_free=16988 int_min=9464;",
+   "energy": [
+    {
+     "kind": "mode=0",
+     "param": 0,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -69,
+     "ch": 7,
+     "int_free": 16988,
+     "int_min": 9464
+    }
+   ]
+  }
+ ],
+ "http": {
+  "E5": {
+   "n": 61,
+   "ok": 61,
+   "median_ms": 19.14381980895996,
+   "max_ms": 34.78503227233887
+  }
+ }
+}

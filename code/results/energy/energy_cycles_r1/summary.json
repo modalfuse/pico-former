@@ -1,0 +1,544 @@
+{
+ "plan": "cycles",
+ "channel": "wifi",
+ "uart_released": true,
+ "date": "2026-10-13 19:15:10",
+ "steps": [
+  {
+   "step": "E7a",
+   "mode": 12,
+   "param": 76812,
+   "t_start_s": 1791883199.285644,
+   "id": 2,
+   "wall_s": 3306.2856850624084,
+   "log": "mode=12 param=76812 cpu_mhz=240 wifi=3 sleep=1 rssi=-62 ch=7 int_free=17268 int_min=13304;r i=0 seq=300000 st=0 us=391443;r i=1 seq=300001 st=0 us=390856;r i=2 seq=300002 st=0 us=391909;r i=3 seq=300003 st=0 us=392864;r i=4 seq=300004 st=0 us=395236;r i=5 seq=300005 st=0 us=393025;r i=6 seq=300006 st=0 us=391170;r i=7 seq=300007 st=0 us=390675;r i=8 seq=300008 st=0 us=389411;r i=9 seq=300009 st=0 us=389165;r i=10 seq=300010 st=0 us=389149;r i=11 seq=300011 st=0 us=389479;mode=12 param=76812 cpu_mhz=240 wifi=3 sleep=1 rssi=-60 ch=7 int_free=17004 int_min=13304;",
+   "energy": [
+    {
+     "kind": "mode=12",
+     "param": 76812,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 1,
+     "rssi": -62,
+     "ch": 7,
+     "int_free": 17268,
+     "int_min": 13304
+    },
+    {
+     "kind": "r",
+     "i": 0,
+     "seq": 300000,
+     "st": 0,
+     "us": 391443
+    },
+    {
+     "kind": "r",
+     "i": 1,
+     "seq": 300001,
+     "st": 0,
+     "us": 390856
+    },
+    {
+     "kind": "r",
+     "i": 2,
+     "seq": 300002,
+     "st": 0,
+     "us": 391909
+    },
+    {
+     "kind": "r",
+     "i": 3,
+     "seq": 300003,
+     "st": 0,
+     "us": 392864
+    },
+    {
+     "kind": "r",
+     "i": 4,
+     "seq": 300004,
+     "st": 0,
+     "us": 395236
+    },
+    {
+     "kind": "r",
+     "i": 5,
+     "seq": 300005,
+     "st": 0,
+     "us": 393025
+    },
+    {
+     "kind": "r",
+     "i": 6,
+     "seq": 300006,
+     "st": 0,
+     "us": 391170
+    },
+    {
+     "kind": "r",
+     "i": 7,
+     "seq": 300007,
+     "st": 0,
+     "us": 390675
+    },
+    {
+     "kind": "r",
+     "i": 8,
+     "seq": 300008,
+     "st": 0,
+     "us": 389411
+    },
+    {
+     "kind": "r",
+     "i": 9,
+     "seq": 300009,
+     "st": 0,
+     "us": 389165
+    },
+    {
+     "kind": "r",
+     "i": 10,
+     "seq": 300010,
+     "st": 0,
+     "us": 389149
+    },
+    {
+     "kind": "r",
+     "i": 11,
+     "seq": 300011,
+     "st": 0,
+     "us": 389479
+    },
+    {
+     "kind": "mode=12",
+     "param": 76812,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 1,
+     "rssi": -60,
+     "ch": 7,
+     "int_free": 17004,
+     "int_min": 13304
+    }
+   ],
+   "check": {
+    "n": 12,
+    "found": 12,
+    "status_match": 12,
+    "evt_match": 12,
+    "rows": [
+     {
+      "i": 0,
+      "seq": 300000,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 1,
+      "seq": 300001,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 2,
+      "seq": 300002,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 3,
+      "seq": 300003,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 4,
+      "seq": 300004,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 5,
+      "seq": 300005,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 6,
+      "seq": 300006,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 7,
+      "seq": 300007,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 8,
+      "seq": 300008,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 9,
+      "seq": 300009,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 10,
+      "seq": 300010,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 11,
+      "seq": 300011,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     }
+    ]
+   }
+  },
+  {
+   "step": "restore",
+   "mode": 0,
+   "param": 0,
+   "t_start_s": 1791886505.574462,
+   "id": 3,
+   "wall_s": 1.0498700141906738,
+   "log": "mode=0 param=0 cpu_mhz=240 wifi=3 sleep=0 rssi=-67 ch=7 int_free=16728 int_min=9764;",
+   "energy": [
+    {
+     "kind": "mode=0",
+     "param": 0,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -67,
+     "ch": 7,
+     "int_free": 16728,
+     "int_min": 9764
+    }
+   ]
+  },
+  {
+   "step": "E7b",
+   "mode": 7,
+   "param": 12,
+   "t_start_s": 1791886506.626126,
+   "cycles": [
+    {
+     "cycle": 0,
+     "t_s": 1791886508.894689,
+     "status": 0,
+     "us_total": 393474,
+     "http_ms": 37.07098960876465,
+     "seq_match": 1,
+     "busy_s": 1.275618076324463
+    },
+    {
+     "cycle": 1,
+     "t_s": 1791886808.901001,
+     "status": 0,
+     "us_total": 393129,
+     "http_ms": 21.361112594604492,
+     "seq_match": 1,
+     "busy_s": 1.1814000606536865
+    },
+    {
+     "cycle": 2,
+     "t_s": 1791887108.912126,
+     "status": 0,
+     "us_total": 393051,
+     "http_ms": 25.98094940185547,
+     "seq_match": 1,
+     "busy_s": 1.2117929458618164
+    },
+    {
+     "cycle": 3,
+     "t_s": 1791887408.91487,
+     "status": 0,
+     "us_total": 393176,
+     "http_ms": 22.627830505371094,
+     "seq_match": 1,
+     "busy_s": 1.2468359470367432
+    },
+    {
+     "cycle": 4,
+     "t_s": 1791887708.9209018,
+     "status": 0,
+     "us_total": 393084,
+     "http_ms": 24.499893188476562,
+     "seq_match": 1,
+     "busy_s": 1.267796277999878
+    },
+    {
+     "cycle": 5,
+     "t_s": 1791888008.929292,
+     "status": 0,
+     "us_total": 393699,
+     "http_ms": 20.730972290039062,
+     "seq_match": 1,
+     "busy_s": 1.1811189651489258
+    },
+    {
+     "cycle": 6,
+     "t_s": 1791888308.939956,
+     "status": 0,
+     "us_total": 393205,
+     "http_ms": 23.499011993408203,
+     "seq_match": 1,
+     "busy_s": 1.2189948558807373
+    },
+    {
+     "cycle": 7,
+     "t_s": 1791888608.9463282,
+     "status": 0,
+     "us_total": 393484,
+     "http_ms": 17.88496971130371,
+     "seq_match": 1,
+     "busy_s": 1.2298028469085693
+    },
+    {
+     "cycle": 8,
+     "t_s": 1791888908.9512691,
+     "status": 0,
+     "us_total": 391979,
+     "http_ms": 20.694971084594727,
+     "seq_match": 1,
+     "busy_s": 5.265909671783447
+    },
+    {
+     "cycle": 9,
+     "t_s": 1791889208.959817,
+     "status": 0,
+     "us_total": 391690,
+     "http_ms": 17.78101921081543,
+     "seq_match": 1,
+     "busy_s": 1.1786072254180908
+    },
+    {
+     "cycle": 10,
+     "t_s": 1791889508.964032,
+     "status": 0,
+     "us_total": 391383,
+     "http_ms": 24.991989135742188,
+     "seq_match": 1,
+     "busy_s": 1.2230989933013916
+    },
+    {
+     "cycle": 11,
+     "t_s": 1791889808.971201,
+     "status": 0,
+     "us_total": 391558,
+     "http_ms": 14.966011047363281,
+     "seq_match": 1,
+     "busy_s": 1.2304739952087402
+    }
+   ],
+   "check": {
+    "n": 12,
+    "found": 12,
+    "status_match": 12,
+    "evt_match": 12,
+    "rows": [
+     {
+      "i": 0,
+      "seq": 400000,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 1,
+      "seq": 400001,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 2,
+      "seq": 400002,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 3,
+      "seq": 400003,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 4,
+      "seq": 400004,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 5,
+      "seq": 400005,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 6,
+      "seq": 400006,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 7,
+      "seq": 400007,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 8,
+      "seq": 400008,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 9,
+      "seq": 400009,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 10,
+      "seq": 400010,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     },
+     {
+      "i": 11,
+      "seq": 400011,
+      "found": 1,
+      "status_match": 1,
+      "evt_match": 1
+     }
+    ]
+   },
+   "wall_s": 3602.4698519706726
+  },
+  {
+   "step": "restore",
+   "mode": 0,
+   "param": 0,
+   "t_start_s": 1791890109.0980291,
+   "id": 17,
+   "wall_s": 1.0341517925262451,
+   "log": "mode=0 param=0 cpu_mhz=240 wifi=3 sleep=0 rssi=-61 ch=7 int_free=16728 int_min=9764;",
+   "energy": [
+    {
+     "kind": "mode=0",
+     "param": 0,
+     "cpu_mhz": 240,
+     "wifi": 3,
+     "sleep": 0,
+     "rssi": -61,
+     "ch": 7,
+     "int_free": 16728,
+     "int_min": 9764
+    }
+   ]
+  }
+ ],
+ "http": {
+  "E7_0": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 37.07098960876465,
+   "max_ms": 37.07098960876465
+  },
+  "E7_1": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 21.361112594604492,
+   "max_ms": 21.361112594604492
+  },
+  "E7_2": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 25.98094940185547,
+   "max_ms": 25.98094940185547
+  },
+  "E7_3": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 22.627830505371094,
+   "max_ms": 22.627830505371094
+  },
+  "E7_4": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 24.499893188476562,
+   "max_ms": 24.499893188476562
+  },
+  "E7_5": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 20.730972290039062,
+   "max_ms": 20.730972290039062
+  },
+  "E7_6": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 23.499011993408203,
+   "max_ms": 23.499011993408203
+  },
+  "E7_7": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 17.88496971130371,
+   "max_ms": 17.88496971130371
+  },
+  "E7_8": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 20.694971084594727,
+   "max_ms": 20.694971084594727
+  },
+  "E7_9": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 17.78101921081543,
+   "max_ms": 17.78101921081543
+  },
+  "E7_10": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 24.991989135742188,
+   "max_ms": 24.991989135742188
+  },
+  "E7_11": {
+   "n": 1,
+   "ok": 1,
+   "median_ms": 14.966011047363281,
+   "max_ms": 14.966011047363281
+  }
+ }
+}

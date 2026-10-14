@@ -24,6 +24,7 @@ firmware/include/ceqt_weights_corrupt.gen.h
 gold/
 host/.cache/
 *.pt
+!checkpoints/*/ceqt.pt
 *.pkl
 *.ckpt
 .env

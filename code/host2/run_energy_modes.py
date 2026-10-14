@@ -6,7 +6,7 @@ In E5 and steps with the _poll suffix, the host requests /api/last over HTTP onc
 cycle marker GPIO 6 high -> send one AZT1D held-out window over serial -> read /api/last over HTTP to confirm the result has been updated -> cycle marker low -> wait for the next cycle.
 Without the PPK2, this script reports per-mode inference latency, HTTP latency and light-sleep wake-up interval; with the PPK2, run with --plan full and the current is recorded by the PPK2.
 The access token is read from firmware/wifi.yaml at run time; it is neither printed nor written to the results.
-Usage: python run_energy_modes.py --port <serial port> [--plan check|full] [--tag energy_check]
+Usage: python run_energy_modes.py --port <serial port> [--plan check|full|short|cycles|e7a|e7b] [--tag energy_check]
 Results: code/results/energy/<tag>/summary.json, http.csv, board_text.log
 """
 
@@ -45,8 +45,25 @@ PLANS = {
         ("E7a", 12, 12 | (300 << 8), False), ("restore", 0, 0, False), ("E7b", 7, 12, False), ("restore", 0, 0, False),
     ],
     "replay_check": [("E7a", 12, 3 | (20 << 8), False), ("restore", 0, 0, False)],
+    # Reported runs (Table 9, Table S9b): three "short" runs on separate power cycles; E7a and E7b
+    # three complete passes each ("cycles" twice, then "e7a" and "e7b" once each).
+    "short": [
+        ("E1", 1, 85, False), ("restore", 0, 0, False), ("E2", 2, 60, False), ("E3", 3, 85, False),
+        ("E4", 4, 60, False), ("E5", 5, 60, True), ("E6", 6, 10 | (10 << 8), False), ("restore", 0, 0, False),
+    ],
+    "cycles": [
+        ("E7a", 12, 12 | (300 << 8), False), ("restore", 0, 0, False), ("E7b", 7, 12, False), ("restore", 0, 0, False),
+    ],
+    # E7a alone: 12 Flash windows, period 300 s.
+    "e7a": [
+        ("E7a", 12, 12 | (300 << 8), False), ("restore", 0, 0, False),
+    ],
+    # E7b alone: 12 windows posted every 300 s.
+    "e7b": [
+        ("E7b", 7, 12, False), ("restore", 0, 0, False),
+    ],
 }
-E7_PERIOD_S = {"check": 20.0, "full": 300.0}
+E7_PERIOD_S = {"check": 20.0, "full": 300.0, "cycles": 300.0, "e7b": 300.0}
 ENERGY_RE = re.compile(r"ENERGY (\S+)(.*)")
 
 

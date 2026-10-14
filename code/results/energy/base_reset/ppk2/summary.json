@@ -1,0 +1,45 @@
+{
+ "tag": "base_reset",
+ "samples": 2977218,
+ "duration_s": 29.77218,
+ "supply_v": 3.3,
+ "mean_ma": 30.110882192206432,
+ "energy_j": 2.9583397951310424,
+ "counter_gaps": 0,
+ "host_s_per_sample": 9.99606514400805e-06,
+ "channels": {
+  "D0": {
+   "n": 1,
+   "energy_mj_median": 0.026544,
+   "energy_mj_iqr": [
+    0.026544,
+    0.026544
+   ],
+   "duration_ms_median": 0.13,
+   "mean_ma_median": 61.87348,
+   "open_at_end": false
+  },
+  "D1": {
+   "n": 1,
+   "energy_mj_median": 0.026544,
+   "energy_mj_iqr": [
+    0.026544,
+    0.026544
+   ],
+   "duration_ms_median": 0.13,
+   "mean_ma_median": 61.87348,
+   "open_at_end": false
+  },
+  "D2": {
+   "n": 1,
+   "energy_mj_median": 0.026544,
+   "energy_mj_iqr": [
+    0.026544,
+    0.026544
+   ],
+   "duration_ms_median": 0.13,
+   "mean_ma_median": 61.87348,
+   "open_at_end": false
+  }
+ }
+}
