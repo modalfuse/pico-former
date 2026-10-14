@@ -24,7 +24,7 @@ The release contains source code, the three checkpoints, and the intermediate da
 
 | Item | Value |
 | --- | --- |
-| Pico-Former release | v1.2.1, commit `f8bf5c932257bcba9bae67e91393eeefba4c9661`, Zenodo version DOI 10.5281/zenodo.23356939 (concept DOI 10.5281/zenodo.22218446); previous release v1.2.0, commit `77ec07a922be741fcdfc5478ef4ef5d65d1235f1`, Zenodo version DOI 10.5281/zenodo.23356115 |
+| Pico-Former release | v1.2.2 (concept DOI 10.5281/zenodo.22218446); previous release v1.2.1, commit `f8bf5c932257bcba9bae67e91393eeefba4c9661`, Zenodo version DOI 10.5281/zenodo.23356939 |
 | Original submission | Pico-Former v1.0.1, commit `3a6d48ff7f834da5bc0f66f9b03aec2f4824cd5a`, DOI 10.5281/zenodo.22231230 |
 | RICE-Former (host model) | v1.0.6, commit `1569493a6d4475ba3170736eac3cf18c434214c0`, DOI 10.5281/zenodo.22231231 |
 | Checkpoints `checkpoints/s<seed>/ceqt.pt` (seeds 20260828 / 20260829 / 20260830) | SHA-256 `18175b249372da8e50338ddcbcc5482d1a6171ecc219c2fc8114ee3f90f35ba8` / `801ef1cf50e8ba278d9baec2ea523f688a42f95c7c29279acd28d1518f67c8f9` / `fd696e298552cb685ea362271897a370262bcd25d55d8d89ef960a717119d02d` |
@@ -50,7 +50,7 @@ The release contains source code, the three checkpoints, and the intermediate da
 | ESP-DL and FP32-B firmware | ESP-IDF 5.5.3, ESP-DL 3.3.13 |
 | Energy measurement | Nordic Power Profiler Kit II, `ppk2-api` |
 
-Boards: mostfun WiFiduino 32 S3 and Espressif ESP32-S3-DevKitC-1 (N16R8); ESP32-S3R8, QFN56, chip revision v0.2; CPU 240 MHz; 16 MB quad flash QIO 80 MHz; 8 MB octal PSRAM 80 MHz; partition table `default_16MB.csv`. Serial audit at 460,800 baud. Chip and flash identification: `esptool.py flash_id` and `espefuse.py --chip esp32s3 -p <port> summary` (read only).
+Boards: mostfun WiFiduino 32 S3 with an Espressif ESP32-S3-WROOM-1-N16R8 module, and Lvshen ESP32-S3-N16R8 development board (ESP32-S3-DevKitC-1 layout, ESP32-S3-N16R8 module), called the Lvshen board below (the tags `devkitc*` refer to it); ESP32-S3R8, QFN56, chip revision v0.2; CPU 240 MHz; 16 MB quad flash QIO 80 MHz; 8 MB octal PSRAM 80 MHz; partition table `default_16MB.csv`. Serial audit at 460,800 baud. Chip and flash identification: `esptool.py flash_id` and `espefuse.py --chip esp32s3 -p <port> summary` (read only).
 
 Design-space training used the Apple GPU backend (MPS), which is not bit-reproducible: retraining one configuration with the same seed three times gave 1 h / 4 h MAE standard deviations of 0.010 / 0.018 mg/dL. All node results refer to the three checkpoint files identified above.
 
@@ -82,12 +82,12 @@ The seed 20260829 and 20260830 images (`s3_s20260829`, `s3_s20260830`) read `fir
 | 4, AZT1D deployed model | `python code/host2/run_audit.py --port <port> --tag azt1d_full --split test --idx all` | `code/results/audit/azt1d_full/audit.json` |
 | 4, second and third models | flash `s3_s20260829` (`s3_s20260830`); `python code/host2/run_audit.py --port <port> --tag s20260829_full --split test --idx all --cache $PF_WORKSPACE/runs/20260830_s20260829/cache/azt1d_s20260829_str15.pkl --ckpt $PF_WORKSPACE/runs/20260830_s20260829/ckpt/ceqt.pt` (seed 20260830 likewise) | `code/results/audit/s20260829_full/`, `s20260830_full/` |
 | 4, OhioT1DM | `python code/host2/run_audit.py --port <port> --tag ohio_full --split test --idx all --cache code/results/external_cache/ohio_str15.pkl` | `code/results/audit/ohio_full/audit.json` |
-| 4, DiaTrend (DevKitC-1, all 115,934 windows) | `python code/host2/run_audit.py --port <port> --tag devkitc_diatrend17_full --split test --idx all --cache code/results/external_cache/diatrend17_str15.pkl` | `code/results/audit/devkitc_diatrend17_full/audit.json` |
+| 4, DiaTrend (Lvshen board, all 115,934 windows) | `python code/host2/run_audit.py --port <port> --tag devkitc_diatrend17_full --split test --idx all --cache code/results/external_cache/diatrend17_str15.pkl` | `code/results/audit/devkitc_diatrend17_full/audit.json` |
 | 4, DiaTrend on the WiFiduino (74,967 windows) and two-board comparison | `run_audit.py --tag diatrend17_sample1000 --idx code/results/r1_1/diatrend17_sample1000.npy` and, on `s3_n16r8`, `--tag fw16b3_diatrend17_second_half --idx code/results/r1_1/diatrend17_second_half.npy` (both with the DiaTrend `--cache` and `--split test`); `python code/host2/r1_1_two_board_compare.py` | `code/results/r1_1/two_board_compare.json` |
 | 4, smallest host margin | `python code/host2/margin_flip_analysis.py` (five full sets); `python code/host2/margin_flip_analysis.py l4_n16r8_sample512` (stratified sample) | `code/results/margin_flip/summary.json`, `summary_l4_n16r8_sample512.json` |
 | 5 | `python code/r2_4_r2_5_event_tables.py`; `python code/host2/board_event_tables.py` | `code/results/r2_4_r2_5/board/board_vs_host.json`, `<cohort>__<set>_table16.csv` |
-| 6 | `python code/r2_8_mem_summary.py` (boot logs and `audit.json` of the six full-set replays: the five sets of Table 4 and the AZT1D holdout on the DevKitC-1, `devkitc_azt1d_full`; section sizes with `xtensa-esp32s3-elf-size -A`); latency from `code/results/audit/azt1d_full/audit.json`; energy row from Table 9 | `code/results/r2_8_mem/r2_8_mem.json` |
-| 7 | `python code/host2/run_lmodes.py --port <port> --reps 5` (WiFiduino); `--reps 5 --modes 1 --tag devkitc` (DevKitC-1); `python code/figures/plot_fig4_resources.py` prints the table | `code/results/latency/lmodes.json`, `latency/devkitc/lmodes.json` |
+| 6 | `python code/r2_8_mem_summary.py` (boot logs and `audit.json` of the six full-set replays: the five sets of Table 4 and the AZT1D holdout on the Lvshen board, `devkitc_azt1d_full`; section sizes with `xtensa-esp32s3-elf-size -A`); latency from `code/results/audit/azt1d_full/audit.json`; energy row from Table 9 | `code/results/r2_8_mem/r2_8_mem.json` |
+| 7 | `python code/host2/run_lmodes.py --port <port> --reps 5` (WiFiduino); `--reps 5 --modes 1 --tag devkitc` (Lvshen board); `python code/figures/plot_fig4_resources.py` prints the table | `code/results/latency/lmodes.json`, `latency/devkitc/lmodes.json` |
 | 8 | Unloaded row: `azt1d_full`. HTTP: `python code/host2/run_wireless.py --port <port> --tag t2_c8 --clients 8 --minutes 10`; `--tag t3_c4 --clients 4 --push azt1d`. HTTPS on 512 windows: `--tag https_keep_c2 --clients 2 --keepalive --scheme https --push azt1d --windows 512`; `--tag https_c1_5s --clients 1 --interval-ms 5000 --scheme https --push azt1d --windows 512`; `--tag https_load_c2 --clients 2 --scheme https --push azt1d --windows 512` | `code/results/wireless/<tag>/summary.json` |
 | 9 | Section 4.1 below | `code/results/energy/energy_tables.json` |
 | 10 | `python code/r2_4_r2_5_event_tables.py` | `code/results/r2_4_r2_5/summary.json`, `<cohort>_table16.csv`, `<cohort>_per_subject.csv` |
@@ -109,7 +109,7 @@ The seed 20260829 and 20260830 images (`s3_s20260829`, `s3_s20260830`) read `fir
 | Item | Command | Output |
 | --- | --- | --- |
 | S1, S2, S3 | `python code/r2_4_r2_5_event_tables.py` | `code/results/r2_4_r2_5/azt1d_s20260828_table16.csv`, `_per_subject.csv`, `_loso.csv` |
-| S4a, S4b | `python code/r2_2_matched_fpr.py` | `code/results/r2_2/r2_2_matched_fpr.json` |
+| S4a, S4b | `python code/r2_2_matched_fpr.py`; then `python code/r2_2_matched_fpr_ci.py` (reads `code/results/r2_2/scores.npz` written by the first script) for the interval of the miss-rate difference in S4a | `code/results/r2_2/r2_2_matched_fpr.json`, `code/results/r2_2/matched_fpr_fnr_ci.json` |
 | S5a, S5b | `python code/host2/margin_flip_analysis.py` (five full sets of Table 4) | `code/results/margin_flip/summary.json` |
 | S5c, Fig. S1 | `python code/r2_13_margin_five_sets.py` | `code/results/margin/r2_13_margin_five_sets.json`; `figures/figs-margin-cdf.{svg,png}` |
 | S6, S6b | Mechanisms from `firmware/`; deployment-build check: flash `s3_deploy`, `python code/host2/deploy_check.py --port <port>`; eFuse state: `espefuse.py --chip esp32s3 -p <port> summary`; fault builds as for S17b | `code/results/security/deploy_check/summary.json` |
@@ -117,13 +117,14 @@ The seed 20260829 and 20260830 images (`s3_s20260829`, `s3_s20260830`) read `fir
 | S7b | `run_wireless.py --tag t3_c4 --clients 4 --push azt1d`; `python code/host2/wireless_rssi_bins.py --tag t3_c4` | `code/results/wireless/t3_c4/summary.json`, `rssi_bins.json` |
 | S7c | `python code/host2/run_https.py --port <port> --n 100` (H1–H4; session memory from the H4 status readings); internal-RAM TLS: flash `s3_tls_int`, `python code/host2/tls_int_diag.py --port <port> --n 5` | `code/results/https/wifiduino/summary.json`, `samples.csv`; `code/results/https/tls_int/diag.json` |
 | S7d | flash `s3_linkdrop`; `python code/host2/run_linkdrop.py --port <port> --tag linkdrop --events 3 --hold-s 60`; `python code/host2/linkdrop_requests.py` | `code/results/wireless/linkdrop/summary.json`, `requests.csv`, `requests_summary.json` |
+| S7e | after the S7a–S7d runs: `python code/host2/wireless_summary_table.py` (reads `summary.json`, `status.jsonl`, `windows.npz` of each test and `code/results/audit/azt1d_full/audit.json`) | `code/results/wireless/s7e.json`. Each `windows.npz` holds, per window of the deployed-model AZT1D holdout (19,152 windows in `t3_c4`, 512 in each HTTPS test, 252 in `linkdrop`), the 16 logits and event bits returned by the node and its telemetry; it contains no CGM, mark, or other input values |
 | S8 | `python code/r2_4_r2_5_event_tables.py` | `code/results/r2_4_r2_5/<cohort>_table16.csv`, `summary.json` |
 | S9a, S9b | Modes of `s3_energy` and Section 4.1 below | `code/results/energy/energy_tables.json` |
 | S10 | Definitions of RICE-Former v1.0.6 and `firmware/src/ceqt_infer.cpp`; no command | — |
 | S11a, S11b | `python code/r2_7_split_stats.py` | `code/results/r2_7/split_stats.csv`, `split_stats.json` |
 | S12a, S12b, S12c | `python code/r2_8_mem_summary.py` | `code/results/r2_8_mem/r2_8_mem.json` |
 | S13a | Build flags in `firmware/platformio.ini` and the host code of RICE-Former v1.0.6; no command | — |
-| S13b | flash `s3_n16r8` and `s3_nofma`, `run_audit.py --tag l4_n16r8_sample512` and `--tag l4_nofma_sample512` (`--split test --idx sample512`); `python code/r2_12_diff_sources.py` | `code/results/r2_12/diff_sources.json`; `code/results/audit/l4_nofma_sample512/audit.json` |
+| S13b | flash `s3_n16r8`, `s3_nofma`, `s3_o2`, and `s3_notiming`, `run_audit.py --tag l4_n16r8_sample512`, `--tag l4_nofma_sample512`, `--tag l4_o2_sample512`, and `--tag l4_notiming_sample512` (`--split test --idx sample512`); `python code/r2_12_diff_sources.py` | `code/results/r2_12/diff_sources.json`; `code/results/audit/l4_{nofma,o2,notiming}_sample512/audit.json` |
 | S14a, S14b | `python code/int8/eval_int8.py` (after the quantization commands of Table 11, including `--quant-type w8a16 --tag qw8a16`) | `code/results/int8/int8_eval.json`, `int8_eval_table.md` |
 | S14c | build `code/int8/firmware_espdl_full` with `CEQT_ESPDL=<dir>/model.espdl idf.py -B <build> build` and flash; `python code/int8/run_int8_board.py --port <port> --bits 8` (`--bits 16`; `--bits 8 --tag qmix`); FP32-B: `code/int8/firmware_fp32_idf`, `--bits 32 --tag fp32`; `python code/int8/board_cells.py` | `code/results/int8/board_<tag>/board.json`, `boot.log`; `board_cells.json` |
 | S15a, S15b | `python code/design_space/eval_grid_paired.py` | `code/results/design_space/external/grid_external_table.md`, `paired_vs_base.json` |
@@ -144,7 +145,7 @@ The seed 20260829 and 20260830 images (`s3_s20260829`, `s3_s20260830`) read `fir
 | --- | --- | --- |
 | Exact and tanh GELU on the host (R2-13) | `python code/gelu_host_sim.py` | `code/results/gelu/gelu_host_sim.json` |
 | Decision margins of the three models on their own holdouts | `python code/r1_3_margin_seeds.py` | `code/results/r1_3/margin_seeds.json` |
-| Same image on the DevKitC-1, AZT1D holdout and stratified sample | `run_audit.py --tag devkitc_azt1d_full --split test --idx all`; `--tag devkitc_sample512 --idx sample512` | `code/results/audit/devkitc_*/audit.json` |
+| Same image on the Lvshen board, AZT1D holdout and stratified sample | `run_audit.py --tag devkitc_azt1d_full --split test --idx all`; `--tag devkitc_sample512 --idx sample512` | `code/results/audit/devkitc_*/audit.json` |
 | Timing overhead and compiler options (L3, L4) | flash `s3_notiming`, `s3_o2`, `s3_nofma`; `run_audit.py --tag l4_<env>_sample512 --split test --idx sample512` | `code/results/audit/l4_*/audit.json` |
 | Working-buffer placement in the original firmware | flash `code/firmware-v1.0.1-probe/`, then `python code/r2_8_sram_probe.py --port <port>` | `code/results/r2_8_probe/r2_8_probe.json` |
 | First pass on the original-submission firmware | `python code/host2/run_oldfw_first.py --port <port>` | `code/results/latency/oldfw/`, `v101fw/first_vs_burn.json` |
@@ -174,7 +175,7 @@ Before any wireless test, `route -n get <board ip>` must report the physical Wi-
 | Host 1 h / 4 h MAE, AZT1D held-out (seed 20260828) | 14.54 / 26.79 mg/dL |
 | Board versus host, AZT1D full held-out, frozen firmware | status 19,152 / 19,152 identical; event cells 0 / 306,432 differ; logit max difference 1.26e-5 |
 | Board versus host, OhioT1DM | event cells 0 / 137,904 differ; logit max difference 2.23e-5 |
-| Board versus host, DiaTrend (DevKitC-1) | event cells 0 / 1,854,944 differ; logit max difference 2.55e-5 |
+| Board versus host, DiaTrend (Lvshen board) | event cells 0 / 1,854,944 differ; logit max difference 2.55e-5 |
 | Node latency, AZT1D held-out | median 393.3 ms, p99 395.0 ms |
 | Minimum free internal SRAM during the replay | 29,140 B |
 | Energy per forward pass on the 3.3 V rail, Wi-Fi off / Wi-Fi associated (median of three runs) | 93.2 / 179.0 mJ (72.3 / 138.7 mA) |

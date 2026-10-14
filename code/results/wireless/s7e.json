@@ -1,0 +1,358 @@
+{
+ "rows": [
+  {
+   "tag": "t2_c1",
+   "test": "HTTP, 1 client, no inference",
+   "requests": {
+    "n": 2923,
+    "failed": 1,
+    "p50": 15.68,
+    "p95": 21.978999999999996,
+    "p99": 46.538099999999986,
+    "max": 297.74,
+    "bytes": [
+     55,
+     55
+    ]
+   },
+   "status_polls": 59,
+   "handler_ms_max": 6.755,
+   "reconnects": 0,
+   "memory": {
+    "int_min": 23560,
+    "int_largest_min": 16884,
+    "psram_free_min": 8370839,
+    "psram_below_unloaded": 0,
+    "stack_infer_min": 14244,
+    "http_stack_min": 3020,
+    "https_stack_min": null
+   }
+  },
+  {
+   "tag": "t2_c4",
+   "test": "HTTP, 4 clients, no inference",
+   "requests": {
+    "n": 11788,
+    "failed": 0,
+    "p50": 18.33,
+    "p95": 33.15,
+    "p99": 60.03949999999988,
+    "max": 328.47,
+    "bytes": [
+     55,
+     55
+    ]
+   },
+   "status_polls": 59,
+   "handler_ms_max": 11.223,
+   "reconnects": 0,
+   "memory": {
+    "int_min": 14092,
+    "int_largest_min": 13300,
+    "psram_free_min": 8366183,
+    "psram_below_unloaded": 4656,
+    "stack_infer_min": 14244,
+    "http_stack_min": 3004,
+    "https_stack_min": null
+   }
+  },
+  {
+   "tag": "t2_c8",
+   "test": "HTTP, 8 clients, no inference",
+   "requests": {
+    "n": 23369,
+    "failed": 0,
+    "p50": 20.97,
+    "p95": 44.25,
+    "p99": 87.73439999999995,
+    "max": 349.34,
+    "bytes": [
+     55,
+     55
+    ]
+   },
+   "status_polls": 59,
+   "handler_ms_max": 14.502,
+   "reconnects": 0,
+   "memory": {
+    "int_min": 5072,
+    "int_largest_min": 10740,
+    "psram_free_min": 8366183,
+    "psram_below_unloaded": 4656,
+    "stack_infer_min": 14244,
+    "http_stack_min": 3020,
+    "https_stack_min": null
+   }
+  },
+  {
+   "tag": "t3_c4",
+   "test": "HTTP, 4 clients, AZT1D holdout",
+   "requests": {
+    "n": 167051,
+    "failed": 23,
+    "p50": 18.3,
+    "p95": 35.61,
+    "p99": 84.8246000000002,
+    "max": 1352.04,
+    "bytes": [
+     55,
+     210
+    ]
+   },
+   "status_polls": 858,
+   "handler_ms_max": 14.756,
+   "reconnects": 0,
+   "windows": {
+    "n": 19152,
+    "median": 414.621,
+    "p99": 421.85486000000003,
+    "max": 435.627,
+    "retransmissions": 6,
+    "windows_retransmitted": 6
+   },
+   "memory": {
+    "int_min": 5760,
+    "int_largest_min": 4596,
+    "psram_free_min": 8361527,
+    "psram_below_unloaded": 9312,
+    "stack_infer_min": 14244,
+    "http_stack_min": 2972,
+    "https_stack_min": null
+   }
+  },
+  {
+   "tag": "https_keep_c2",
+   "test": "HTTPS, 2 persistent clients",
+   "requests": {
+    "n": 2121,
+    "failed": 1,
+    "p50": 11.29,
+    "p95": 17.3905,
+    "p99": 46.92729999999998,
+    "max": 1652.53,
+    "bytes": [
+     55,
+     208
+    ]
+   },
+   "status_polls": 22,
+   "handler_ms_max": 7.587,
+   "reconnects": 0,
+   "windows": {
+    "n": 512,
+    "median": 400.02599999999995,
+    "p99": 405.18142,
+    "max": 466.571,
+    "retransmissions": 0,
+    "windows_retransmitted": 0
+   },
+   "memory": {
+    "int_min": 8504,
+    "int_largest_min": 6132,
+    "psram_free_min": 8303895,
+    "psram_below_unloaded": 66944,
+    "stack_infer_min": 14244,
+    "http_stack_min": 3052,
+    "https_stack_min": 6288
+   }
+  },
+  {
+   "tag": "https_c1_5s",
+   "test": "HTTPS, full handshake every 5 s",
+   "requests": {
+    "n": 51,
+    "failed": 0,
+    "p50": 960.54,
+    "p95": 1115.84,
+    "p99": 1183.575,
+    "max": 1199.68,
+    "bytes": [
+     55,
+     208
+    ]
+   },
+   "status_polls": 25,
+   "handler_ms_max": 7.658,
+   "reconnects": 0,
+   "windows": {
+    "n": 512,
+    "median": 392.117,
+    "p99": 455.26589,
+    "max": 463.481,
+    "retransmissions": 0,
+    "windows_retransmitted": 0
+   },
+   "memory": {
+    "int_min": 13432,
+    "int_largest_min": 7668,
+    "psram_free_min": 8337367,
+    "psram_below_unloaded": 33472,
+    "stack_infer_min": 14244,
+    "http_stack_min": 3004,
+    "https_stack_min": 6228
+   }
+  },
+  {
+   "tag": "https_load_c2",
+   "test": "HTTPS, about 2 handshakes per second",
+   "requests": {
+    "n": 1192,
+    "failed": 602,
+    "p50": 2033.0500000000002,
+    "p95": 2331.46,
+    "p99": 2388.563,
+    "max": 2445.81,
+    "bytes": [
+     55,
+     208
+    ]
+   },
+   "status_polls": 104,
+   "handler_ms_max": 8.782,
+   "reconnects": 0,
+   "windows": {
+    "n": 512,
+    "median": 472.027,
+    "p99": 478.32660000000004,
+    "max": 484.12,
+    "retransmissions": 17,
+    "windows_retransmitted": 16
+   },
+   "memory": {
+    "int_min": 372,
+    "int_largest_min": 1268,
+    "psram_free_min": 8294583,
+    "psram_below_unloaded": 76256,
+    "stack_infer_min": 14244,
+    "http_stack_min": 2972,
+    "https_stack_min": 6132
+   }
+  },
+  {
+   "tag": "linkdrop",
+   "test": "HTTP, 2 clients, three 60 s link outages",
+   "requests": {
+    "n": 3329,
+    "failed": 240,
+    "p50": 16.57,
+    "p95": 25.417999999999996,
+    "p99": 77.36399999999998,
+    "max": 1075.73,
+    "bytes": [
+     55,
+     208
+    ]
+   },
+   "status_polls": 154,
+   "handler_ms_max": 31.275,
+   "reconnects": 3,
+   "windows": {
+    "n": 252,
+    "median": 400.842,
+    "p99": 406.29803,
+    "max": 414.974,
+    "retransmissions": 2,
+    "windows_retransmitted": 2
+   },
+   "memory": {
+    "int_min": 20848,
+    "int_largest_min": 13044,
+    "psram_free_min": 8368511,
+    "psram_below_unloaded": 2328,
+    "stack_infer_min": 14236,
+    "http_stack_min": 2980,
+    "https_stack_min": null
+   }
+  }
+ ],
+ "reference": {
+  "tag": "azt1d_full",
+  "test": "Unloaded replay, AZT1D holdout",
+  "audit": {
+   "tag": "azt1d_full",
+   "time": "2026-10-09 20:19:50",
+   "port": "<port>",
+   "cache": "$PF_WORKSPACE/runs/20260830_s20260828/cache/azt1d_s20260828_str15.pkl",
+   "split": "test",
+   "ckpt": "$PF_WORKSPACE/runs/20260830_s20260828/ckpt/ceqt.pt",
+   "idx": "all",
+   "n": 19152,
+   "wall_s": 8614.84080004692,
+   "serial_retries": 81,
+   "status_host": {
+    "0": 19152
+   },
+   "status_board": {
+    "0": 19152
+   },
+   "status_agree": 19152,
+   "windows_marks_dropped_host": 2,
+   "windows_marks_dropped_board": 2,
+   "windows_cgm_clamped_host": 0,
+   "windows_cgm_clamped_board": 0,
+   "flags_agree": 19152,
+   "evt_cells_compared": 306432,
+   "evt_cells_disagree": 0,
+   "evt_windows_disagree": 0,
+   "disagree_cells": [],
+   "logit_maxabs": 1.2590370467080447e-05,
+   "logit_maxabs_median": 1.7660166069799477e-06,
+   "yhat_maxabs": 0.00015735885443746156,
+   "g_maxabs": 1.1920928966180355e-08,
+   "latency_ms": {
+    "n": 19152,
+    "median": 393.275,
+    "p95": 394.391,
+    "p99": 395.01737,
+    "max": 399.871,
+    "min": 388.928,
+    "first": 392.131
+   },
+   "mem": {
+    "int_free_min": 29408,
+    "int_min_min": 29140,
+    "int_largest_min": 20980,
+    "spiram_free_min": 8370839,
+    "stack_infer_hw_min": 14244,
+    "stack_serial_hw_min": 2592
+   },
+   "cores": [
+    1
+   ],
+   "reset_count_end": 0,
+   "reconnects_end": 0,
+   "hypo70_4h_board": {
+    "tp": 1070,
+    "fn": 2164,
+    "fp": 691,
+    "tn": 15227,
+    "fnr": 0.6691403834260977,
+    "fpr": 0.04340997612765423
+   },
+   "hypo70_4h_host": {
+    "tp": 1070,
+    "fn": 2164,
+    "fp": 691,
+    "tn": 15227,
+    "fnr": 0.6691403834260977,
+    "fpr": 0.04340997612765423
+   },
+   "hyper180_4h_board": {
+    "tp": 2569,
+    "fn": 4479,
+    "fp": 574,
+    "tn": 11530,
+    "fnr": 0.6354994324631101,
+    "fpr": 0.04742233972240582
+   },
+   "hyper180_4h_host": {
+    "tp": 2569,
+    "fn": 4479,
+    "fp": 574,
+    "tn": 11530,
+    "fnr": 0.6354994324631101,
+    "fpr": 0.04742233972240582
+   }
+  }
+ }
+}

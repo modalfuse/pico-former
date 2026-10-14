@@ -82,7 +82,7 @@ def main() -> None:
         ax.spines[s].set_visible(False)
 
     ax = axes[1]
-    kb = 1000.0
+    kb = 1024.0
     used_run = h["after_web"]["int_free"] - run["mem"]["int_min_min"]
     heap_parts = [
         ("Working buffers", run["init_drop_int"], "#1F77B4"),
@@ -103,7 +103,7 @@ def main() -> None:
             left += w / kb
     ax.set_yticks([0, 1], [f"Heap at boot\n({h['before_init']['int_free'] / kb:.1f})", "Linker"])
     ax.set_xlim(0, 340)
-    ax.set_xlabel("Internal SRAM (kB)")
+    ax.set_xlabel("Internal SRAM (KB)")
     ax.set_title("B  Internal SRAM account", loc="left", fontsize=9)
     handles = [plt.Rectangle((0, 0), 1, 1, color=c) for _, _, c in link_parts + heap_parts]
     names = [n for n, _, _ in link_parts + heap_parts]

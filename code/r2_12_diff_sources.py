@@ -5,8 +5,9 @@ and host logits across precisions and backends.
 Deployed AZT1D model, full held-out set: 19,152 windows x 16 outputs. Host reference and board results are
 taken from code/results/audit/azt1d_full/audit.npz (float64 reference, frozen firmware 10cba768...).
 This script reuses the input checks of host2/run_audit.py (pf2.guard) and, on identical inputs, additionally
-computes two host forward passes, CPU float32 and MPS float32. Builds with fused multiply-add disabled,
-on the 512-window sample, are taken from code/results/audit/l4_{n16r8,nofma}_sample512/.
+computes two host forward passes, CPU float32 and MPS float32. On the 512-window sample, the default build and
+the builds with fused multiply-add disabled, with -O2, and without stage timers are taken from
+code/results/audit/l4_{n16r8,nofma,o2,notiming}_sample512/.
 Results are written to code/results/r2_12/diff_sources.json.
 """
 
@@ -72,12 +73,19 @@ def main() -> None:
         pairs.update({"board_vs_mps32": (board, lm), "mps32_vs_cpu64": (lm, l64), "cpu32_vs_mps32": (l32, lm)})
     for k, (u, v) in pairs.items():
         res[k] = stats(u, v, thr)
-    n = np.load(RES / "audit/l4_nofma_sample512/audit.npz")
     f = np.load(RES / "audit/l4_n16r8_sample512/audit.npz")
-    assert (n["idx"] == f["idx"]).all()
+    builds = {k: np.load(RES / f"audit/l4_{k}_sample512/audit.npz") for k in ("nofma", "o2", "notiming")}
+    assert all((b["idx"] == f["idx"]).all() for b in builds.values())
+    n = builds["nofma"]
     res["sample512"] = {"nofma_vs_fma": stats(n["logits"], f["logits"], thr),
                         "fma_vs_cpu64": stats(f["logits"], f["ref_logits"], thr),
-                        "nofma_vs_cpu64": stats(n["logits"], n["ref_logits"], thr)}
+                        "nofma_vs_cpu64": stats(n["logits"], n["ref_logits"], thr),
+                        "o2_vs_default": stats(builds["o2"]["logits"], f["logits"], thr),
+                        "notiming_vs_default": stats(builds["notiming"]["logits"], f["logits"], thr)}
+    for k, b in builds.items():
+        res["sample512"][f"{k}_curve_maxabs_vs_default"] = float(np.abs(b["yhat"].astype(np.float64) - f["yhat"]).max())
+        res["sample512"][f"{k}_median_us"] = float(np.median(b["us_total"]))
+    res["sample512"]["default_median_us"] = float(np.median(f["us_total"]))
     out = RES / "r2_12"
     out.mkdir(exist_ok=True)
     (out / "diff_sources.json").write_text(json.dumps(res, indent=1), encoding="utf-8")
@@ -86,6 +94,9 @@ def main() -> None:
         print(f"{k:16s} max={v['max']:.2e} median={v['median']:.1e} p99={v['p99']:.1e} "
               f"equal={v['bitwise_equal_cells_fp32']}/{v['cells']} flips={v['decision_cells_differ']}")
     for k, v in res["sample512"].items():
+        if not isinstance(v, dict):
+            print(f"512 {k:30s} {v}")
+            continue
         print(f"512 {k:14s} max={v['max']:.2e} median={v['median']:.1e} "
               f"equal={v['bitwise_equal_cells_fp32']}/{v['cells']} flips={v['decision_cells_differ']}")
 

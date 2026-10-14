@@ -46,6 +46,11 @@ code/firmware-v1.0.1-probe/include/wifi_secrets.gen.h
 code/firmware-v1.0.1-probe/wifi.yaml
 *.espdl
 *.npz
+!code/results/wireless/t3_c4/windows.npz
+!code/results/wireless/https_c1_5s/windows.npz
+!code/results/wireless/https_keep_c2/windows.npz
+!code/results/wireless/https_load_c2/windows.npz
+!code/results/wireless/linkdrop/windows.npz
 *.npy
 !code/results/r1_1/*.npy
 *.log
