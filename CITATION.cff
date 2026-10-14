@@ -50,6 +50,7 @@ authors:
   - family-names: Huang
     given-names: Dongming
     affiliation: Capital Medical University Daxing Teaching Hospital
+    orcid: "https://orcid.org/0009-0008-7514-6908"
 keywords:
   - continuous glucose monitoring
   - on-device inference
