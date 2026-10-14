@@ -1,0 +1,96 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1668
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x317c
+entry 0x403c894c
+I (24) boot: ESP-IDF v5.5.3 2nd stage bootloader
+I (25) boot: compile time Oct  9 2026 21:35:37
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.3
+I (31) qio_mode: Enabling default flash chip QIO
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (40) boot.esp32s3: SPI Mode       : QIO
+I (43) boot.esp32s3: SPI Flash Size : 16MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (74) boot:  2 factory          factory app      00 00 00010000 003e8000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=6dee4h (450276) map
+I (158) esp_image: segment 1: paddr=0007df0c vaddr=3fc9a700 size=0210ch (  8460) load
+I (159) esp_image: segment 2: paddr=00080020 vaddr=42000020 size=e248ch (926860) map
+I (299) esp_image: segment 3: paddr=001624b4 vaddr=3fc9c80c size=01468h (  5224) load
+I (300) esp_image: segment 4: paddr=00163924 vaddr=40378000 size=1269ch ( 75420) load
+I (317) esp_image: segment 5: paddr=00175fc8 vaddr=50000000 size=00020h (    32) load
+I (325) boot: Loaded app from partition at offset 0x10000
+I (325) boot: Disabling RNG early entropy source...
+I (335) octal_psram: vendor id    : 0x0d (AP)
+I (335) octal_psram: dev id       : 0x02 (generation 3)
+I (335) octal_psram: density      : 0x03 (64 Mbit)
+I (337) octal_psram: good-die     : 0x01 (Pass)
+I (341) octal_psram: Latency      : 0x01 (Fixed)
+I (346) octal_psram: VCC          : 0x01 (3V)
+I (350) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (355) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (360) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (364) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (369) octal_psram: DriveStrength: 0x00 (1/1)
+I (374) MSPI Timing: Enter psram timing tuning
+I (378) esp_psram: Found 8MB PSRAM device
+I (381) esp_psram: Speed: 80MHz
+I (384) cpu_start: Multicore app
+I (673) esp_psram: SPI SRAM memory test OK
+I (681) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (681) cpu_start: Pro cpu start user code
+I (681) cpu_start: cpu freq: 240000000 Hz
+I (683) app_init: Application information:
+I (687) app_init: Project name:     ceqt_espdl_full
+I (692) app_init: App version:      exp/ceqt-P9-diatrend-dirty
+I (697) app_init: Compile time:     Oct  9 2026 21:36:07
+I (702) app_init: ELF file SHA256:  67b00db4d...
+I (706) app_init: ESP-IDF:          v5.5.3
+I (710) efuse_init: Min chip rev:     v0.0
+I (714) efuse_init: Max chip rev:     v0.99 
+I (718) efuse_init: Chip rev:         v0.2
+I (722) heap_init: Initializing. RAM available for dynamic allocation:
+I (728) heap_init: At 3FCA44D0 len 00045240 (276 KiB): RAM
+I (733) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (739) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (746) spi_flash: detected chip: generic
+I (749) spi_flash: flash io: qio
+I (752) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (758) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (765) main_task: Started on CPU0
+I (795) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (795) main_task: Calling app_main()
+ESP-DL CEQT full graph S3
+input dtype=5 bytes=9216
+
+I (1165) dl::Model: model:main_graph, version:0
+I (1165) dl::Model: MODEL LOCATION IN FLASH RODATA
+I (1165) dl::Model: +----------------+--------------+----------+--------------+
+I (1175) dl::Model: |                     memory summary                      |
+I (1175) dl::Model: +----------------+--------------+----------+--------------+
+I (1185) dl::Model: |                | internal RAM | PSRAM    | FLASH        |
+I (1195) dl::Model: +----------------+--------------+----------+--------------+
+I (1195) dl::Model: | fbs_model      |              |          | 351.58KB     |
+I (1205) dl::Model: |  -- parameter  |              |          |  -- 130.00KB |
+I (1215) dl::Model: +----------------+--------------+----------+--------------+
+I (1215) dl::Model: | parameter_copy |              | 130.00KB |              |
+I (1225) dl::Model: +----------------+--------------+----------+--------------+
+I (1235) dl::Model: | variable       |              | 207.00KB |              |
+I (1245) dl::Model: +----------------+--------------+----------+--------------+
+I (1245) dl::Model: | others         | 112.04KB     | 91.02KB  |              |
+I (1255) dl::Model: +----------------+--------------+----------+--------------+
+I (1265) dl::Model: | total          | 112.04KB     | 428.02KB | 351.58KB     |
+I (1265) dl::Model: +----------------+--------------+----------+--------------+
+
+heap_internal=168739 heap_internal_min=32039 heap_psram=7901440
+QTK ready

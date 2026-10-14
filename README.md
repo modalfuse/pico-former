@@ -3,12 +3,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22218446.svg)](https://doi.org/10.5281/zenodo.22218446)
 
 Repository: [https://github.com/modalfuse/pico-former](https://github.com/modalfuse/pico-former)  
-Release: [v1.2.0](https://github.com/modalfuse/pico-former/releases/tag/v1.2.0), Zenodo version DOI [10.5281/zenodo.23356115](https://doi.org/10.5281/zenodo.23356115)  
+Release: [v1.2.1](https://github.com/modalfuse/pico-former/releases/tag/v1.2.1)  
 Zenodo: [https://doi.org/10.5281/zenodo.22218446](https://doi.org/10.5281/zenodo.22218446)
 
 Pico-Former is an on-device curve–event glucose predictor for ESP32-S3. One Core-1 forward pass emits a 48-point 1–4 h trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. The network definition and \(\tau\) protocol follow the public RICE-Former archive.
 
-This package contains the MCU kernels, the dual-core firmware with input checks, fault handling, and HTTP/HTTPS services, the serial audit host, the scripts that produce every table and figure of the revised manuscript, the aggregate results they read, the PPK2 energy measurement scripts and per-step energy terms, and the three trained checkpoints. Raw CGM records, participant windows, firmware images, and dataset archives are not distributed.
+This package contains the MCU kernels, the dual-core firmware with input checks, fault handling, and HTTP/HTTPS services, the serial audit host, the scripts that produce every table and figure of the revised manuscript and its Supplementary Material, the aggregate results they read, the PPK2 energy measurement scripts and per-step energy terms, and the three trained checkpoints. Raw CGM records, participant windows, firmware images, and dataset archives are not distributed.
 
 ## Companion archive
 

@@ -1,0 +1,26 @@
+{
+  "requests": 3329,
+  "ok": 3089,
+  "failed": 240,
+  "events": [
+    {
+      "event": 0,
+      "requests_during_outage": 80,
+      "failed_during_outage": 80,
+      "first_success_completed_after_outage_s": 0.851
+    },
+    {
+      "event": 1,
+      "requests_during_outage": 80,
+      "failed_during_outage": 80,
+      "first_success_completed_after_outage_s": 0.805
+    },
+    {
+      "event": 2,
+      "requests_during_outage": 80,
+      "failed_during_outage": 80,
+      "first_success_completed_after_outage_s": 0.778
+    }
+  ],
+  "failed_outside_outages": 0
+}

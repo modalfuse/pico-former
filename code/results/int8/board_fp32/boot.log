@@ -1,0 +1,76 @@
+
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1668
+load:0x403c8700,len:0xec0
+load:0x403cb700,len:0x317c
+entry 0x403c894c
+I (24) boot: ESP-IDF v5.5.3 2nd stage bootloader
+I (25) boot: compile time Oct  9 2026 22:00:16
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.3
+I (31) qio_mode: Enabling default flash chip QIO
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (40) boot.esp32s3: SPI Mode       : QIO
+I (43) boot.esp32s3: SPI Flash Size : 16MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (74) boot:  2 factory          factory app      00 00 00010000 003e8000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=40ab8h (264888) map
+I (130) esp_image: segment 1: paddr=00050ae0 vaddr=3fc97400 size=03284h ( 12932) load
+I (133) esp_image: segment 2: paddr=00053d6c vaddr=40378000 size=0c2ach ( 49836) load
+I (143) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=164e4h ( 91364) map
+I (157) esp_image: segment 4: paddr=0007650c vaddr=403842ac size=03140h ( 12608) load
+I (160) esp_image: segment 5: paddr=00079654 vaddr=50000000 size=00020h (    32) load
+I (167) boot: Loaded app from partition at offset 0x10000
+I (168) boot: Disabling RNG early entropy source...
+I (183) octal_psram: vendor id    : 0x0d (AP)
+I (183) octal_psram: dev id       : 0x02 (generation 3)
+I (183) octal_psram: density      : 0x03 (64 Mbit)
+I (185) octal_psram: good-die     : 0x01 (Pass)
+I (189) octal_psram: Latency      : 0x01 (Fixed)
+I (194) octal_psram: VCC          : 0x01 (3V)
+I (198) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (203) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (208) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (212) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (217) octal_psram: DriveStrength: 0x00 (1/1)
+I (221) MSPI Timing: Enter psram timing tuning
+I (226) esp_psram: Found 8MB PSRAM device
+I (229) esp_psram: Speed: 80MHz
+I (232) cpu_start: Multicore app
+I (520) esp_psram: SPI SRAM memory test OK
+I (529) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (529) cpu_start: Pro cpu start user code
+I (529) cpu_start: cpu freq: 240000000 Hz
+I (531) app_init: Application information:
+I (535) app_init: Project name:     ceqt_fp32_idf
+I (539) app_init: App version:      exp/ceqt-P9-diatrend-dirty
+I (545) app_init: Compile time:     Oct  9 2026 22:00:46
+I (550) app_init: ELF file SHA256:  b7d4f2261...
+I (554) app_init: ESP-IDF:          v5.5.3
+I (558) efuse_init: Min chip rev:     v0.0
+I (562) efuse_init: Max chip rev:     v0.99 
+I (566) efuse_init: Chip rev:         v0.2
+I (570) heap_init: Initializing. RAM available for dynamic allocation:
+I (576) heap_init: At 3FC9F918 len 00049DF8 (295 KiB): RAM
+I (581) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (586) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator
+I (593) spi_flash: detected chip: generic
+I (596) spi_flash: flash io: qio
+I (599) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (606) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (613) main_task: Started on CPU0
+I (643) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (643) main_task: Calling app_main()
+FP32-B CEQT graph S3 (ESP-IDF)
+act_alloc=196636 heap_internal=111391 heap_internal_min=111391 heap_psram=8339736
+QTK ready

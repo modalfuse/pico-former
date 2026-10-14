@@ -17,7 +17,7 @@ R = HERE / "results"
 EVTS = ["hypo70", "hypo54", "hyper180", "hyper250"]
 NAMES = [f"{e}_{h}h" for e in EVTS for h in (1, 2, 3, 4)]
 DEFAULT = ["azt1d_s20260828:azt1d_full", "azt1d_s20260829:s20260829_full", "azt1d_s20260830:s20260830_full",
-           "ohio:ohio_full"]
+           "ohio:ohio_full", "diatrend17:devkitc_diatrend17_full"]
 
 
 def counts(pred, y):

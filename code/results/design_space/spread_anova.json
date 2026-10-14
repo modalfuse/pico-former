@@ -1,0 +1,53 @@
+{
+  "n_configs": 15,
+  "metrics": {
+    "traj_mae_1h": {
+      "label": "MAE 0-1 h (mg/dL)",
+      "seeds_per_config": [
+        3
+      ],
+      "config_mean_min": 13.470679352794264,
+      "config_mean_max": 14.341974853788768,
+      "width": 0.8712955009945045,
+      "mean_seed_sd": 0.5501480061819023,
+      "anova_f": 0.5508829968491866,
+      "anova_p": 0.8808765197677744
+    },
+    "traj_mae_4h": {
+      "label": "MAE 0-4 h (mg/dL)",
+      "seeds_per_config": [
+        3
+      ],
+      "config_mean_min": 25.697408664050034,
+      "config_mean_max": 27.043104598593118,
+      "width": 1.345695934543084,
+      "mean_seed_sd": 0.5228063382214607,
+      "anova_f": 1.2055232917153862,
+      "anova_p": 0.3214541211016928
+    },
+    "hypo70_4h_fnr": {
+      "label": "4 h hypo70 FNR",
+      "seeds_per_config": [
+        3
+      ],
+      "config_mean_min": 0.5938981653267367,
+      "config_mean_max": 0.6600700886415173,
+      "width": 0.06617192331478061,
+      "mean_seed_sd": 0.03579268539686096,
+      "anova_f": 0.5525723200553397,
+      "anova_p": 0.879666642485582
+    },
+    "hyper180_4h_fnr": {
+      "label": "4 h hyper180 FNR",
+      "seeds_per_config": [
+        3
+      ],
+      "config_mean_min": 0.6229190314037079,
+      "config_mean_max": 0.6457150964812713,
+      "width": 0.022796065077563488,
+      "mean_seed_sd": 0.010491445843259582,
+      "anova_f": 1.0344429254955554,
+      "anova_p": 0.44863646639620397
+    }
+  }
+}

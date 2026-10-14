@@ -1,0 +1,19 @@
+{
+ "l4_n16r8_sample512": {
+  "windows": 512,
+  "cells": 8192,
+  "mismatch_cells": 0,
+  "logit_maxabs": 9.968229242041104e-06,
+  "min_margin": 0.0026848551085156824,
+  "frac_toward_threshold": 0.5032958984375,
+  "n_margin_lt_maxdiff": 0,
+  "margin_lt_maxdiff": [],
+  "diff_gt_margin": [],
+  "expected_flips": 0.0,
+  "p_zero_flips": 1.0
+ },
+ "_total": {
+  "expected_flips": 0.0,
+  "p_zero_flips": 1.0
+ }
+}

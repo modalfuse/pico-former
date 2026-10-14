@@ -47,4 +47,7 @@ code/firmware-v1.0.1-probe/wifi.yaml
 *.espdl
 *.npz
 *.npy
+!code/results/r1_1/*.npy
 *.log
+!code/results/int8/board_*/boot.log
+/figures/

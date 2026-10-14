@@ -6,7 +6,8 @@ For each audit result audit.npz:
 - randomly assign the measured signed errors of each output to its cells to estimate the expected number of decision changes and the probability of zero changes (Poisson approximation).
 
 Usage: python host2/margin_flip_analysis.py [audit_dir ...]
-Results are written to results/margin_flip/summary.json.
+Results are written to results/margin_flip/summary.json for the five full sets (no arguments), otherwise to
+results/margin_flip/summary_<audit_dir>.json.
 """
 import json
 import sys
@@ -81,7 +82,8 @@ def main():
     print(f"total expected decision changes {total:.3f}, P(0 changes) {np.exp(-total):.3f}")
     dst = ROOT / "results/margin_flip"
     dst.mkdir(parents=True, exist_ok=True)
-    (dst / "summary.json").write_text(json.dumps(out, indent=1, ensure_ascii=False))
+    name = "summary.json" if tags == DEFAULT else f"summary_{'_'.join(tags)}.json"
+    (dst / name).write_text(json.dumps(out, indent=1, ensure_ascii=False))
 
 
 if __name__ == "__main__":
