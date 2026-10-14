@@ -21,7 +21,7 @@ The release contains source code, the three checkpoints, and the intermediate da
 
 | Item | Value |
 | --- | --- |
-| Pico-Former release | v1.2.0 (concept DOI 10.5281/zenodo.22218446); previous release v1.1.0, commit `18bcbbb8feb91d683023a173043d226a7589505e`, Zenodo version DOI 10.5281/zenodo.23292043 |
+| Pico-Former release | v1.2.0, commit `77ec07a922be741fcdfc5478ef4ef5d65d1235f1`, Zenodo version DOI 10.5281/zenodo.23356115 (concept DOI 10.5281/zenodo.22218446); previous release v1.1.0, commit `18bcbbb8feb91d683023a173043d226a7589505e`, Zenodo version DOI 10.5281/zenodo.23292043 |
 | Original submission | Pico-Former v1.0.1, commit `3a6d48ff7f834da5bc0f66f9b03aec2f4824cd5a`, DOI 10.5281/zenodo.22231230 |
 | RICE-Former (host model) | v1.0.6, commit `1569493a6d4475ba3170736eac3cf18c434214c0`, DOI 10.5281/zenodo.22231231 |
 | Checkpoints `checkpoints/s<seed>/ceqt.pt` (seeds 20260828 / 20260829 / 20260830) | SHA-256 `18175b249372da8e50338ddcbcc5482d1a6171ecc219c2fc8114ee3f90f35ba8` / `801ef1cf50e8ba278d9baec2ea523f688a42f95c7c29279acd28d1518f67c8f9` / `fd696e298552cb685ea362271897a370262bcd25d55d8d89ef960a717119d02d` |
