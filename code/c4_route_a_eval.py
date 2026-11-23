@@ -1,13 +1,13 @@
-"""Route A: published checkpoints and frozen thresholds on causal windows.
+"""Fixed released checkpoints and thresholds on origin-causal windows.
 
 Predictive metrics use the CPU. Logits are stored as float64. The validation
-curve cuts of Table S4b are chosen on the submitted validation cache and then
+curve cuts of Table S4b are chosen on the symmetric-resampling validation cache and then
 read on the evaluated windows. The matched-FPR miss rate is a retrospective
 read of the evaluated ROC.
 
   PF_RICE_SRC  directory that contains the ceqt package
   PF_RUNS      released training-run directory
-  PF_EXT_CACHE submitted external-cache directory
+  PF_EXT_CACHE symmetric-resampling external-cache directory
   PF_C3        C3 causal-window run directory
   PF_OUT_C4    C4 metric-output directory (created)
   PF_OUT_C5    C5 comparison-output directory (created)

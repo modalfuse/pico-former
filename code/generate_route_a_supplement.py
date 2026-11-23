@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Markdown tables for the Route-A supplementary results."""
+"""Generate Markdown tables for the origin-causal fixed-model results."""
 
 from __future__ import annotations
 
@@ -31,8 +31,8 @@ def primary_metrics_table(result: dict) -> str:
     primary = result["sets"][0]
     lines = [
         (
-            f"**Table S1. Origin-causal Route-A event outputs at the "
-            f"R1-submitted frozen thresholds on {primary['windows']:,} windows "
+            f"**Table S1. Origin-causal event outputs at the "
+            f"validation-frozen thresholds on {primary['windows']:,} windows "
             f"from {primary['participants']} participants.**"
         ),
         "",
@@ -55,7 +55,7 @@ def comparison_table(title: str, dataset: dict, table_name: str) -> str:
     lines = [
         (
             f"**{table_name}. {title}: event head versus curve readout on "
-            f"{dataset['windows']:,} origin-causal Route-A windows "
+            f"{dataset['windows']:,} origin-causal windows "
             f"({dataset['participants']} participants).** AUROC difference is "
             "event head minus curve readout; FNR difference is curve readout "
             "minus event head. Curve FNR is read retrospectively from the "
@@ -89,7 +89,7 @@ def validation_cut_table(result: dict) -> str:
             "**Table S4b. Clinical-level reference and validation-selected curve "
             "cuts evaluated on origin-causal test windows.** OP0 applies the "
             "clinical glucose level directly. OP1 and OP2 were selected on the "
-            "original R1 validation cache; no threshold was re-selected on "
+            "symmetric-resampling validation cache; no threshold was re-selected on "
             "causal validation windows."
         ),
         "",

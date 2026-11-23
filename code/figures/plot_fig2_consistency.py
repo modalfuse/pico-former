@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""R2-6 Fig. 2 (revised): FPR-FNR operating points of host and board event heads at frozen thresholds,
-16 outputs x 5 full sets.
+"""Plot host and board operating points on the hardware-audit windows.
 
 Host is the float64 reference (same input checks as the node; ref_logits and thr in audit.npz); board is the
 decision bits returned by the node (evt); labels come from results/r2_4_r2_5/<cohort>_scores.npz.
-The figure shows host-board agreement only and excludes the trajectory-threshold readout.
+The figure shows host-board agreement only and excludes the separate
+origin-causal fixed-model host evaluation.
 Outputs: fig2-host-board-event-heads.svg and .pdf in code/results/figures/
 (see IMG); values are written to results/r2_6/fig2_points.json
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -31,6 +32,7 @@ COLOR = {"hypo70": "#4C72B0", "hypo54": "#55A868", "hyper180": "#DD8452", "hyper
 SIZE = {1: 16, 2: 30, 3: 46, 4: 64}
 
 plt.rcParams["svg.fonttype"] = "path"
+plt.rcParams["pdf.fonttype"] = 42
 plt.rcParams["font.size"] = 8
 
 
@@ -41,8 +43,25 @@ def rates(pred, y):
 
 
 def main():
-    fig, grid = plt.subplots(2, 3, figsize=(7.16, 4.6), sharex=True, sharey=True, constrained_layout=True)
-    axes = grid.ravel()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--compact", action="store_true")
+    ap.add_argument("--out-dir", type=Path, default=IMG)
+    args = ap.parse_args()
+    if args.compact:
+        plt.rcParams["font.size"] = 7
+        fig, axes = plt.subplots(
+            1,
+            6,
+            figsize=(7.16, 2.2),
+            sharey=True,
+            constrained_layout=True,
+            gridspec_kw={"width_ratios": [1, 1, 1, 1, 1, 1.05]},
+        )
+        grid = None
+    else:
+        fig, grid = plt.subplots(2, 3, figsize=(7.16, 4.6), sharex=True, sharey=True, constrained_layout=True)
+        axes = grid.ravel()
+    fig.suptitle("Hardware-audit-window consistency", fontsize=7.5)
     pts = {}
     for ax, (title, cohort, run, board_name) in zip(axes, COHORTS):
         s = np.load(RES / "r2_4_r2_5" / f"{cohort}_scores.npz")
@@ -61,28 +80,57 @@ def main():
             ax.scatter(fpr_b[k], fnr_b[k], s=SIZE[h] + 22, facecolors="none", edgecolors="k", lw=0.7, marker="D",
                        zorder=3)
         ax.axvline(0.06, color="0.5", ls="--", lw=0.7)
-        ax.set_title(f"{title}\n{board_name} board\n{len(y):,} windows, {int((host != board).sum())} cells differ",
-                     fontsize=7)
+        if args.compact:
+            name, seed = (title.split(" (seed ") + ["20260828)"])[:2]
+            ax.set_title(f"{name}\nseed {seed.rstrip(')')}\n{board_name}\n{len(y):,} windows", fontsize=6.5)
+            ax.text(
+                0.04,
+                0.96,
+                f"{int((host != board).sum())} cells differ",
+                transform=ax.transAxes,
+                fontsize=6.5,
+                va="top",
+            )
+        else:
+            ax.set_title(
+                f"{title}\n{board_name} board\n{len(y):,} windows, {int((host != board).sum())} cells differ",
+                fontsize=7,
+            )
         ax.set_xlim(0, 0.085)
         ax.set_ylim(0, 1)
         ax.grid(alpha=0.25, lw=0.5)
-    for ax in (grid[1, 0], grid[1, 1], grid[0, 2]):
-        ax.set_xlabel("False-positive rate")
-        ax.xaxis.set_tick_params(labelbottom=True)
-    for ax in grid[:, 0]:
-        ax.set_ylabel("False-negative rate")
+    if args.compact:
+        for ax in axes[:5]:
+            ax.set_xlabel("False-positive rate")
+            ax.set_xticks([0, 0.04, 0.08])
+        axes[0].set_ylabel("False-negative rate")
+    else:
+        for ax in (grid[1, 0], grid[1, 1], grid[0, 2]):
+            ax.set_xlabel("False-positive rate")
+            ax.xaxis.set_tick_params(labelbottom=True)
+        for ax in grid[:, 0]:
+            ax.set_ylabel("False-negative rate")
     handles = [plt.Line2D([], [], color=COLOR[e], marker="o", ls="", ms=5, label=e) for e in EVTS]
     handles += [plt.Line2D([], [], color="0.4", marker="o", ls="", ms=ms, label=f"{h} h")
                 for h, ms in ((1, 3), (2, 4.2), (3, 5.2), (4, 6.2))]
     handles += [plt.Line2D([], [], color="k", marker="D", mfc="none", ls="", ms=6, label="board"),
                 plt.Line2D([], [], color="0.4", marker="o", ls="", ms=5, label="host"),
-                plt.Line2D([], [], color="0.5", ls="--", lw=0.7, label="0.06 validation FPR budget")]
+                plt.Line2D([], [], color="0.5", ls="--", lw=0.7,
+                           label="0.06 validation\nFPR budget" if args.compact else "0.06 validation FPR budget")]
     leg_ax = axes[-1]
     leg_ax.axis("off")
-    leg_ax.legend(handles=handles, loc="center", ncol=2, fontsize=7, frameon=False)
-    IMG.mkdir(parents=True, exist_ok=True)
-    fig.savefig(IMG / "fig2-host-board-event-heads.svg")
-    fig.savefig(IMG / "fig2-host-board-event-heads.pdf")
+    leg_ax.legend(
+        handles=handles,
+        loc="center",
+        ncol=2,
+        fontsize=6.5 if args.compact else 7,
+        frameon=False,
+        columnspacing=0.6 if args.compact else 2.0,
+        handletextpad=0.3 if args.compact else 0.8,
+    )
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    fig.savefig(args.out_dir / "fig2-host-board-event-heads.svg")
+    fig.savefig(args.out_dir / "fig2-host-board-event-heads.pdf")
     (RES / "r2_6").mkdir(exist_ok=True)
     (RES / "r2_6" / "fig2_points.json").write_text(json.dumps(pts, indent=1))
     print({c: v["cells_differ"] for c, v in pts.items()})

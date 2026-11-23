@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Insert Route-A result tables into the revision supplementary Markdown."""
+"""Insert origin-causal result tables into the supplementary Markdown."""
 
 from __future__ import annotations
 
@@ -36,9 +36,9 @@ def replace_section(text: str, heading: str, next_heading: str, body: str) -> st
 def per_participant_section(primary: dict) -> str:
     lines = [
         (
-            "**Table S2. Per-participant Route-A results, deployed checkpoint, "
+            "**Table S2. Per-participant results, deployed checkpoint, "
             "AZT1D origin-causal holdout.** MAE is in mg/dL; FNR/FPR use the "
-            "R1-submitted frozen 4 h hypo70 threshold."
+            "validation-frozen 4 h hypo70 threshold."
         ),
         "",
         "| Participant | Windows | MAE 0–1 / 0–4 h | 4 h hypo70 positive | FNR / FPR |",
@@ -57,9 +57,9 @@ def per_participant_section(primary: dict) -> str:
 def leave_one_out_section(primary: dict) -> str:
     lines = [
         (
-            "**Table S3. Route-A aggregate 4 h hypo70 results after removing one "
+            "**Table S3. Origin-causal aggregate 4 h hypo70 results after removing one "
             "primary-holdout participant.** The released checkpoint and "
-            "R1-submitted frozen threshold are unchanged."
+            "validation-frozen threshold are held fixed."
         ),
         "",
         "| Participant removed | Remaining positive windows | FNR | FPR |",
@@ -76,9 +76,9 @@ def leave_one_out_section(primary: dict) -> str:
 def route_a_partition_table(result: dict) -> str:
     lines = [
         (
-            "**Table S11c. Origin-causal Route-A test-window counts and 4 h event "
+            "**Table S11c. Origin-causal test-window counts and 4 h event "
             "prevalence.** These test windows were reconstructed for fixed-model "
-            "host evaluation. The R1 training and validation counts in Table S11a "
+            "host evaluation. The model-development training and validation counts in Table S11a "
             "remain the data actually used for model fitting and threshold selection."
         ),
         "",
@@ -125,14 +125,14 @@ def main() -> None:
     old_s1_body = old_s1_body.replace("**Table S1.", "**Table S1b.", 1)
     old_s1_body = old_s1_body.replace(
         "Event outputs at frozen",
-        "R1-submitted-window event outputs at frozen",
+        "Hardware-audit-window event outputs at frozen",
         1,
     )
     s1_body = (
         f"{new_s1}\n\n"
-        "The Route-A evaluation fixes the released checkpoint, R1 training-set "
-        "normalization statistics, and R1-submitted thresholds. Training and "
-        "threshold selection used the original symmetric-resampling workflow.\n\n"
+        "The origin-causal fixed-model evaluation fixes the released checkpoint, "
+        "training-set normalization statistics, and validation-frozen thresholds. "
+        "Training and threshold selection used the symmetric-resampling workflow.\n\n"
         f"{old_s1_body}"
     )
     supplement = replace_section(
@@ -162,12 +162,12 @@ def main() -> None:
     old_s4_body = old_s4_body.replace("**Table S4b.", "**Table S4d.", 1)
     old_s4_body = old_s4_body.replace(
         "Held-out AUROC",
-        "R1-submitted-window AUROC",
+        "Symmetric-resampling-window AUROC",
         1,
     )
     old_s4_body = old_s4_body.replace(
         "Validation-selected operating points",
-        "R1-submitted-window validation-selected operating points",
+        "Symmetric-resampling-window validation-selected operating points",
         1,
     )
     supplement = replace_section(
@@ -183,7 +183,7 @@ def main() -> None:
     old_s8_body = old_s8_body.replace("**Table S8.", "**Table S8f.", 1)
     old_s8_body = old_s8_body.replace(
         "FNR / FPR / AUROC at frozen",
-        "R1-submitted-window FNR / FPR / AUROC at frozen",
+        "Symmetric-resampling-window FNR / FPR / AUROC at frozen",
         1,
     )
     supplement = replace_section(

@@ -1,4 +1,4 @@
-"""Causal windows for the second-round route-A evaluation.
+"""Origin-causal windows for fixed-model evaluation.
 
 Candidate origins are the 15 min nominal times of a single 5 min grid built on
 the raw observations. The prediction time is the latest observation at or
@@ -9,7 +9,7 @@ pass for every cohort. A repeated (subject, t0) keeps the earlier nominal origin
   PF_RICE_SRC   directory that contains the ceqt package
   RICE_DATA_DIR dataset root used by the released paths
   PF_RUNS       released training-run directory
-  PF_EXT_CACHE  submitted external-cache directory
+  PF_EXT_CACHE  symmetric-resampling external-cache directory
   PF_OUT        C3 run directory (created)
 """
 

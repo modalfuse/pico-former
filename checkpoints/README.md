@@ -1,6 +1,6 @@
 # Trained checkpoints
 
-The three Pico-Former models of the revised manuscript, trained on the AZT1D training split with seeds 20260828, 20260829, and 20260830 (RICE-Former v1.0.6 protocol and locked splits). Seed 20260828 is the deployed model.
+The three Pico-Former models evaluated in the manuscript, trained on the AZT1D training split with seeds 20260828, 20260829, and 20260830 (RICE-Former v1.0.6 protocol and locked splits). Seed 20260828 is the deployed model.
 
 | File | Seed | SHA-256 |
 | --- | --- | --- |
