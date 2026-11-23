@@ -3,12 +3,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22218446.svg)](https://doi.org/10.5281/zenodo.22218446)
 
 Repository: [https://github.com/modalfuse/pico-former](https://github.com/modalfuse/pico-former)  
-Release: [v1.2.2](https://github.com/modalfuse/pico-former/releases/tag/v1.2.2), Zenodo version DOI [10.5281/zenodo.23361428](https://doi.org/10.5281/zenodo.23361428)  
+Release: [v1.3.0](https://github.com/modalfuse/pico-former/releases/tag/v1.3.0)
 Zenodo: [https://doi.org/10.5281/zenodo.22218446](https://doi.org/10.5281/zenodo.22218446)
 
 Pico-Former is an on-device curve–event glucose predictor for ESP32-S3. One Core-1 forward pass emits a 48-point 1–4 h trajectory and 16 Flash-threshold event flags. Core 0 serves wireless I/O. The network definition and \(\tau\) protocol follow the public RICE-Former archive.
 
-This package contains the MCU kernels, the dual-core firmware with input checks, fault handling, and HTTP/HTTPS services, the serial audit host, the scripts that produce every table and figure of the revised manuscript and its Supplementary Material, the aggregate results they read, the PPK2 energy measurement scripts and per-step energy terms, and the three trained checkpoints. Raw CGM records, participant windows, firmware images, and dataset archives are not distributed.
+This package contains the MCU kernels, the dual-core firmware with input checks, fault handling, and HTTP/HTTPS services, the serial audit host, the scripts that produce every table and figure of the revised manuscript and its Supplementary Material, the origin-causal Route-A evaluation scripts and aggregate results, the PPK2 energy measurement scripts and per-step energy terms, and the three trained checkpoints. Raw CGM records, participant windows, firmware images, and dataset archives are not distributed.
 
 ## Companion archive
 
@@ -18,7 +18,7 @@ Host protocol, model code, and locked splits: [RICE-Former](https://github.com/m
 
 - `firmware/`: PlatformIO project for ESP32-S3 (self-attention, cross-attention, residual glue, dual-core I/O, input checks, fault handling, HTTP and HTTPS). `env:s3_n16r8` is the node firmware; the other environments are test builds that differ only in build flags.
 - `checkpoints/`: the three trained models (seeds 20260828, 20260829, 20260830; seed 20260828 is deployed), CC BY 4.0.
-- `code/`: scripts of the revised manuscript (board audit, event tables, quantized baseline, design space, input and fault tests, wireless and HTTPS tests, PPK2 energy measurement, figures) and `code/results/`, the aggregate results they write.
+- `code/`: scripts of the revised manuscript (origin-causal Route-A evaluation, board audit, event tables, quantized baseline, design space, input and fault tests, wireless and HTTPS tests, PPK2 energy measurement, figures) and `code/results/`, the aggregate results they write.
 - `host/`: export and serial-audit scripts. They import `ceqt` from a local RICE-Former checkout.
 - `results/tables/`: aggregate AZT1D holdout curve and event tables.
 - `results/validation/`: on-board summaries of the original submission (v1.0.x).
@@ -43,10 +43,10 @@ On the 3.3 V rail, measured with a Nordic PPK2 at 100 kS/s, one forward pass dra
 ## Host audit
 
 ```bash
-export RICE_FORMER_SRC="/absolute/path/to/rice-former/src"
+export RICE_FORMER_SRC="${PF_WORKSPACE}/rice-former/src"
 export RICE_CKPT="checkpoints/s20260828/ceqt.pt"
-export RICE_CACHE="/absolute/path/to/azt1d_cache.pkl"
-export PICO_PORT="/dev/cu.usbserial-0001"
+export RICE_CACHE="${PF_WORKSPACE}/runs/20260830_s20260828/cache/azt1d_s20260828_str15.pkl"
+export PICO_PORT="<serial-port>"
 python host/run_validation.py
 ```
 

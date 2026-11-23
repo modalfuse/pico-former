@@ -1,0 +1,44 @@
+{
+ "python": "3.13.1",
+ "numpy": "2.2.3",
+ "torch": "2.6.0",
+ "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+ "device": "cpu",
+ "boot_seed": 20261113,
+ "n_boot": 2000,
+ "c3_run": "20261113_164744",
+ "checkpoints": {
+  "20260828": {
+   "y_mean": 149.09940515714914,
+   "y_std": 49.30314366529123,
+   "checkpoint_sha256": "18175b249372da8e50338ddcbcc5482d1a6171ecc219c2fc8114ee3f90f35ba8",
+   "threshold_sha256": "2ab0c6f5448f885922bc463d362b86ee6fd6cf199b32ee736a534835f58f3217"
+  },
+  "20260829": {
+   "y_mean": 142.98821362139847,
+   "y_std": 45.68518729819398,
+   "checkpoint_sha256": "801ef1cf50e8ba278d9baec2ea523f688a42f95c7c29279acd28d1518f67c8f9",
+   "threshold_sha256": "aca156b8eebdee615c9a2ef720b317b037b2c284fd02abbfa834f7d6e6f82630"
+  },
+  "20260830": {
+   "y_mean": 145.21661590506227,
+   "y_std": 48.487806252449445,
+   "checkpoint_sha256": "fd696e298552cb685ea362271897a370262bcd25d55d8d89ef960a717119d02d",
+   "threshold_sha256": "e8edf8bc60ce2f26385effe53970fdef5a548a09b71fb71f23b2fe0563dcf0af"
+  }
+ },
+ "historical_4h_hypo70": {
+  "auroc_head": 0.7482582834273642,
+  "auroc_curve": 0.6710288594072451,
+  "head_fnr": 0.6691403834260977,
+  "curve_fnr": 0.7009894867037725
+ },
+ "historical_minus_paper": {
+  "auroc_head": 0.0002582834273642254,
+  "auroc_curve": 2.8859407245063196e-05,
+  "head_fnr": 0.00014038342609767884,
+  "curve_fnr": -1.0513296227476765e-05
+ },
+ "historical_matches_paper": true,
+ "elapsed_s": 2812.4
+}

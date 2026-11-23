@@ -1,0 +1,442 @@
+[
+ {
+  "name": "azt1d_s20260828_train",
+  "alignment": {
+   "cache_windows": 59236,
+   "rebuilt_windows": 59236,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 59236,
+   "origin_after_t0": 17426,
+   "any_history_after_t0": 17426,
+   "history_after_only_at_origin": 17392,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 17474,
+   "first_target_time_le_origin_time": 163,
+   "same_raw_row_and_time": 90,
+   "cross": {
+    "origin_after_and_first_target_time_le": 122,
+    "origin_not_after_and_first_target_time_le": 41,
+    "origin_after_and_same_raw_row": 72,
+    "origin_not_after_and_same_raw_row": 18
+   },
+   "unknown_windows": 6226,
+   "unknown_cells": 25549
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260828_val",
+  "alignment": {
+   "cache_windows": 15641,
+   "rebuilt_windows": 15641,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 15641,
+   "origin_after_t0": 6627,
+   "any_history_after_t0": 6627,
+   "history_after_only_at_origin": 6625,
+   "history_values_after_t0_max": 2,
+   "history_values_after_t0_sum": 6629,
+   "first_target_time_le_origin_time": 10,
+   "same_raw_row_and_time": 7,
+   "cross": {
+    "origin_after_and_first_target_time_le": 5,
+    "origin_not_after_and_first_target_time_le": 5,
+    "origin_after_and_same_raw_row": 4,
+    "origin_not_after_and_same_raw_row": 3
+   },
+   "unknown_windows": 460,
+   "unknown_cells": 2233
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260828_test",
+  "alignment": {
+   "cache_windows": 19152,
+   "rebuilt_windows": 19152,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 19152,
+   "origin_after_t0": 4450,
+   "any_history_after_t0": 4450,
+   "history_after_only_at_origin": 4440,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 4464,
+   "first_target_time_le_origin_time": 58,
+   "same_raw_row_and_time": 43,
+   "cross": {
+    "origin_after_and_first_target_time_le": 45,
+    "origin_not_after_and_first_target_time_le": 13,
+    "origin_after_and_same_raw_row": 33,
+    "origin_not_after_and_same_raw_row": 10
+   },
+   "unknown_windows": 1808,
+   "unknown_cells": 10063
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260829_train",
+  "alignment": {
+   "cache_windows": 60511,
+   "rebuilt_windows": 60511,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 60511,
+   "origin_after_t0": 20150,
+   "any_history_after_t0": 20150,
+   "history_after_only_at_origin": 20115,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 20200,
+   "first_target_time_le_origin_time": 165,
+   "same_raw_row_and_time": 91,
+   "cross": {
+    "origin_after_and_first_target_time_le": 122,
+    "origin_not_after_and_first_target_time_le": 43,
+    "origin_after_and_same_raw_row": 70,
+    "origin_not_after_and_same_raw_row": 21
+   },
+   "unknown_windows": 6755,
+   "unknown_cells": 32289
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260829_val",
+  "alignment": {
+   "cache_windows": 15558,
+   "rebuilt_windows": 15558,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 15558,
+   "origin_after_t0": 4795,
+   "any_history_after_t0": 4795,
+   "history_after_only_at_origin": 4786,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 4807,
+   "first_target_time_le_origin_time": 51,
+   "same_raw_row_and_time": 38,
+   "cross": {
+    "origin_after_and_first_target_time_le": 40,
+    "origin_not_after_and_first_target_time_le": 11,
+    "origin_after_and_same_raw_row": 31,
+    "origin_not_after_and_same_raw_row": 7
+   },
+   "unknown_windows": 1174,
+   "unknown_cells": 3664
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260829_test",
+  "alignment": {
+   "cache_windows": 17960,
+   "rebuilt_windows": 17960,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 17960,
+   "origin_after_t0": 3558,
+   "any_history_after_t0": 3558,
+   "history_after_only_at_origin": 3556,
+   "history_values_after_t0_max": 2,
+   "history_values_after_t0_sum": 3560,
+   "first_target_time_le_origin_time": 15,
+   "same_raw_row_and_time": 11,
+   "cross": {
+    "origin_after_and_first_target_time_le": 10,
+    "origin_not_after_and_first_target_time_le": 5,
+    "origin_after_and_same_raw_row": 8,
+    "origin_not_after_and_same_raw_row": 3
+   },
+   "unknown_windows": 565,
+   "unknown_cells": 1892
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260830_train",
+  "alignment": {
+   "cache_windows": 61617,
+   "rebuilt_windows": 61617,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 61617,
+   "origin_after_t0": 22585,
+   "any_history_after_t0": 22585,
+   "history_after_only_at_origin": 22557,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 22625,
+   "first_target_time_le_origin_time": 157,
+   "same_raw_row_and_time": 114,
+   "cross": {
+    "origin_after_and_first_target_time_le": 119,
+    "origin_not_after_and_first_target_time_le": 38,
+    "origin_after_and_same_raw_row": 88,
+    "origin_not_after_and_same_raw_row": 26
+   },
+   "unknown_windows": 4284,
+   "unknown_cells": 16798
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260830_val",
+  "alignment": {
+   "cache_windows": 14048,
+   "rebuilt_windows": 14048,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 14048,
+   "origin_after_t0": 1837,
+   "any_history_after_t0": 1837,
+   "history_after_only_at_origin": 1830,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 1846,
+   "first_target_time_le_origin_time": 34,
+   "same_raw_row_and_time": 12,
+   "cross": {
+    "origin_after_and_first_target_time_le": 22,
+    "origin_not_after_and_first_target_time_le": 12,
+    "origin_after_and_same_raw_row": 9,
+    "origin_not_after_and_same_raw_row": 3
+   },
+   "unknown_windows": 2666,
+   "unknown_cells": 11400
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "azt1d_s20260830_test",
+  "alignment": {
+   "cache_windows": 18364,
+   "rebuilt_windows": 18364,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 18364,
+   "origin_after_t0": 4081,
+   "any_history_after_t0": 4081,
+   "history_after_only_at_origin": 4070,
+   "history_values_after_t0_max": 3,
+   "history_values_after_t0_sum": 4096,
+   "first_target_time_le_origin_time": 40,
+   "same_raw_row_and_time": 14,
+   "cross": {
+    "origin_after_and_first_target_time_le": 31,
+    "origin_not_after_and_first_target_time_le": 9,
+    "origin_after_and_same_raw_row": 12,
+    "origin_not_after_and_same_raw_row": 2
+   },
+   "unknown_windows": 1544,
+   "unknown_cells": 9647
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "ohiot1dm_test",
+  "alignment": {
+   "cache_windows": 8619,
+   "rebuilt_windows": 8619,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 8619,
+   "origin_after_t0": 3662,
+   "any_history_after_t0": 3662,
+   "history_after_only_at_origin": 3624,
+   "history_values_after_t0_max": 6,
+   "history_values_after_t0_sum": 3739,
+   "first_target_time_le_origin_time": 97,
+   "same_raw_row_and_time": 97,
+   "cross": {
+    "origin_after_and_first_target_time_le": 60,
+    "origin_not_after_and_first_target_time_le": 37,
+    "origin_after_and_same_raw_row": 60,
+    "origin_not_after_and_same_raw_row": 37
+   },
+   "unknown_windows": 0,
+   "unknown_cells": 0
+  },
+  "trace_value_flags": 0
+ },
+ {
+  "name": "diatrend_test",
+  "alignment": {
+   "cache_windows": 115934,
+   "rebuilt_windows": 115934,
+   "length_equal": true,
+   "subject_id_equal": true,
+   "t0_max_abs_min": 0.0,
+   "y_hist_exact": true,
+   "y_hist_max_abs": 0.0,
+   "t_hist_max_abs_min": 0.0,
+   "y_future_exact": true,
+   "y_future_max_abs": 0.0,
+   "horizons_max_abs_min": 0.0,
+   "n_marks_equal": true,
+   "mark_multiset_mismatches": 0,
+   "cache_windows_with_mark_after_t0": 0,
+   "cache_mark_times_after_t0": 0,
+   "fields_equal": true
+  },
+  "source": {
+   "windows": 115934,
+   "origin_after_t0": 55726,
+   "any_history_after_t0": 55726,
+   "history_after_only_at_origin": 55427,
+   "history_values_after_t0_max": 6,
+   "history_values_after_t0_sum": 56237,
+   "first_target_time_le_origin_time": 1508,
+   "same_raw_row_and_time": 1508,
+   "cross": {
+    "origin_after_and_first_target_time_le": 1211,
+    "origin_not_after_and_first_target_time_le": 297,
+    "origin_after_and_same_raw_row": 1211,
+    "origin_not_after_and_same_raw_row": 297
+   },
+   "unknown_windows": 16,
+   "unknown_cells": 32
+  },
+  "trace_value_flags": 0
+ }
+]

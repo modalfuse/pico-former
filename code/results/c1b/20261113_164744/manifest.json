@@ -1,0 +1,8 @@
+{
+ "python": "3.13.1",
+ "numpy": "2.2.3",
+ "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+ "stride_min": 15.0,
+ "elapsed_s": 660.0,
+ "rice_src_note": "released package via PF_RICE_SRC"
+}
